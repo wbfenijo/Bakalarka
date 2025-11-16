@@ -1,0 +1,31 @@
+@startuml
+title Choose Discount Offer and Add to Basket
+
+actor Customer as C
+boundary System as S
+control OfferService as OS
+entity Basket as B
+
+C -> S: View discount offers
+S -> OS: Fetch available discount offers
+OS --> S: List of discount offers
+S --> C: Display list of discount offers
+
+C -> S: Choose discount offer (offerId)
+S -> OS: Get discount offer details(offerId)
+OS --> S: Discount offer details
+S --> C: Display discount offer details
+
+C -> S: Click "Add to basket" (offerId)
+S -> OS: Check availability(offerId)
+OS --> S: availableCount
+
+alt [availableCount > 0]
+  S -> B: Insert discount offer into basket (offerId)
+  B --> S: Insert confirmation
+  S --> C: Show "Offer added to basket"
+else [availableCount == 0]
+  S --> C: Show "Offer unavailable"
+end
+
+@enduml
