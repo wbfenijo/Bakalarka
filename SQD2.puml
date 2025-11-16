@@ -1,0 +1,38 @@
+@startuml
+actor Customer
+participant System
+participant DiscountOfferService
+participant BasketService
+
+Customer -> System : Request list of discount offers
+activate System
+System -> DiscountOfferService : Get discount offers
+activate DiscountOfferService
+DiscountOfferService --> System : Return list of offers
+deactivate DiscountOfferService
+System -> Customer : Display list of offers
+deactivate System
+
+Customer -> System : Choose a specific discount offer
+activate System
+System -> DiscountOfferService : Get offer details
+activate DiscountOfferService
+DiscountOfferService --> System : Return offer details
+deactivate DiscountOfferService
+System -> Customer : Display offer details
+deactivate System
+
+Customer -> System : Click "Add to basket"
+activate System
+System -> DiscountOfferService : Check availability
+activate DiscountOfferService
+DiscountOfferService --> System : Return availability
+deactivate DiscountOfferService
+System -> BasketService : Add offer to basket
+activate BasketService
+BasketService --> System : Confirm addition
+deactivate BasketService
+System -> Customer : Update basket view
+deactivate System
+
+@enduml
