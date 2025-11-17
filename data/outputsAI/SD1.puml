@@ -1,31 +1,49 @@
+```plantuml
 @startuml
-title Choose Discount Offer and Add to Basket
+actor "Drone Commander" as Commander
+actor "Semi-autonomous UAV" as UAV
+participant "DroneResponse" as Response
+participant "Mobile Rescue System" as Rescue
+participant "Human Operator" as Operator
+participant "Emergency Responders" as Responders
 
-actor Customer as C
-boundary System as S
-control OfferService as OS
-entity Basket as B
+Commander -> Response : Activate the search
+Response -> UAV : Place in launch positions
+Response -> UAV : Activate and arm
+Responders -> Response : Initiate dynamic flight routes
+Response -> UAV : Start the mission
+UAV -> UAV : Perform synchronized takeoff
+UAV -> UAV : Lease airspace and fly assigned routes
+UAV -> UAV : Perform image capture and analysis
+UAV -> UAV : Detect potential victim
+UAV -> Response : Raise victim_detection event
+Response -> Operator : Forward victim_detection alert
+Operator -> UAV : Confirm victim sighting
+UAV -> Response : Request victim confirmation
+UAV -> Rescue : Send GPS coordinates
+UAV -> Rescue : Deliver flotation device
+Responders -> Rescue : Arrive at the scene
+Commander -> Response : End the mission
 
-C -> S: View discount offers
-S -> OS: Fetch available discount offers
-OS --> S: List of discount offers
-S --> C: Display list of discount offers
-
-C -> S: Choose discount offer (offerId)
-S -> OS: Get discount offer details(offerId)
-OS --> S: Discount offer details
-S --> C: Display discount offer details
-
-C -> S: Click "Add to basket" (offerId)
-S -> OS: Check availability(offerId)
-OS --> S: availableCount
-
-alt [availableCount > 0]
-  S -> B: Insert discount offer into basket (offerId)
-  B --> S: Insert confirmation
-  S --> C: Show "Offer added to basket"
-else [availableCount == 0]
-  S --> C: Show "Offer unavailable"
+alt Human responders deliver manually
+    Responders -> Rescue : Deliver flotation device manually
 end
 
+opt UAV detects possible victim but low confidence
+    UAV -> Response : Raise notification with imagery
+    Response -> Response : Save GPS coordinates
+    UAV -> UAV : Continue assigned route
+    Operator -> UAV : Review streamed imagery
+    Operator -> UAV : Confirm not a victim
+end
+
+opt Operator refutes sighting validity
+    UAV -> Response : Resume previous search activity
+end
+
+opt UAV needs permission for tracking
+    UAV -> UAV : Continue search without tracking
+    Operator -> UAV : If confirmed, relocate victim
+end
 @enduml
+```

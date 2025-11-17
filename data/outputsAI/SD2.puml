@@ -1,0 +1,14 @@
+```
+@startuml
+actor Customer
+participant System
+
+Customer -> System : displays list of discount offers
+System -> Customer : list of discount offers
+Customer -> System : chooses a specific discount offer
+System -> Customer : displays discount offer details
+Customer -> System : clicks on "Add to basket" button
+System -> System : checks available discount offers
+System -> System : inserts discount offer to the basket
+@enduml
+```
