@@ -13,7 +13,7 @@ class OpenAIClient:
         response = self.client.chat.completions.create(
             model = self.model,
             messages = [
-                {"role": "user", "content": "Create sequence diagram in plantuml without any comments and without any markdown code fences. for the following use case:" + message},
+                {"role": "user", "content": "Create sequence diagram in plantuml without any comments and without any markdown code fences for the following use case:" + message},
                 ]
         )
         return response.choices[0].message.content
