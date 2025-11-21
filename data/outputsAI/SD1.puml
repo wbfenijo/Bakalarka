@@ -1,43 +1,49 @@
 @startuml
-actor DroneCommander
-actor SeamlessUAV
-boundary DroneResponse
-boundary MobileRescueSystem
-boundary HumanOperator
+actor "Drone Commander" as DC
+actor "Semi-autonomous UAV" as UAV
+participant "DroneResponse" as DR
+participant "Human Operator" as HO
+participant "Mobile Rescue System" as MRS
+participant "Emergency Responders" as ER
 
-DroneCommander -> DroneResponse : activate search
-DroneResponse -> SeamlessUAV : place in launch positions
-SeamlessUAV -> SeamlessUAV : activate and arm
-DroneResponse -> EmergencyResponders : generate flight routes
-DroneResponse -> SeamlessUAV : start mission
-SeamlessUAV -> SeamlessUAV : synchronized takeoff
-SeamlessUAV -> SeamlessUAV : lease airspace and fly routes
-SeamlessUAV -> SeamlessUAV : perform image capture and analysis
-SeamlessUAV -> SeamlessUAV : detect potential victim
-alt victim detected at threshold
-    SeamlessUAV -> DroneResponse : raise victim_detection event
-    DroneResponse -> HumanOperator : forward event
-    SeamlessUAV -> SeamlessUAV : switch to active tracking mode
-    DroneResponse -> HumanOperator : request victim confirmation
-    HumanOperator -> SeamlessUAV : confirm victim sighting
-    DroneResponse -> MobileRescueSystem : send GPS coordinates
-    SeamlessUAV -> MobileRescueSystem : deliver flotation device
-    HumanResponder -> HumanResponder : arrive at the scene
-else low confidence detection
-    SeamlessUAV -> SeamlessUAV : raise notification with imagery
-    DroneResponse -> SeamlessUAV : save GPS coordinates
-    SeamlessUAV -> SeamlessUAV : continue assigned route
-    BackUpOperator -> SeamlessUAV : review imagery
-    BackUpOperator -> SeamlessUAV : confirm no victim
+DC -> UAV: Place UAVs in launch positions
+DC -> UAV: Activate and arm UAVs
+ER -> DR: Initiate dynamic flight routes
+DC -> DR: Issue command to start mission
+UAV -> UAV: Perform synchronized takeoff
+UAV -> UAV: Lease airspace and fly assigned routes
+UAV -> UAV: Perform image capture and analysis
+UAV -> UAV: Detect potential victim
+UAV -> DR: Raise victim_detection event
+DR -> HO: Forward victim_detection alert
+UAV -> UAV: Switch to active tracking mode
+DR -> HO: Request victim confirmation
+HO -> UAV: Confirm victim sighting
+DR -> MRS: Send GPS coordinates
+UAV -> MRS: Deliver flotation device
+ER -> UAV: Arrive at the scene
+DC -> DR: End mission
+
+alt Human delivers flotation device manually
+    ER -> ER: Deliver flotation device manually
 end
-alt human refutes validity
-    HumanOperator -> SeamlessUAV : refute sighting
-    SeamlessUAV -> SeamlessUAV : resume previous search
+
+opt Confidence below threshold
+    UAV -> DR: Raise notification with saved imagery
+    DR -> DR: Save GPS coordinates of sighting
+    UAV -> UAV: Continue current route
+    DR -> HO: Review streamed imagery
+    HO -> DR: Confirm not a victim
 end
-alt no permission for tracking
-    SeamlessUAV -> SeamlessUAV : continue search without tracking
-    HumanOperator -> SeamlessUAV : confirm victim sighting
-    SeamlessUAV -> SeamlessUAV : relocate and start tracking
+
+opt Refutes sighting
+    HO -> UAV: Refute validity of sighting
+    UAV -> UAV: Resume search activity
 end
-DroneCommander -> DroneResponse : end mission
+
+opt No permission for tracking
+    UAV -> UAV: Continue search
+    HO -> UAV: Confirm victim sighting
+    UAV -> UAV: Attempt to relocate and track
+end
 @enduml

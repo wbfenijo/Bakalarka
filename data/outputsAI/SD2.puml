@@ -2,13 +2,11 @@
 actor Customer
 participant System
 
-Customer -> System: display discount offers
-System -> Customer: list of discount offers
-
-Customer -> System: choose discount offer
-System -> Customer: discount offer details
-
-Customer -> System: click "Add to basket"
-System -> System: check available discount offers
-System -> System: insert discount offer to basket
+Customer -> System : Display list of discount offers
+System --> Customer : List of discount offers
+Customer -> System : Choose a specific discount offer
+System --> Customer : Display discount offer details
+Customer -> System : Click "Add to basket"
+System -> System : Check available discount offers
+System -> System : Insert discount offer to basket
 @enduml
