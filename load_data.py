@@ -1,5 +1,3 @@
-import pandas as pd
-
 with open(r"data/inputs/UC1.xml") as f:
     useCase1 = f.read()
 

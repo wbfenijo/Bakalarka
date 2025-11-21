@@ -1,3 +1,4 @@
+import pandas as pd
 from openai_client import *
 from load_data import *
 
