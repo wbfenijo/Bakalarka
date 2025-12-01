@@ -1,50 +1,43 @@
 @startuml
-actor "Drone Commander" as DC
-actor "Semi-autonomous UAV" as UAV
-participant "DroneResponse" as DR
-participant "Human Operator" as HO
-participant "Mobile Rescue System" as MRS
-participant "Emergency Responders" as ER
+actor DroneCommander
+actor UAV
 
-DC -> UAV: Place UAVs in launch positions
-DC -> UAV: Activate and arm UAVs
-ER -> DR: Initiate dynamic flight routes
-DC -> DR: Issue command to start mission
-UAV -> UAV: Perform synchronized takeoff
-UAV -> UAV: Lease airspace and fly assigned routes
-UAV -> UAV: Perform image capture and analysis
-UAV -> UAV: Detect potential victim
-UAV -> DR: Raise victim_detection event
-DR -> HO: Forward victim_detection alert
-UAV -> UAV: Switch to active tracking mode
-DR -> HO: Request victim confirmation
-HO -> UAV: Confirm victim sighting
-DR -> MRS: Send GPS coordinates
-UAV -> MRS: Deliver flotation device
-ER -> UAV: Arrive at the scene
-DC -> DR: End mission
+DroneCommander -> UAV : Place in launch positions
+UAV -> UAV : Activate and arm
+UAV -> UAV : Initiate dynamic generation of flight routes
+DroneCommander -> UAV : Issue command to start mission
+UAV -> UAV : Perform synchronized takeoff
+UAV -> UAV : Lease airspace and fly assigned routes
+UAV -> UAV : Perform image capture and analysis
+UAV -> UAV : Detect potential victim (confidence level above threshold)
+UAV -> DroneCommander : Raise victim_detection event
+DroneCommander -> UAV : Forward event to all UIs
+UAV -> UAV : Switch to active tracking mode
+UAV -> DroneCommander : Request victim confirmation
+DroneCommander -> UAV : Confirm victim sighting
+UAV -> DroneCommander : Send GPS coordinates to mobile_rescue
+UAV -> UAV : Deliver flotation device
+UAV -> DroneCommander : Human responders arrive at scene
+DroneCommander -> UAV : End mission
 
-alt Human delivers flotation device manually
-    ER -> ER: Deliver flotation device manually
+alt Human responders deliver manually
+    UAV -> DroneCommander : Human responders deliver flotation device manually
 end
 
-opt Confidence below threshold
-    UAV -> DR: Raise notification with saved imagery
-    DR -> DR: Save GPS coordinates of sighting
-    UAV -> UAV: Continue current route
-    DR -> HO: Review streamed imagery
-    HO -> DR: Confirm not a victim
+alt Confidence level below threshold
+    UAV -> UAV : Raise notification with imagery
+    UAV -> UAV : Save GPS coordinates of sighting
+    UAV -> UAV : Continue assigned route
+    UAV -> UAV : Back-up operator reviews imagery
+    UAV -> UAV : Back-up operator confirms no victim
 end
 
-opt Refutes sighting
-    HO -> UAV: Refute validity of sighting
-    UAV -> UAV: Resume search activity
+alt Human operator refutes sighting
+    UAV -> UAV : Resume previous search activity
 end
 
-opt No permission for tracking
-    UAV -> UAV: Continue search
-    HO -> UAV: Confirm victim sighting
-    UAV -> UAV: Attempt to relocate and track
+alt No permission for automatic tracking
+    UAV -> UAV : Continue search without tracking
+    UAV -> UAV : Attempt to relocate and start tracking if confirmed
 end
 @enduml
-

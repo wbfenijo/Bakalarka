@@ -1,0 +1,4 @@
+Model,QE1,QE2,QE3,QE4,QE5
+llama3.1:8b,Yes,9,8,10,Yes
+mistral,Yes,9 ,8 ,8 ,Yes
+ChatGPT,Yes,9,9,10,Yes
