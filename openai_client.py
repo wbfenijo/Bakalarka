@@ -2,14 +2,14 @@ from openai import OpenAI
 from load_data import *
 
 class OpenAIClient:
-    def __init__(self, key_file = "bckey.txt"):
+    def __init__(self, key_file: str = "bckey.txt"):
         with open(key_file) as f:
             token = f.read().strip()
 
         self.client = OpenAI(api_key=token)
         self.model = "gpt-4o-mini"
 
-    def prompt(self, message):
+    def prompt(self, message: str) -> str:
         response = self.client.chat.completions.create(
             model = self.model,
             messages = [
@@ -18,7 +18,7 @@ class OpenAIClient:
         )
         return response.choices[0].message.content
     
-    def prompt_eval(self, user_story, plantuml_code):
+    def prompt_eval(self, user_story: str, plantuml_code: str) -> str:
         response = self.client.chat.completions.create(
             model = self.model,
             messages = [
