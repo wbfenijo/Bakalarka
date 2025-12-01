@@ -1,43 +1,46 @@
 @startuml
-actor DroneCommander
-actor UAV
+actor "Drone Commander" as DC
+actor "Semi-autonomous UAV" as UAV
+participant "DroneResponse" as DR
 
-DroneCommander -> UAV : Place in launch positions
+DC -> DR : Activate search
+DR -> UAV : Place in launch positions
 UAV -> UAV : Activate and arm
-UAV -> UAV : Initiate dynamic generation of flight routes
-DroneCommander -> UAV : Issue command to start mission
+DR -> DR : Generate flight routes
+DR -> UAV : Issue command to start mission
 UAV -> UAV : Perform synchronized takeoff
-UAV -> UAV : Lease airspace and fly assigned routes
+UAV -> UAV : Fly assigned flight routes
 UAV -> UAV : Perform image capture and analysis
-UAV -> UAV : Detect potential victim (confidence level above threshold)
-UAV -> DroneCommander : Raise victim_detection event
-DroneCommander -> UAV : Forward event to all UIs
+UAV -> UAV : Detect potential victim
+UAV -> DR : Raise victim_detection event
+DR -> DR : Forward event to UIs
 UAV -> UAV : Switch to active tracking mode
-UAV -> DroneCommander : Request victim confirmation
-DroneCommander -> UAV : Confirm victim sighting
-UAV -> DroneCommander : Send GPS coordinates to mobile_rescue
+DR -> UAV : Request victim confirmation
+UAV -> DC : Confirm victim sighting
+DR -> DR : Send GPS coordinates to mobile_rescue
 UAV -> UAV : Deliver flotation device
-UAV -> DroneCommander : Human responders arrive at scene
-DroneCommander -> UAV : End mission
+DC -> DC : End the mission
 
-alt Human responders deliver manually
-    UAV -> DroneCommander : Human responders deliver flotation device manually
+alt Manual delivery of flotation device
+    UAV -> Responders : Confirm manual delivery
 end
 
-alt Confidence level below threshold
+alt Low confidence victim detection
     UAV -> UAV : Raise notification with imagery
-    UAV -> UAV : Save GPS coordinates of sighting
+    DR -> DR : Save GPS coordinates
     UAV -> UAV : Continue assigned route
-    UAV -> UAV : Back-up operator reviews imagery
-    UAV -> UAV : Back-up operator confirms no victim
+    DC -> DC : Review imagery
+    DC -> UAV : Confirm not a victim
 end
 
-alt Human operator refutes sighting
-    UAV -> UAV : Resume previous search activity
+alt Refuted sighting
+    DR -> UAV : Resume search activity
 end
 
-alt No permission for automatic tracking
-    UAV -> UAV : Continue search without tracking
-    UAV -> UAV : Attempt to relocate and start tracking if confirmed
+alt No tracking permission
+    UAV -> UAV : Continue search
+    DC -> UAV : Confirm victim sighting
+    UAV -> UAV : Attempt to relocate and track
 end
+
 @enduml

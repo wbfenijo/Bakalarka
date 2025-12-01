@@ -1,14 +1,12 @@
 @startuml
 actor Customer
-participant System
+entity System
 
-Customer -> System : Displays list of discount offers
-System -> Customer : List of discount offers
-
-Customer -> System : Choose specific discount offer
-System -> Customer : Display discount offer details
-
-Customer -> System : Click "Add to basket"
-System -> System : Check available discount offers
-System -> System : Insert discount offer to basket
+Customer -> System: display list of discount offers
+System -> Customer: list of discount offers
+Customer -> System: choose specific discount offer
+System -> Customer: display discount offer details
+Customer -> System: click "Add to basket"
+System -> System: check number of available discount offers
+System -> System: insert discount offer to the basket
 @enduml

@@ -5,15 +5,15 @@ from load_data import *
 client = OpenAIClient()
 
 
-sequenceDiagram_1 = client.prompt(useCase1)
+# sequenceDiagram_1 = client.prompt(useCase1)
 
-sequenceDiagram_2 = client.prompt(useCase2)
+# sequenceDiagram_2 = client.prompt(useCase2)
 
-with open(r"data/outputsAI/SD1.puml", "w") as f:
-    f.write(sequenceDiagram_1)
+# with open(r"data/outputsAI/SD1.puml", "w") as f:
+#     f.write(sequenceDiagram_1)
 
-with open(r"data/outputsAI/SD2.puml", "w") as f:
-    f.write(sequenceDiagram_2)
+# with open(r"data/outputsAI/SD2.puml", "w") as f:
+#     f.write(sequenceDiagram_2)
 
 
 
