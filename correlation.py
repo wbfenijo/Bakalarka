@@ -64,7 +64,7 @@ def main():
 
                 r = pearson_r(human_vec, model_vec)
                 if not np.isnan(r):
-                    correlations[model].append(r)
+                    correlations[model].append(r)  
 
     for model, values in sorted(
         correlations.items(),
