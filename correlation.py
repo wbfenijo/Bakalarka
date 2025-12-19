@@ -8,11 +8,11 @@ EVAL_DIR = "evaluation_outputs/"
 def normalize_row(row):
     try:
         return np.array([
-            float(1 if row["QE1"] == "y" or row["QE1"] == "Y" else 0),
+            float(1 if row["QE1"] == "y" or row["QE1"] == "Y" or  row["QE1"] == "1" else 0),
             (float(row["QE2"]) - 1) / 9,
             (float(row["QE3"]) - 1) / 9,
             (float(row["QE4"]) - 1) / 9,
-            float(1 if row["QE5"] == "y" or row["QE5"] == "Y" else 0)
+            float(1 if row["QE5"] == "y" or row["QE5"] == "Y" or row["QE5"] == "1" else 0)
         ])
     except:
         return None
@@ -58,13 +58,16 @@ def main():
                 model = row["Model"]
                 model_vec = normalize_row(row)
                 if model_vec is None:
-                    print(row)
-                    fails += 1
+                    # print(row)
+                    # fails += 1
                     continue
 
                 r = pearson_r(human_vec, model_vec)
                 if not np.isnan(r):
-                    correlations[model].append(r)  
+                    correlations[model].append(r) 
+                else:
+                    fails += 1
+                    print(f"dojebany model {model} pre story {file} a kod gen by {source} problem je {human_vec} a {model_vec}")
 
     for model, values in sorted(
         correlations.items(),
@@ -72,7 +75,8 @@ def main():
         reverse=True
     ):
         print(f"{model}: mean r = {np.mean(values):.4f} (n={len(values)})")
-        print(fails)
+        # print(fails)
+
         
 
 if __name__ == "__main__":
