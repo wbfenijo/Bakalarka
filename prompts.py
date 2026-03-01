@@ -2,7 +2,7 @@ import pandas as pd
 from openai_client import *
 from load_data import *
 
-client = OpenAIClient()
+
 
 
 # sequenceDiagram_1 = client.prompt(useCase1)

@@ -2,20 +2,19 @@ import os
 import pandas as pd
 import numpy as np
 from collections import defaultdict
+from results import *
+
 
 EVAL_DIR = "evaluation_outputs/"
 
 def normalize_row(row):
-    try:
-        return np.array([
-            float(1 if row["QE1"] == "y" or row["QE1"] == "Y" or  row["QE1"] == "1" else 0),
-            (float(row["QE2"]) - 1) / 9,
-            (float(row["QE3"]) - 1) / 9,
-            (float(row["QE4"]) - 1) / 9,
-            float(1 if row["QE5"] == "y" or row["QE5"] == "Y" or row["QE5"] == "1" else 0)
-        ])
-    except:
-        return None
+        qe1 = 1.0 if str(row["QE1"]).strip().lower() in ("y", "1") else 0.0
+        qe2 = (float(row["QE2"]) - 1) / 9
+        qe3 = (float(row["QE3"]) - 1) / 9
+        qe4 = (float(row["QE4"]) - 1) / 9
+        qe5 = 1.0 if str(row["QE5"]).strip().lower() in ("y", "1") else 0.0
+        return np.array([qe1, qe2, qe3, qe4, qe5], dtype=float)
+
 
 
 
@@ -49,31 +48,33 @@ def main():
                 continue
 
             human_vec = normalize_row(human_rows.iloc[0])
-            if human_vec is None:
-                continue
 
             for _, row in df_src.iterrows():
                 if row["Model"] == "Human":
                     continue
 
                 model_vec = normalize_row(row)
+
                 if model_vec is None:
                     fails += 1
                     continue
 
+                    
+
                 model_name = row["Model"]
 
-                correlations[model_name]["human"].extend(human_vec)
-                correlations[model_name]["model"].extend(model_vec)
+                correlations[model_name]["human"].append(human_vec)
+                correlations[model_name]["model"].append(model_vec)
 
 
     print("\n=== FINAL PEARSON CORRELATION (PAIRED DATA) ===")
 
     results = []
     for model, data in correlations.items():
-        h = np.array(data["human"])
-        m = np.array(data["model"])
-        r = pearson_r(h, m)
+        h = np.vstack(data["human"])
+        m = np.vstack(data["model"])
+
+        r = pearson_r(h.flatten(), m.flatten())
         results.append((model, r, len(h)))
 
     results.sort(key=lambda x: (np.nan_to_num(x[1], nan=-2)), reverse=True)

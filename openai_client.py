@@ -2,12 +2,12 @@ from openai import OpenAI
 from load_data import *
 
 class OpenAIClient:
-    def __init__(self, key_file: str = "bckey.txt"):
+    def __init__(self, model, key_file: str = "bckey.txt"):
         with open(key_file) as f:
             token = f.read().strip()
 
         self.client = OpenAI(api_key=token)
-        self.model = "gpt-4o-mini"
+        self.model = model
 
     def prompt(self, message: str) -> str:
         response = self.client.chat.completions.create(
