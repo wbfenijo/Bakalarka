@@ -46,11 +46,9 @@ def query_ollama(model_name: str, prompt: str) -> str:
         resp = requests.post(url, json=payload, timeout=120)
         data = resp.json()
         if "response" in data:
-            print(data["response"])
             return data["response"]
         
         if "message" in data and "content" in data["message"]:
-            print(data["message"]["content"])
             return data["message"]["content"]
         return str(data)
     except Exception as e:
