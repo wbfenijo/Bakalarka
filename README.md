@@ -27,19 +27,19 @@ implementácia prístupu pre transformáciu artefaktov vývoja softvéru
 Tu udržiavaj aktuálny zoznam zdrojov použitých pre prácu:  
 
 - **Články:**  
-  - [Názov článku](link)  
+  - [Automatic generation of UML sequence diagrams from user requirements specifications](https://www.thinkmind.org/articles/softeng_2015_4_30_55074.pdf)
+  - [Generating Sequence Diagram from Natural Language Requirements](https://ieeexplore.ieee.org/document/9582297)
 - **Východiskové záverečné práce:**  
-  - [Názov práce](link)  
-- **Učebnice:**  
-  - Názov učebnice, autor, rok vydania  
-- **Technické manuály:**  
-  - Názov manuálu, autor, rok vydania  
+  - [Datasety v softvérovom inžinierstve](https://opac.crzp.sk/?fn=detailBiblioFormChildI2FCAF&sid=71F69C32541FA50939647AB0024D&seo=CRZP-detail-kniha)
+  - [Generovanie UML modelu z prípadov použitia](https://opac.crzp.sk/?fn=detailBiblioForm&sid=9A7D98113A4E7D6F04A971A0EB46)  
+
+
 
 *(Pridávaj nové položky priebežne, aby bol zoznam vždy aktuálny.)*
 
 ---
 
-https://www.overleaf.com/read/wkdmrwcgzvjm#60a968
+[Priebežná verzia bakalárskej práce](https://www.overleaf.com/read/wkdmrwcgzvjm#60a968)
 
 ---
 
