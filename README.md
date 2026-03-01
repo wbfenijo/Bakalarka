@@ -1,0 +1,57 @@
+# Web stránka bakalárskej práce
+
+
+---
+
+## Informácie o študentovi
+
+- **Meno študenta:** Adam Blažek
+- **Názov práce:** TTransformácia arttefaktov vo vývoji softvéru.
+- **Meno školiteľa:** Lukáš Radoský 
+- **Kontakt na študenta:** blazek29@uniba.sk
+
+---
+
+## Zadanie práce
+
+- **Anotácia:**  
+V rámci vývoja softvéru poznáme niekoľko fáz, vrátane špecifikácie, návrhu, a implementácie. V rámci každej fázy vznikajú rôzne artefakty, napríklad diagramy tried v rámci návrhu alebo zdrojový kód v rámci implementácie. Automatizovaná transformácia artefaktov z jednej fázy vývoja na artefakty ďalsích fáz vývoja by umožnila rýchlejší vývoj softvéru, a je preto predmetom výskumu.
+
+Analyzujte existujúce prístupy pre transformáciu zvoleného typu artefaktu v softvérovom vývoji, napríklad transformáciu prípadov použitia na sekvenčný diagram. Navrhnite a implementujte prístup pre zvolený problém, pričom môžete aj nadviazať na existujúce práce. Svoju implementáciu vyhodnoťte na vzorke dát.
+
+- **Cieľ práce:**  
+implementácia prístupu pre transformáciu artefaktov vývoja softvéru
+
+---
+
+## Zdroje a odkazy
+
+Tu udržiavaj aktuálny zoznam zdrojov použitých pre prácu:  
+
+- **Články:**  
+  - [Názov článku](link)  
+- **Východiskové záverečné práce:**  
+  - [Názov práce](link)  
+- **Učebnice:**  
+  - Názov učebnice, autor, rok vydania  
+- **Technické manuály:**  
+  - Názov manuálu, autor, rok vydania  
+
+*(Pridávaj nové položky priebežne, aby bol zoznam vždy aktuálny.)*
+
+---
+
+https://www.overleaf.com/read/wkdmrwcgzvjm#60a968
+
+---
+
+## Týždenný denník aktualizácií
+
+| Týždeň | Dátum | Popis aktualizácie | Autor |
+|--------|-------|------------------|-------|
+| 1      | 01.03.2026 | Pridané zadanie, vytvorená štruktúra repozitára | [Tvoje meno] |
+| 2      | 08.03.2026 | Pridané prvé texty a screenshoty | [Tvoje meno] |
+| ...    | ...   | ...              | ...   |
+
+
+
