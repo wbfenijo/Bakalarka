@@ -47,11 +47,11 @@ SEQUENCE DIAGRAM (PlantUML):
 
 Evaluate using:
 
-QE1: Yes/No
+QE1: 0/1 (Yes/No)
 QE2: 1-10
 QE3: 1-10
 QE4: 1-10
-QE5: Yes/No
+QE5: 0/1 (Yes/No)
 
 Return exactly:
 
@@ -63,20 +63,28 @@ QE5: ...
 """
 
 
+
+
 def parse_response(response: str) -> dict:
-    qe = {"QE1": "", "QE2": "", "QE3": "", "QE4": "", "QE5": ""}
+    qe = {"QE1": "0", "QE2": "1", "QE3": "1", "QE4": "1", "QE5": "0"}
+
     for line in response.splitlines():
         t = line.strip()
-        if t.startswith("QE1:"):
-            qe["QE1"] = t.replace("QE1:", "").strip()[:1]
-        elif t.startswith("QE2:"):
-            qe["QE2"] = t.replace("QE2:", "").strip()[:2]
-        elif t.startswith("QE3:"):
-            qe["QE3"] = t.replace("QE3:", "").strip()[:2]
-        elif t.startswith("QE4:"):
-            qe["QE4"] = t.replace("QE4:", "").strip()[:2]
-        elif t.startswith("QE5:"):
-            qe["QE5"] = t.replace("QE5:", "").strip()[:1]
+        if ":" not in t:
+            continue
+        key, val = t.split(":", 1)
+        val = val.strip()
+
+        digits = "".join(filter(str.isdigit, val))
+
+        if key == "QE1" or key == "QE5":
+            qe[key] = "1" if digits == "" or digits[0] == "1" else "0"
+        elif key in ["QE2", "QE3", "QE4"]:
+            if digits == "":
+                qe[key] = "1"
+            else:
+                n = int(digits)
+                qe[key] = str(min(max(n, 1), 10))
     return qe
 
 
