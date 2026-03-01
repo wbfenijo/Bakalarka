@@ -46,8 +46,11 @@ def query_ollama(model_name: str, prompt: str) -> str:
         resp = requests.post(url, json=payload, timeout=120)
         data = resp.json()
         if "response" in data:
+            print(data["response"])
             return data["response"]
+        
         if "message" in data and "content" in data["message"]:
+            print(data["message"]["content"])
             return data["message"]["content"]
         return str(data)
     except Exception as e:
@@ -67,7 +70,7 @@ def query_model(model_name: str, prompt: str) -> str:
 
     if model_name in OPENAI_MODELS:
         client = OpenAIClient(model_name)
-        return client.query(prompt)
+        return client.prompt_eval(prompt)
 
     elif model_name in OLLAMA_MODELS:
         return query_ollama(model_name, prompt)
@@ -76,4 +79,4 @@ def query_model(model_name: str, prompt: str) -> str:
         return query_external_model(model_name, prompt)
 
     else:
-        raise ValueError(f"Unknown model: {model_name}")
+        pass
