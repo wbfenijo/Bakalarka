@@ -6,7 +6,7 @@
 ## Informácie o študentovi
 
 - **Meno študenta:** Adam Blažek
-- **Názov práce:** Transformácia arttefaktov vo vývoji softvéru.
+- **Názov práce:** Transformácia artefaktov vo vývoji softvéru.
 - **Meno školiteľa:** Lukáš Radoský 
 - **Kontakt na študenta:** blazek29@uniba.sk
 
