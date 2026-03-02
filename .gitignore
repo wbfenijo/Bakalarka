@@ -5,3 +5,4 @@ __pycache__/
 results.py
 plantuml_outputs/
 correlation.py
+stratified.py

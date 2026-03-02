@@ -149,7 +149,7 @@ medicalcaregiver->System:locate alfred_user
             QE4: ...
             QE5: ...
         "
-GPT,mistral,Y,5,7,No,I,"
+GPT,mistral,Y,5,7,1,1,"
             You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
 
             USER STORY:
