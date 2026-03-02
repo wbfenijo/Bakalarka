@@ -39,7 +39,7 @@ implementácia prístupu pre transformáciu artefaktov vývoja softvéru
 
 ## Týždenný denník aktualizácií
 
-| Dátum | Popis aktualizácie |
+| Dátum | Popis  |
 |-------|------------------|
 | 06.10.-12.10. | Úvodný náhľad do problematiky, prvé články a práce |
 | 20.10.-26.10. | Prvý kód, jednoduchý zero shot, spracovanie článkov do práce| 
