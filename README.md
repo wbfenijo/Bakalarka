@@ -39,10 +39,10 @@ implementácia prístupu pre transformáciu artefaktov vývoja softvéru
 
 ## Týždenný denník aktualizácií
 
-| Týždeň | Dátum | Popis aktualizácie |
-|--------|-------|------------------|-------|
-| 1      | 01.03.2026 | Pridané zadanie, vytvorená štruktúra repozitára |
-| 2      | 08.03.2026 | Pridané prvé texty a screenshoty | 
+| Dátum | Popis aktualizácie |
+|-------|------------------|
+| 01.03.2026 | Pridané zadanie, vytvorená štruktúra repozitára |
+| 08.03.2026 | Pridané prvé texty a screenshoty | 
 
 
 
