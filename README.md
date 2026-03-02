@@ -41,8 +41,13 @@ implementácia prístupu pre transformáciu artefaktov vývoja softvéru
 
 | Dátum | Popis aktualizácie |
 |-------|------------------|
-| 01.03.2026 | Pridané zadanie, vytvorená štruktúra repozitára |
-| 08.03.2026 | Pridané prvé texty a screenshoty | 
+| 06.10.-12.10. | Úvodný náhľad do problematiky, prvé články a práce |
+| 20.10.-26.10. | Prvý kód, jednoduchý zero shot, spracovanie článkov do práce| 
+| 03.11.-09.11. | Skúška zero shot s use case-om, vytvorenie klasy pre OpenAI, nájdenie datasetu a AI modelov| 
+| 17.11.-23.11. | Spracovanie datasetu, prvý script pre judge-a, jednoduché prompty do viacerých modelov| 
+| 01.12.-07.12. | Pokračovanie v skripte pre judge-a, prvé výsledky, spracovanie do .csv súborov | 
+| 08.12.-14.12. | Návrh skriptu pre koreláciu v dátach, zlyhanie pre chybné dáta | 
+| 16.02.-22.02. | Skript pre opravu dát, pridané nové modely, veľká refaktorizácia, stratified split datasetu pre trénovanie LLM| 
 
 
 
