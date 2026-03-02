@@ -29,11 +29,9 @@ implementácia prístupu pre transformáciu artefaktov vývoja softvéru
   - [Generating Sequence Diagram from Natural Language Requirements](https://ieeexplore.ieee.org/document/9582297)
   - [Automated Derivation of UML Sequence Diagrams from User Stories: Unleashing the Power of Generative AI vs. a Rule-Based Approach](https://dl.acm.org/doi/abs/10.1145/3640310.3674081)
   - [A semi-automatic approach to translating use cases to sequence diagrams](https://ieeexplore.ieee.org/abstract/document/779011)
-  
 - **Východiskové záverečné práce:**  
   - [Datasety v softvérovom inžinierstve](https://opac.crzp.sk/?fn=detailBiblioFormChildI2FCAF&sid=71F69C32541FA50939647AB0024D&seo=CRZP-detail-kniha)
-  - [Generovanie UML modelu z prípadov použitia](https://opac.crzp.sk/?fn=detailBiblioForm&sid=9A7D98113A4E7D6F04A971A0EB46)  
-
+  - [Generovanie UML modelu z prípadov použitia](https://opac.crzp.sk/?fn=detailBiblioForm&sid=9A7D98113A4E7D6F04A971A0EB46)
 ---
 
 [Priebežná verzia bakalárskej práce](https://www.overleaf.com/read/wkdmrwcgzvjm#60a968)
