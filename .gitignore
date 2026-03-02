@@ -1,8 +1,6 @@
 bckey.txt
 postup.txt
-data-folder/
 __pycache__/
 results.py
 plantuml_outputs/
-correlation.py
 stratified.py
