@@ -337,3 +337,7 @@ deactivate PlanReviewStaff
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,7,8,7,n,None
+Tool,Human,y,9,8,7,y,None
+GPT,Human,y,7,8,7,n,None
+Tool,Human,y,9,8,7,y,None

@@ -261,3 +261,7 @@ System --> APIUser: Return Combined Results
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,9,8,8,y,None
+Tool,Human,y,8,7,6,y,None
+GPT,Human,y,9,8,8,y,None
+Tool,Human,y,8,7,6,y,None

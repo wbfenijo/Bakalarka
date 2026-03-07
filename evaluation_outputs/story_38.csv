@@ -257,3 +257,7 @@ GameSettings --> ALFRED: Confirmation
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,9,8,8,y,None
+Tool,Human,y,7,5,4,n,None
+GPT,Human,y,9,8,8,y,None
+Tool,Human,y,7,5,4,n,None

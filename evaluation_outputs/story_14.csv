@@ -297,3 +297,7 @@ deactivate RepositoryManager
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,9,9,y,None
+Tool,Human,y,8,6,6,n,None
+GPT,Human,y,10,9,9,y,None
+Tool,Human,y,8,6,6,n,None

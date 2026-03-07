@@ -309,3 +309,7 @@ ReportGenerator --> Researcher: Generate and present research output report
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,10,10,y,None
+Tool,Human,y,10,7,7,y,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,y,10,7,7,y,None

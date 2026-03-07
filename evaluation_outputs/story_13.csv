@@ -321,3 +321,7 @@ deactivate LibraryStaff
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,8,9,y,None
+Tool,Human,y,8,5,5,n,None
+GPT,Human,y,10,8,9,y,None
+Tool,Human,y,8,5,5,n,None

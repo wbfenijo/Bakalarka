@@ -285,3 +285,7 @@ deactivate Researcher
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,9,8,9,y,None
+Tool,Human,n,6,4,4,n,None
+GPT,Human,y,9,8,9,y,None
+Tool,Human,n,6,4,4,n,None

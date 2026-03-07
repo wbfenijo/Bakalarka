@@ -293,3 +293,7 @@ deactivate DescriptiveRecordService
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,8,9,y,None
+Tool,Human,y,10,2,1,n,None
+GPT,Human,y,10,8,9,y,None
+Tool,Human,y,10,2,1,n,None

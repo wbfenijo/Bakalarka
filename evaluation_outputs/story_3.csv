@@ -273,3 +273,7 @@ deactivate Employee
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,7,8,7,n,None
+Tool,Human,y,6,5,4,y,None
+GPT,Human,y,7,8,7,n,None
+Tool,Human,y,6,5,4,y,None

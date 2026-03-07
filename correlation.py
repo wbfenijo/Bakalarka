@@ -6,7 +6,7 @@ from evaluator import *
 
 
 EVAL_DIR = "evaluation_outputs/"
-
+top_user_stories = set()
 def normalize_row(row):
         qe1 = 1.0 if str(row["QE1"]).strip().lower() in ("y", "1") else 0.0
         qe2 = (float(row["QE2"]) - 1) / 9
@@ -43,17 +43,29 @@ def main():
                 continue
 
             human_rows = df_src[df_src["Model"] == "Human"]
+
             if human_rows.empty:
                 continue
             human_vec = normalize_row(human_rows.iloc[0])
 
+
             for _, row in df_src.iterrows():
-                if row["Model"] == "Human":
-                    continue
+                model_name = row["Model"]
+
+                if model_name == "Human":
+                    evaluation = 0
+
+                    for value in human_vec:
+                        evaluation += value
+
+                    if evaluation == 5:
+                        top_user_stories.add(source + "-" + file)
+                
+
 
                 model_vec = normalize_row(row)
 
-                model_name = row["Model"]
+                
                 correlations[model_name]["human"].append(human_vec)
                 correlations[model_name]["model"].append(model_vec)
 
@@ -73,6 +85,9 @@ def main():
 
     for model, r, n in results:
         print(f"{model:20s}  r = {r:.4f}   n = {n}")
+    print((top_user_stories))
+    print(len(top_user_stories))
+    
 
 
 

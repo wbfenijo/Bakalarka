@@ -285,3 +285,7 @@ deactivate Cook
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,7,5,5,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,7,5,5,n,None

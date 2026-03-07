@@ -281,3 +281,7 @@ deactivate ZooniverseAdmin
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,9,9,y,None
+Tool,Human,y,10,4,4,n,None
+GPT,Human,y,10,9,9,y,None
+Tool,Human,y,10,4,4,n,None

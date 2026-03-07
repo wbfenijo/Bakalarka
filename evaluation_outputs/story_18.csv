@@ -289,3 +289,7 @@ deactivate AssetManager
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,7,8,y,None
+Tool,Human,y,10,8,9,y,None
+GPT,Human,y,10,7,8,y,None
+Tool,Human,y,10,8,9,y,None

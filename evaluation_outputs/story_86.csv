@@ -265,3 +265,7 @@ deactivate DAMSManager
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,3,2,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,3,2,n,None

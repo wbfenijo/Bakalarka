@@ -273,3 +273,7 @@ Interviewer --> ResearchParticipant: Continue with the user interview
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,10,10,y,None
+Tool,Human,y,10,5,5,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,y,10,5,5,n,None

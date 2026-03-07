@@ -245,3 +245,7 @@ System -> MedicalCaregiver: Display User Location
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,9,9,9,y,None
+Tool,Human,y,8,8,6,n,None
+GPT,Human,y,9,9,9,y,None
+Tool,Human,y,8,8,6,n,None

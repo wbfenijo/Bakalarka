@@ -241,3 +241,7 @@ OrderDisplaySystem --> Manager: Display orders by date
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,8,7,7,y,None
+Tool,Human,y,10,10,10,y,None
+GPT,Human,y,8,7,7,y,None
+Tool,Human,y,10,10,10,y,None

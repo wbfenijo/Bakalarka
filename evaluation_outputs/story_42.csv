@@ -285,3 +285,7 @@ deactivate PI
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,4,3,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,4,3,3,n,None

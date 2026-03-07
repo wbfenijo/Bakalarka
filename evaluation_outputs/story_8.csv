@@ -153,7 +153,7 @@ deactivate Cook
             QE4: ...
             QE5: ...
         "
-GPT,llama3.1:8b,19,6 ,4 ,1 ,1,"
+GPT,llama3.1:8b,1,6,4,1,1,"
             You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
 
             USER STORY:
@@ -305,3 +305,7 @@ deactivate Cook
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,9,8,8,y,
+Tool,Human,y,8,7,5,y,
+GPT,Human,y,9,8,8,y,None
+Tool,Human,y,8,7,5,y,None

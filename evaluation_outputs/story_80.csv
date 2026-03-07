@@ -301,3 +301,7 @@ deactivate StaffMember
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,10,10,y,None
+Tool,Human,y,10,9,10,y,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,y,10,9,10,y,None

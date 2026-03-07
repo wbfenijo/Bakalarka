@@ -301,3 +301,7 @@ deactivate LibraryMember
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,9,8,7,n,None
+Tool,Human,y,10,9,7,y,None
+GPT,Human,y,9,8,7,n,None
+Tool,Human,y,10,9,7,y,None

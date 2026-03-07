@@ -129,7 +129,6 @@ def evaluate_diagram(user_story, diagram_code, generated_by, csv_path):
             if (generated_by, model_name) in existing_pairs:
                 print(f"Skipping {model_name} for {generated_by} — already done")
                 continue
-
             print(f"Model: {model_name} evaluating {generated_by}")
             prompt = make_prompt(user_story, diagram_code)
             response = query_model(model_name, prompt)

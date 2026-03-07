@@ -253,3 +253,7 @@ DAMSManager -> PreservationManagers: Provide Master File Information
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
