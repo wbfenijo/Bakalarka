@@ -25,12 +25,13 @@ implementácia prístupu pre transformáciu artefaktov vývoja softvéru
 ## Zdroje a odkazy
 
 - **Články:**  
-  - [Automatic generation of UML sequence diagrams from user requirements specifications](https://www.thinkmind.org/articles/softeng_2015_4_30_55074.pdf)
+  - [Automatic generation of sequence diagrams and updating domain model from use cases.](https://www.thinkmind.org/articles/softeng_2015_4_30_55074.pdf)
   - [Generating Sequence Diagram from Natural Language Requirements](https://ieeexplore.ieee.org/document/9582297)
+  - [Automated Derivation of UML Sequence Diagrams from User Stories: Unleashing the Power of Generative AI vs. a Rule-Based Approach](https://dl.acm.org/doi/abs/10.1145/3640310.3674081)
+  - [A semi-automatic approach to translating use cases to sequence diagrams](https://ieeexplore.ieee.org/abstract/document/779011)
 - **Východiskové záverečné práce:**  
   - [Datasety v softvérovom inžinierstve](https://opac.crzp.sk/?fn=detailBiblioFormChildI2FCAF&sid=71F69C32541FA50939647AB0024D&seo=CRZP-detail-kniha)
-  - [Generovanie UML modelu z prípadov použitia](https://opac.crzp.sk/?fn=detailBiblioForm&sid=9A7D98113A4E7D6F04A971A0EB46)  
-
+  - [Generovanie UML modelu z prípadov použitia](https://opac.crzp.sk/?fn=detailBiblioForm&sid=9A7D98113A4E7D6F04A971A0EB46)
 ---
 
 [Priebežná verzia bakalárskej práce](https://www.overleaf.com/read/wkdmrwcgzvjm#60a968)
@@ -39,10 +40,15 @@ implementácia prístupu pre transformáciu artefaktov vývoja softvéru
 
 ## Týždenný denník aktualizácií
 
-| Týždeň | Dátum | Popis aktualizácie |
-|--------|-------|------------------|-------|
-| 1      | 01.03.2026 | Pridané zadanie, vytvorená štruktúra repozitára |
-| 2      | 08.03.2026 | Pridané prvé texty a screenshoty | 
+| Dátum | Popis  |
+|-------|------------------|
+| 06.10.-12.10. | Úvodný náhľad do problematiky, prvé články a práce |
+| 20.10.-26.10. | Prvý kód, jednoduchý zero shot, spracovanie článkov do práce| 
+| 03.11.-09.11. | Skúška zero shot s use case-om, vytvorenie klasy pre OpenAI, nájdenie datasetu a AI modelov| 
+| 17.11.-23.11. | Spracovanie datasetu, prvý script pre judge-a, jednoduché prompty do viacerých modelov| 
+| 01.12.-07.12. | Pokračovanie v skripte pre judge-a, prvé výsledky, spracovanie do .csv súborov | 
+| 08.12.-14.12. | Návrh skriptu pre koreláciu v dátach, zlyhanie pre chybné dáta | 
+| 16.02.-22.02. | Skript pre opravu dát, pridané nové modely, veľká refaktorizácia, stratified split datasetu pre trénovanie LLM| 
 
 
 
