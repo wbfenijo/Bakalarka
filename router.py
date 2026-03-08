@@ -16,7 +16,7 @@ EXTERNAL_MODELS = {
     "azure/gpt-4.1-mini",
     "azure/gpt-4o",
     "azure/gpt-5.1",
-    "devstral-small-2",
+    #"devstral-small-2",
     "Gemma3-27b",
     "google/claude-haiku-4-5",
     "google/claude-sonnet-4-5",
@@ -26,7 +26,7 @@ EXTERNAL_MODELS = {
     "GPT-oss-20b",
     "Granite-4.0-tiny",
     "Llama-3.1-70b",
-    "minimax-m2.1",
+    #"minimax-m2.1",
     "Ministral-3-14B-Instruct",
     "Mistral-Small-3.2-24B-Instruct",
     "ollama-embedding-qwen3-06",
@@ -58,8 +58,8 @@ def query_ollama(model_name: str, prompt: str) -> str:
 
 
 def query_external_model(model_name: str, prompt: str) -> str: #Lukas
+    pass
 
-    return ...
 
 
 

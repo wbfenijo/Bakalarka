@@ -293,3 +293,1306 @@ deactivate User
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+Tool,azure/gpt-4.1,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,azure/gpt-4.1-mini,0,2,2,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,azure/gpt-4o,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,azure/gpt-5.1,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,Gemma3-27b,1,2,2,3,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,google/claude-haiku-4-5,0,2,1,2,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,google/claude-sonnet-4-5,0,1,2,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,google/gemini-2.5-flash,1,5,9,2,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,google/gemini-2.5-pro,1,2,1,2,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,GPT-oss-120b,1,1,1,1,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,GPT-oss-20b,0,2,3,2,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,Granite-4.0-tiny,1,7,6,8,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,Llama-3.1-70b,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,Ministral-3-14B-Instruct,1,2,2,2,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,Mistral-Small-3.2-24B-Instruct,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,ollama-embedding-qwen3-06,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,vision/Qwen3-32b-VL,0,2,3,2,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+user->System:ontend_change enum_list 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,azure/gpt-4.1,1,7,8,7,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,azure/gpt-4.1-mini,1,8,8,7,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,azure/gpt-4o,1,7,8,7,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,azure/gpt-5.1,1,7,7,7,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Gemma3-27b,1,7,6,8,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,google/claude-haiku-4-5,1,7,6,7,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,google/claude-sonnet-4-5,1,7,8,6,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,google/gemini-2.5-flash,1,9,9,9,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,google/gemini-2.5-pro,1,9,9,9,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,GPT-oss-120b,1,8,7,6,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,GPT-oss-20b,1,8,8,7,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Granite-4.0-tiny,1,8,7,8,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Llama-3.1-70b,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Ministral-3-14B-Instruct,1,4,6,5,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Mistral-Small-3.2-24B-Instruct,1,8,7,8,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,ollama-embedding-qwen3-06,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,vision/Qwen3-32b-VL,1,8,7,6,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a user, I want frontend changes for managing enum lists.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None
+GPT,Human,y,10,10,10,y,None
+Tool,Human,n,5,4,3,n,None

@@ -253,3 +253,1136 @@ DAMSManager -> PreservationManagers: Provide Master File Information
             QE4: ...
             QE5: ...
         "
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+Tool,azure/gpt-4.1,0,2,2,2,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,azure/gpt-4.1-mini,0,3,2,2,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,azure/gpt-4o,0,2,3,2,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,azure/gpt-5.1,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,Gemma3-27b,1,2,3,2,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,google/claude-haiku-4-5,0,2,1,2,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,google/claude-sonnet-4-5,0,2,3,2,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,google/gemini-2.5-flash,1,2,1,2,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,google/gemini-2.5-pro,0,2,1,2,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,GPT-oss-120b,1,2,2,2,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,GPT-oss-20b,0,2,2,2,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,Granite-4.0-tiny,1,8,7,8,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,Llama-3.1-70b,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,Ministral-3-14B-Instruct,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,Mistral-Small-3.2-24B-Instruct,1,3,2,2,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,ollama-embedding-qwen3-06,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+Tool,vision/Qwen3-32b-VL,0,2,3,2,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,azure/gpt-4.1,1,6,5,5,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,azure/gpt-4.1-mini,0,7,6,7,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,azure/gpt-4o,1,8,7,8,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,azure/gpt-5.1,1,7,7,6,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Gemma3-27b,1,6,7,5,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,google/claude-haiku-4-5,1,6,7,5,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,google/claude-sonnet-4-5,0,4,5,3,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,google/gemini-2.5-flash,0,8,9,6,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,google/gemini-2.5-pro,1,5,6,5,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,GPT-oss-120b,1,7,6,6,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,GPT-oss-20b,1,7,8,7,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Granite-4.0-tiny,1,8,7,9,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Llama-3.1-70b,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Ministral-3-14B-Instruct,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Mistral-Small-3.2-24B-Instruct,1,8,7,6,1,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,ollama-embedding-qwen3-06,0,1,1,1,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,vision/Qwen3-32b-VL,1,7,6,5,0,"
+You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+
+USER STORY:
+As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.
+
+SEQUENCE DIAGRAM (PlantUML):
+@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+
+
+Evaluate using:
+
+QE1: 0/1 (Yes/No)
+QE2: 1-10
+QE3: 1-10
+QE4: 1-10
+QE5: 0/1 (Yes/No)
+
+Return exactly:
+
+QE1: ...
+QE2: ...
+QE3: ...
+QE4: ...
+QE5: ...
+"
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None
+GPT,Human,y,10,7,7,y,None
+Tool,Human,y,10,5,6,n,None

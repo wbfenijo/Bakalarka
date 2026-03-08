@@ -16,7 +16,7 @@ MODELS = [
     "azure/gpt-4.1-mini",
     "azure/gpt-4o",
     "azure/gpt-5.1",
-    "devstral-small-2",
+    #"devstral-small-2",
     "Gemma3-27b",
     "google/claude-haiku-4-5",
     "google/claude-sonnet-4-5",
@@ -26,7 +26,7 @@ MODELS = [
     "GPT-oss-20b",
     "Granite-4.0-tiny",
     "Llama-3.1-70b",
-    "minimax-m2.1",
+    #"minimax-m2.1",
     "Ministral-3-14B-Instruct",
     "Mistral-Small-3.2-24B-Instruct",
     "ollama-embedding-qwen3-06",
@@ -132,22 +132,28 @@ def evaluate_diagram(user_story, diagram_code, generated_by, csv_path):
 
             print(f"Model: {model_name} evaluating {generated_by}")
             prompt = make_prompt(user_story, diagram_code)
-            response = query_model(model_name, prompt)
-            qe = parse_response(response)
+            
+            try:
+                response = query_model(model_name, prompt)
+                qe = parse_response(response)
 
-            writer.writerow([
-                generated_by,
-                model_name,
-                qe["QE1"],
-                qe["QE2"],
-                qe["QE3"],
-                qe["QE4"],
-                qe["QE5"],
-                prompt
-            ])
+                writer.writerow([
+                    generated_by,
+                    model_name,
+                    qe["QE1"],
+                    qe["QE2"],
+                    qe["QE3"],
+                    qe["QE4"],
+                    qe["QE5"],
+                    prompt
+                ])
 
-            file.flush()
-            os.fsync(file.fileno())
+                file.flush()
+                os.fsync(file.fileno())
+            except Exception as e:
+                print(f"Error with {model_name} for {generated_by}: {e}")
+                print(f"Continuing to next model...")
+                continue
 
 
 
