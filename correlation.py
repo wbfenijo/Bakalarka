@@ -60,6 +60,7 @@ def main():
 
                     if evaluation == 5:
                         top_user_stories.add(source + "-" + file)
+                    continue
                 
 
 
