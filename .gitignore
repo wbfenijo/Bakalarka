@@ -4,3 +4,4 @@ __pycache__/
 results.py
 plantuml_outputs/
 stratified.py
+all_combined.csv

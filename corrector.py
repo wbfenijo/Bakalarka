@@ -33,7 +33,7 @@ Do not add any explanation or text, only the number.
 
 def is_valid(qe, col):
     if col in YESNO_QE:
-        return str(qe).strip() in ["0", "1", "Y", "y", "N", "n"]
+        return str(qe).strip() in ["0", "1"]
     elif col in NUM_QE:
         try:
             val = int(qe)
@@ -64,6 +64,14 @@ def correct_csv(csv_path):
         for qe_col in QE_COLUMNS:
             value = row[qe_col]
 
+            if qe_col in YESNO_QE:
+                if value in "yY" or value == 1:
+                    value = "1"
+                    df.at[idx, qe_col] = (value)
+                elif value in "nN" or value == 0:
+                    value = "0"
+                    df.at[idx, qe_col] = (value )
+
             if not is_valid(value, qe_col):
                 corrected = True
                 question = f"{qe_col} question"
@@ -73,7 +81,7 @@ def correct_csv(csv_path):
                 new_value = "".join(filter(str.isdigit, new_value))
                 if not new_value:
                     new_value = "1"  
-                df.at[idx, qe_col] = int(new_value)
+                df.at[idx, qe_col] =new_value
                 print(f"Corrected {qe_col} for {model_name} ({generated_by}): {value} -> {new_value}")
 
         if corrected:

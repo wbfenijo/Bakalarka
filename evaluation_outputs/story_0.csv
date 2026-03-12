@@ -55,7 +55,7 @@ zoning_staff_member->request:capture response communication system applicant
             QE4: ...
             QE5: ...
         "
-Tool,gpt-4o-mini,Y,8,9,8,Y,"
+Tool,gpt-4o-mini,1,8,9,8,1,"
             You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
 
             USER STORY:
@@ -101,7 +101,7 @@ deactivate ZoningStaff
             QE4: ...
             QE5: ...
         "
-Tool,gpt-5,Y,9,8,9,Y,"
+Tool,gpt-5,1,9,8,9,1,"
             You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
 
             USER STORY:
@@ -174,7 +174,7 @@ zoning_staff_member->request:capture response communication system applicant
             QE4: ...
             QE5: ...
         "
-GPT,mistral,Y,8,7,1,Y,"
+GPT,mistral,1,8,7,1,1,"
             You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
 
             USER STORY:
@@ -201,7 +201,7 @@ zoning_staff_member->request:capture response communication system applicant
             QE4: ...
             QE5: ...
         "
-GPT,gpt-4o-mini,Y,9,8,9,Y,"
+GPT,gpt-4o-mini,1,9,8,9,1,"
             You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
 
             USER STORY:
@@ -293,8 +293,8 @@ deactivate ZoningStaff
             QE4: ...
             QE5: ...
         "
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
 Tool,azure/gpt-4.1,0,2,2,2,0,"
 You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
 
@@ -575,8 +575,8 @@ QE3: ...
 QE4: ...
 QE5: ...
 "
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
 Tool,GPT-oss-20b,0,10,10,10,0,"
 You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
 
@@ -1572,35 +1572,35 @@ QE3: ...
 QE4: ...
 QE5: ...
 "
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
-GPT,Human,y,10,10,10,y,None
-Tool,Human,y,9,8,10,y,None
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
+GPT,Human,y,10,10,10,y,
+Tool,Human,y,9,8,10,y,
