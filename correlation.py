@@ -3,10 +3,14 @@ import pandas as pd
 import numpy as np
 from collections import defaultdict
 from evaluator import *
-
+import random
 
 EVAL_DIR = "evaluation_outputs/"
+
 top_user_stories = set()
+
+
+
 def normalize_row(row):
         qe1 = 1.0 if str(row["QE1"]).strip().lower() in ("y", "1") else 0.0
         qe2 = (float(row["QE2"]) - 1) / 9
@@ -86,9 +90,11 @@ def main():
 
     for model, r, n in results:
         print(f"{model:20s}  r = {r:.4f}   n = {n}")
-    print((top_user_stories))
-    print(len(top_user_stories))
+    #print((top_user_stories))
+    #print(len(top_user_stories))
     
+
+
 
 
 
