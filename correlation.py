@@ -31,6 +31,27 @@ def pearson_r(a, b):
 
     return np.corrcoef(a, b)[0, 1]
 
+def save_best_results(top_user_stories):
+    unique = {}
+    result = []
+
+    for file in top_user_stories:
+        story = file.split("-", 1)[1]
+
+        if story not in unique:
+            unique[story] = file
+            result.append(file)
+
+    gpt = [x for x in result if x.startswith("GPT")]
+    tool = [x for x in result if x.startswith("Tool")]
+
+
+    selected = random.sample(gpt, 10) + random.sample(tool, 10)
+    with open("selected.txt", "w") as f:
+        for s in selected:
+            f.write(s + "\n")
+
+
 def main():
     correlations = defaultdict(lambda: {"human": [], "model": []})
 
@@ -65,9 +86,6 @@ def main():
                     if evaluation == 5:
                         top_user_stories.add(source + "-" + file)
                     continue
-                
-
-
                 model_vec = normalize_row(row)
 
                 
@@ -90,9 +108,9 @@ def main():
 
     for model, r, n in results:
         print(f"{model:20s}  r = {r:.4f}   n = {n}")
-    #print((top_user_stories))
-    #print(len(top_user_stories))
-    
+
+    save_best_results(top_user_stories)
+
 
 
 

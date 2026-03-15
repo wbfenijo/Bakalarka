@@ -6,3 +6,7 @@ plantuml_outputs/
 stratified.py
 all_combined.csv
 RAG.py
+selected.txt
+rag_examples.csv
+evaluation_data.csv
+datasplit.py
