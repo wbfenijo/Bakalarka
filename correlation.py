@@ -111,11 +111,6 @@ def main():
 
     save_best_results(top_user_stories)
 
-
-
-
-
-
 if __name__ == "__main__":
     main()
 

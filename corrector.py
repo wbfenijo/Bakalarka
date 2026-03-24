@@ -54,6 +54,7 @@ def correct_csv(csv_path):
         
         if model_name == "Human":
             continue
+
         diagram_file = f"{TOOL_DIR}/SD{idx+1}.txt" if generated_by=="Tool" else None
         diagram_code = open(diagram_file).read() if diagram_file else row.get("Prompt","")
 
@@ -80,7 +81,7 @@ def correct_csv(csv_path):
                 new_value = new_value[:new_value.find(" ")]
                 new_value = "".join(filter(str.isdigit, new_value))
                 if not new_value:
-                    new_value = "1"  
+                    new_value = "1"
                 df.at[idx, qe_col] =new_value
                 print(f"Corrected {qe_col} for {model_name} ({generated_by}): {value} -> {new_value}")
 
