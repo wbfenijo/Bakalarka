@@ -1,1 +1,2284 @@
 model,prompt_id,story_id,user_story,plantuml
+llama3.1:8b,1,1,"As a Zoning Staff member, I want to Process the Requests for Zoning Information, so that I can capture my response to the request in the system and also send a communication from the system to the Applicant.","```plantuml
+@startuml
+participant ZoningStaff as ""ZS""
+participant System as ""Sys""
+participant Applicant as ""App""
+
+note right of Sys: Process Request for Zoning Information\nCapture response in system\nSend communication to applicant
+
+ZS->>Sys: Submit request for zoning information
+Sys-->>ZS: Validate request
+alt Valid Request
+    Sys->>ZS: Send form to complete response
+    ZS->>Sys: Complete response and submit
+    Sys->>Applicant: Send notification of completed response
+else Invalid Request
+    Sys->>ZS: Display error message
+end
+
+note right of App: Receive communication from system\nView response in the system
+@enduml
+```"
+llama3.1:8b,1,2,"As a cook, I want to keep track of store orders so that I can schedule orders.","```plantuml
+@startuml
+participant Cook as ""Cook""
+participant StoreOrderSystem as ""Store Order System""
+
+Cook->>StoreOrderSystem: Submit order
+
+alt Order is valid
+  StoreOrderSystem-->Cook: Acknowledge order submission
+else
+  StoreOrderSystem-->Cook: Error submitting order, please try again.
+endif
+
+Note right of Cook and StoreOrderSystem: Valid orders are those that have been reviewed by the store.
+
+@enduml
+```"
+llama3.1:8b,1,3,"As a cook, I want to keep track of store orders so that I can schedule orders.","```plantuml
+@startuml
+participant Cook as ""Cook""
+participant Store as ""Store""
+
+note right
+The Cook places an order with the Store.
+@endnote
+
+Cook->>Store: Place Order
+activate Store
+
+alt Success
+  Store-->Cook: Order Confirmed
+else Failure
+  note over Store,Cook
+    The store is out of stock or has an issue with the order.
+  endnote
+  Store-->Cook: Order Failed
+endif
+
+deactivate Store
+@enduml
+```"
+llama3.1:8b,1,4,"As an OlderPerson, I want to use ALFRED to control the heating.","```plantuml
+@startuml
+participant OlderPerson as ""Older Person""
+participant Alfred as ""ALFRED""
+
+Older Person->Alfred: Use ALFRED to control the heating
+
+Alfred-->Older Person: Heating system controlled successfully
+
+@enduml
+```
+
+This PlantUML code will generate a sequence diagram that shows an older person interacting with ALFRED to control the heating system. The OlderPerson participant initiates the interaction, and then the Alfred participant responds by controlling the heating system successfully."
+llama3.1:8b,1,5,"As an OlderPerson, I want to use ALFRED to control the heating.","```plantuml
+@startuml
+participant User as ""OlderPerson""
+participant ""ALFRED System""
+
+OlderPerson->>ALFRED System: Use ALFRED to control heating
+Note right of ALFRED System: Control heating logic is executed
+ALFRED System->>Heating System: Send command to turn on/off heating
+
+@enduml
+```
+
+This code will generate a sequence diagram that shows the OlderPerson interacting with the ALFRED system and ultimately controlling the heating system. The `participant` keyword is used to identify each participant in the interaction, and the arrows represent the flow of control between them."
+llama3.1:8b,1,6,"As an employee, I want to see all store orders.","```plantuml
+@startuml
+participant Employee as ""Me""
+participant StoreOrders
+
+Me->>StoreOrders: Retrieve All Orders
+
+StoreOrders-->>Me: Display all orders
+@enduml
+```"
+llama3.1:8b,1,7,"As an employee, I want to see all store orders.","```plantuml
+@startuml
+participant Employee as E
+participant OrderService as OS
+
+E->OS: Get all orders
+OS-->E: List of order objects
+@enduml
+```
+
+This will create a simple sequence diagram showing an employee interacting with the `OrderService` to retrieve a list of orders."
+llama3.1:8b,1,8,"As a Data Consuming User, I want to be able to search any dataset published and publicly accessible by their title and metadata, So that I can find the datasets I'm interested in.","```
+@startuml
+participant DatasetService as DS
+participant SearchEngine as SE
+participant User as U
+
+note right of U: Title and Metadata Search
+U->>DS: Search by title and metadata
+alt Result found
+    DS->>SE: Fetch dataset details
+    SE->>U: Display search results
+else No result found
+    DS->>U: Notify user of no match
+endif
+
+@enduml
+```"
+llama3.1:8b,1,9,"As a Data Consuming User, I want to be able to search any dataset published and publicly accessible by their title and metadata, So that I can find the datasets I'm interested in.","```plantuml
+@startuml
+participant DatasetRegistry as ""Dataset Registry""
+participant SearchEngine as ""Search Engine""
+
+note right of DatasetRegistry
+  Publishes datasets with title and metadata
+end note
+
+note left of SearchEngine
+  Handles user search queries
+end note
+
+DatasetRegistry->>SearchEngine: Receive search query (title and/or metadata)
+SearchEngine-->>DatasetRegistry: Retrieve relevant datasets from registry
+DatasetRegistry-->>SearchEngine: Return list of matching datasets
+SearchEngine->>User: Display search results to the user
+
+note over DatasetRegistry, SearchEngine
+  Search engine uses indexing or querying algorithms on stored data
+end note
+@enduml
+```"
+llama3.1:8b,1,10,"As a library member, I want to locate related books and see the shelf number in the library by using unique information to speed up the searching process.","```plantuml
+@startuml
+participant Member as ""Library Member""
+participant Catalog as ""Catalog System""
+
+Member->>Catalog: Search related books with title=""The Great Gatsby"" and author=""Fitzgerald""
+Catalog->>Database: Retrieve book information from database
+alt Book found in catalog
+  Database-->Catalog: Return book information
+  Catalog-->Member: Display related books and shelf number on the screen
+else
+  Catalog-->Member: Display ""Book not found"" message on the screen
+endif
+
+@enduml
+```
+
+This sequence diagram illustrates how a library member uses unique information (in this case, title and author) to search for related books in the catalog system. The catalog system then interacts with the database to retrieve book information, which is used to display results to the user. If no matches are found, an error message is displayed instead."
+llama3.1:8b,1,11,"As a library member, I want to locate related books and see the shelf number in the library by using unique information to speed up the searching process.","```plantuml
+@startuml
+participant Member
+participant LibrarySystem
+
+Member->>LibrarySystem: Search for book
+LibrarySystem->>Database: Retrieve book info
+alt Book found
+  Database->>LibrarySystem: Return book details and shelf number
+  LibrarySystem->>Member: Display search results with shelf number
+else 
+  LibrarySystem->>Member: No matching books found
+endif
+
+@enduml
+```"
+llama3.1:8b,1,12,"As an API User, I want to be able to use data to get results from multiple datasets, So that I can build user experiences based on more than one dataset more easily.","```plantuml
+@startuml
+participant ""API User"" as (user)
+participant ""Data Service"" as (data_service)
+
+user->>data_service: Get data from multiple datasets
+activate data_service
+
+data_service->>+database1: Retrieve data from database 1
+data_service->>+database2: Retrieve data from database 2
+
+database1-->>data_service: Return data from database 1
+database2-->>data_service: Return data from database 2
+
+data_service->>user: Return combined results
+deactivate data_service
+
+@enduml
+```
+
+This sequence diagram shows the flow of interactions between an API user and a data service, where the data service retrieves data from multiple databases to return combined results."
+llama3.1:8b,1,13,"As an API User, I want to be able to use data to get results from multiple datasets, So that I can build user experiences based on more than one dataset more easily.","```plantuml
+@startuml
+participant APIUser as ""You""
+participant DataAPI as ""Data Service""
+
+title Multi-Dataset Query Sequence Diagram
+
+APIUser->>DataAPI: Get data from multiple datasets
+DataAPI->>Database1: Retrieve data from Dataset 1
+alt Dataset 2 available
+    DataAPI->>Database2: Retrieve data from Dataset 2
+else
+    DataAPI->>Database1: Retrieve all data (no other dataset found)
+end
+
+DataAPI->>APIUser: Return combined results
+@enduml
+```
+This sequence diagram illustrates how the API user can retrieve and combine data from multiple datasets. The `alt` block shows an alternative flow for when a secondary dataset is available, otherwise it falls back to retrieving all data from the primary dataset."
+llama3.1:8b,1,14,"As a customer, I want to be able to pay the bill partially","```plantuml
+@startuml
+participant Customer
+participant PaymentGateway
+participant InvoiceService
+participant Order
+
+Customer ->> InvoiceService: Request partial payment of invoice
+InvoiceService ->> Order: Check if order is eligible for partial payment
+Order -->> InvoiceService: Return result of eligibility check
+InvoiceService ->> PaymentGateway: Process partial payment
+PaymentGateway ->> Customer: Confirm successful payment
+@enduml
+```
+
+This sequence diagram shows the interactions between a customer, an invoice service, an order, and a payment gateway when making a partial payment."
+llama3.1:8b,1,15,"As a customer, I want to be able to pay the bill partially","```plantuml
+@startuml
+participant Customer
+participant Cart
+participant PaymentGateway
+
+Customer->Cart: Add item to cart
+Cart->>PaymentGateway: Initiate payment
+alt Partial payment allowed
+  PaymentGateway-->Cart: Check if partial payments allowed
+ (Customer)->Cart: Request partial payment
+  Cart-->PaymentGateway: Partial payment request
+else Full payment required
+  PaymentGateway-->Customer: Display error message (full payment required)
+endif
+
+PaymentGateway->>Cart: Confirm payment processed
+Customer->>Cart: View updated cart
+
+@enduml
+```"
+llama3.1:8b,1,16,"As a cook, I want to have employee data on the system including clock in and out information.","```plantuml
+@startuml
+participant Cook
+participant ClockInSystem
+participant Database
+
+Cook->>ClockInSystem: Get Employee Data
+alt Employee exists in database
+  ClockInSystem-->Database: Get employee data from database
+  alt Employee clocked out before
+    Database-->ClockInSystem: Return clock-out status
+    ClockInSystem-->>Cook: Display clock-in information to Cook
+  else
+    ClockInSystem-->Database: Update clock-in status in database
+    Database-->ClockInSystem: Save new clock-in data
+    ClockInSystem-->>Cook: Display clock-in confirmation message to Cook
+  end
+else
+  ClockInSystem-->>Cook: Display employee not found error to Cook
+endif
+
+alt Employee wants to clock out
+  Cook->>ClockInSystem: Get Clock-Out Button
+  alt Employee is still on clocked in status
+    ClockInSystem-->Database: Update clock-out status in database
+    Database-->ClockInSystem: Save new clock-out data
+    ClockInSystem-->>Cook: Display clock-out confirmation message to Cook
+  else
+    ClockInSystem-->>Cook: Display already clocked out error to Cook
+  end
+
+end
+@enduml
+```
+
+This sequence diagram illustrates the interactions between the cook, the clock-in system, and the database when an employee wants to clock in or out. The diagram covers two main use cases:
+
+1.  **Clocking In:** When a cook tries to get employee data from the clock-in system.
+2.  **Clocking Out:** When an employee wants to clock out.
+
+The PlantUML code is written in a way that it's easy to follow and understand, with clear labels and arrows illustrating the flow of interactions between participants."
+llama3.1:8b,1,17,"As a cook, I want to have employee data on the system including clock in and out information.","```plantuml
+@startsequence
+participant Cook as C
+participant System as S
+
+C->S: Clock in
+activate S
+
+S->>C: Employee data loaded (e.g., John Smith)
+S->>C: Time recorded (e.g., 08:00)
+
+C->S: Request employee data update
+S->>C: Update employee data (e.g., updated location, shift change)
+
+deactivate S
+
+@endsequence
+```"
+llama3.1:8b,1,18,"As a Plan Review Staff member, I want to Review Plans, so that I can review them for compliance and either approve, or fail or deny the plans and record any conditions, clearances, or corrections needed from the Applicant.","```
+@startuml
+participant Plan Review Staff
+participant Applicant
+participant System
+
+note right of Plan Review Staff
+Plan Review Staff reviews plan for compliance
+end note
+
+Plan Review Staff->>Applicant: Send plan for review
+Applicant->>System: Receive plan
+System->>Plan Review Staff: Display plan for review
+Plan Review Staff->>Applicant: Request conditions, clearances, or corrections
+Applicant->>System: Provide conditions, clearances, or corrections
+System->>Plan Review Staff: Update plan with provided information
+
+alt Plan meets requirements
+  Plan Review Staff->>Applicant: Approve plan
+else
+  Plan Review Staff->>Applicant: Fail/deny plan
+end
+
+@enduml
+```"
+llama3.1:8b,1,19,"As a Plan Review Staff member, I want to Review Plans, so that I can review them for compliance and either approve, or fail or deny the plans and record any conditions, clearances, or corrections needed from the Applicant.","```plantuml
+@startuml
+participant PlanReviewStaff as ""Plan Review Staff""
+participant Applicant as ""Applicant""
+
+note left: User Story
+  As a Plan Review Staff member, I want to review plans so that I can 
+  review them for compliance and either approve or fail or deny the plans 
+  and record any conditions, clearances or corrections needed from the Applicant.
+
+PlanReviewStaff->>Applicant: Receive Plans
+Applicant->>PlanReviewStaff: Submit Plans
+PlanReviewStaff->>Applicant: Review Plans for Compliance
+alt Compliant
+  PlanReviewStaff->>Applicant: Approve Plans
+else Non-Compliant
+  PlanReviewStaff->>Applicant: Deny Plans
+  PlanReviewStaff->>Applicant: Record Conditions, Clearances or Corrections Needed
+endif
+
+@enduml
+```"
+llama3.1:8b,1,20,"As a patron, I want to know previous name(s) and publication date range (first version-last version) of reports/datasets, so that I can know what historical versions are available and how current more recent version is.","```plantuml
+@startuml
+title Previous Names and Publication Date Range of Reports/Datasets
+
+participant Patron as P
+participant DatasetAPI as API
+
+P->>API: Get previous names and publication date range of reports/datasets
+API-->P: {
+  ""previous_names"": [""Name1"", ""Name2""],
+  ""publication_date_range"": {
+    ""first_version"": ""2020-01-01"",
+    ""last_version"": ""2022-12-31""
+  }
+}
+@enduml
+```"
+llama3.1:8b,1,21,"As a patron, I want to know previous name(s) and publication date range (first version-last version) of reports/datasets, so that I can know what historical versions are available and how current more recent version is.","```plantuml
+@startsequence
+title Previous Name and Publication Date Range of Reports/Datasets
+
+participant Patron as ""User""
+participant API as ""Data Service""
+
+Patron->>API: Get previous name(s) and publication date range of reports/datasets
+API-->Patron: Response with historical versions and current version information
+@endsequence
+```
+
+This will produce a sequence diagram where the patron requests data from an API, which then responds with the required information."
+llama3.1:8b,1,22,"As a user, I want to scope my searches for collections, objects, or object components to a specific language.","```plantuml
+@startuml
+participant User
+participant SearchService
+
+User->SearchService: Search for collections/objects/components with language filter
+alt Language is set
+    SearchService-->>User: Collections/Objects/Components in [Language] only
+else Language is not set
+    SearchService-->>User: All collections/objects/components available
+endif
+@enduml
+```"
+llama3.1:8b,1,23,"As a user, I want to scope my searches for collections, objects, or object components to a specific language.","```plantuml
+@startuml
+participant User as ""You""
+participant SearchService
+
+User->>SearchService: search in English
+alt Language set to French
+    User->>SearchService: search in French
+else 
+    User->>SearchService: search without language filter (default)
+end
+
+Note on top: Filter searches by language
+
+SearchService-->>User: search results
+@enduml
+```"
+llama3.1:8b,1,24,"As a MedicalCaregiver, I want to locate the ALFRED user.","```plantuml
+@startuml
+participant MedicalCaregiver
+participant System
+
+MedicalCaregiver->System: Locate ALFRED User
+System-->MedicalCaregiver: Return Location of ALFRED User
+@enduml
+```
+
+This PlantUML code represents a sequence diagram where the MedicalCaregiver is interacting with the System to locate the ALFRED user. The `participant` keyword is used to specify the involved parties, and the arrows represent the interactions between them."
+llama3.1:8b,1,25,"As a MedicalCaregiver, I want to locate the ALFRED user.","```plantuml
+@startuml
+participant User as ""MedicalCaregiver""
+participant Database as ""Database""
+participant Locator as ""ALFRED Locator""
+
+User->Locator: Locate Alfred in database
+Locator->Database: Query database for ALFRED user
+Database-->Locator: Return valid ALFRED user data
+
+Locator->User: Display location of ALFRED user to MedicalCaregiver
+@enduml
+```"
+llama3.1:8b,1,26,"As a library staff member, I want to be able to assign an item to more than one collection.","```plantuml
+@startuml
+participant LibraryStaffMember as LSM
+participant Database as DB
+
+LSM ->> DB: Get existing collections
+alt Collection not found
+DB-->>LSM: None
+else 
+DB-->>LSM: List of collections
+end
+
+LSM->>DB : Assign item to multiple collections
+DB-->>LSM: Confirmation that item has been assigned to all selected collections
+
+@enduml
+```
+Note: This sequence diagram assumes a simple database system where the library staff member can query and assign items to existing collections."
+llama3.1:8b,1,27,"As a library staff member, I want to be able to assign an item to more than one collection.","```plantuml
+@startuml
+participant LibraryStaff as Staff
+participant LibraryItem as Item
+participant CollectionManager as Manager
+
+Staff->>Manager: Assign Item to Collection
+alt Is Item already assigned?
+    Manager->>Staff: Yes, cannot reassign.
+else 
+    Manager->>Manager: Update collection associations for Item
+    Manager->>Manager: Add new association (for duplicate assignment)
+endif
+@enduml
+```"
+llama3.1:8b,1,28,"As a repository manager, I want to indicate any name that is pertinent to the component.","```plantuml
+@startuml
+participant RepositoryManager as RM
+participant Component as C
+
+RM->>C: Indicate relevant names in the component.
+note right of C: Valid pertinant name example: ""Component-Name""
+@enduml
+```
+
+This PlantUML code will generate a simple sequence diagram that shows a repository manager interacting with a component. The note is used to highlight an example of a valid pertinent name, which could be any string related to the component's identity or purpose."
+llama3.1:8b,1,29,"As a repository manager, I want to indicate any name that is pertinent to the component.","```
+@startuml
+participant RepositoryManager as RM
+participant Component
+
+RM->>Component: Check name for pertinence
+alt Pertinent name
+    RM->>Component: Indicate name as pertinent
+else Not pertinent name
+    RM->>Component: Do nothing
+end
+    
+@enduml
+```"
+llama3.1:8b,1,30,"As a library member, I want to keep track of books from an app so that I can know if it is taken or in the library before I go.","```plantuml
+@startuml
+participant Library as L
+participant User as U
+participant BookDB as B
+
+U->>L: Search book by title
+activate L
+L-->B: Request book data from database
+activate B
+B-->L: Return book data
+deactivate B
+L-->>U: Show book details (title, author, status)
+if book is available in library then
+    alt Book is available
+        L-->>U: Display ""Available""
+    end
+else
+    alt Book is taken
+        L-->>U: Display ""Taken by <name>""
+    end
+end
+
+deactivate L
+@enduml
+```"
+llama3.1:8b,1,31,"As a library member, I want to keep track of books from an app so that I can know if it is taken or in the library before I go.","```plantuml
+@startuml
+participant LibraryMember as ""You""
+participant LibraryApp
+participant LibraryServer
+
+You->>LibraryApp: Open app and login
+note right of LibraryApp
+Verify credentials and grant access
+end note
+
+LibraryApp->>LibraryServer: Check book availability
+LibraryServer-->LibraryApp: Book available in library or taken by other member
+
+LibraryMember->>LibraryApp: Search for specific book
+LibraryApp->>LibraryServer: Retrieve book details from server
+
+LibraryServer-->LibraryApp: Return book information (title, author, status)
+
+LibraryApp->>LibraryMember: Display search results to user
+
+alt Book is available in library
+    LibraryMember->>LibraryApp: Request to borrow the book
+    LibraryApp->>LibraryServer: Update book status as borrowed
+end
+    
+alt Book is taken by other member
+    LibraryMember->>LibraryApp: Receive notification that book is not available
+end
+    
+@enduml
+```"
+llama3.1:8b,1,32,"As a restaurant employee, I want to receive a notification message when the customer places an order.","```plantuml
+@startuml
+participant RestaurantEmployee as ""You""
+participant NotificationService
+participant OrderSystem
+
+RestaurantEmployee->OrderSystem: Place Order
+activate OrderSystem
+OrderSystem->NotificationService: Send Order Placed
+activate NotificationService
+NotificationService->RestaurantEmployee: Send Notification
+deactivate NotificationService
+deactivate OrderSystem
+@enduml
+```"
+llama3.1:8b,1,33,"As a restaurant employee, I want to receive a notification message when the customer places an order.","```plantuml
+@startuml
+participant Customer as (C)
+participant RestaurantEmployee as (E)
+participant OrderService as (OS)
+
+note right of OS
+Order received from Customer
+@endnote
+C->>OS: Place order
+activate OS
+OS-->E: Notification message
+deactivate OS
+@enduml
+```"
+llama3.1:8b,1,34,"As a student, I want to see the books that are currently unavailable so that I can arrange my reading plan.","```plantuml
+@startuml
+participant Student as ""You""
+participant LibrarySystem
+
+Student->>LibrarySystem: Get unavailable books
+alt Unavailable books found
+  LibrarySystem->>Student: List of unavailable book titles
+else No available books
+  LibrarySystem->>Student: No books are currently unavailable.
+endif
+@enduml
+```"
+llama3.1:8b,1,35,"As a student, I want to see the books that are currently unavailable so that I can arrange my reading plan.","```
+@startuml
+participant Student as S
+participant LibrarySystem as LS
+
+S->LS: get unavailable books
+alt unavailable books exist
+    LS->>S: show list of unavailable books
+else 
+    LS->>S: no unavailable books found
+endif
+@enduml
+```"
+llama3.1:8b,1,36,"As an asset manager, I want to know what the intellectual value of the asset is to the institution at the time of deposit, so that I obtain guidance in the evaluation of it for current value for the institution.","```plantuml
+@startuml
+participant AssetManager as ""Asset Manager""
+participant IntellectualValueCalculator as ""Intellectual Value Calculator""
+participant Institution as ""Institution""
+
+note right of Institution
+  at time of deposit
+end note
+
+AssetManager->>IntellectualValueCalculator: Calculate intellectual value
+alt Intellectual Value high
+  IntellectualValueCalculator->>AssetManager: High value for institutional purposes
+else
+  IntellectualValueCalculator->>AssetManager: Low value for institutional purposes
+endif
+
+note left of AssetManager
+  Obtain guidance in evaluation
+end note
+
+@enduml
+```"
+llama3.1:8b,1,37,"As a DAMS manager, I want to know the agent(s) responsible for carrying out an event.","```plantuml
+@startuml
+participant DAMS_manager as ""You""
+participant EventDB as ""Database""
+
+DAMS_manager->EventDB: Get agents responsible for current event
+alt Not found
+  EventDB-->DAMS_manager: No agents found
+else
+  EventDB-->DAMS_manager: Agent(s) responsible for the current event
+endif
+
+@enduml
+```"
+llama3.1:8b,1,38,"As a DAMS manager, I want to know the agent(s) responsible for carrying out an event.","```
+@startuml
+participant Manager as ""DAMS Manager""
+participant Database as ""Database System""
+
+Manager->>Database: Get agents for event
+alt Event exists in database
+  Database-->>Manager: List of agent(s) responsible for event
+else Event does not exist in database
+  Database-->Manager: Event not found
+endif
+
+@enduml
+```"
+llama3.1:8b,1,39,"As a Developer I want to quickly access Broker application data, so that I can investigate issues.","```plantuml
+@startuml
+participant BrokerApp as ""Broker Application""
+participant Database as ""Database""
+
+note right of BrokerApp: Accessing broker app data
+alt Valid Request
+  note right of Database: Returning valid response
+  BrokerApp->>Database: Get Data
+  Database-->>BrokerApp: {Data}
+else Invalid Request
+  note right of Database: Error response
+  BrokerApp->>Database: Get Data
+  Database-->>BrokerApp: error
+endif
+
+@enduml
+```"
+llama3.1:8b,1,40,"As a Developer I want to quickly access Broker application data, so that I can investigate issues.","```plantuml
+@startuml
+participant BrokerApp as ""Broker App""
+participant Database as ""Database""
+
+note right of Database
+  contains user data
+end note
+
+BrokerApp->>Database: Access Data
+activate Database
+
+Database-->BrokerApp: Return Data
+deactivate Database
+
+@enduml
+```
+
+This sequence diagram shows the interaction between the `Broker Application` and the `Database`, where the application requests access to its data, and the database responds with the required information."
+llama3.1:8b,1,41,"As an agency user, I want to submit my data elements surrounded by quotation marks, so that Excel won't strip off leading and trailing zeroes.","```plantuml
+@startuml
+participant Agency as ""Agency User""
+participant System as ""System""
+
+note left of Agency: Quote surrounding data elements to prevent Excel stripping
+Agency->>System: Submit data with quoted values (""0001"", ""00.00"")
+alt Leading and trailing zeroes removed by Excel
+System-->>Agency: Trimmed value received (1, 0.0)
+end alt
+
+note right of System: Data preserved with quotation marks
+@enduml
+```"
+llama3.1:8b,1,42,"As an agency user, I want to submit my data elements surrounded by quotation marks, so that Excel won't strip off leading and trailing zeroes.","```plantuml
+@startuml
+participant AgencyUser
+participant DataElementProcessor
+
+AgencyUser->DataElementProcessor: Surround data elements with quotation marks
+note right of DataElementProcessor: Excel won't strip off leading and trailing zeroes\nwith quotation marks around data elements
+@enduml
+```
+
+This will generate a sequence diagram showing the interaction between an `AgencyUser` and `DataElementProcessor`, which surrounds data elements with quotation marks to prevent Excel from stripping off leading and trailing zeroes."
+llama3.1:8b,1,43,"As a developer, I want to have the ALFRED API to reduce the work to achieve my goals.","```plantuml
+@startuml
+participant ""ALFRED API"" as A
+participant ""Developer"" as D
+
+D->A: Call ALFRED API endpoint
+A-->D: Return result of operation
+note right
+API Response includes a unique identifier and a success flag.
+end note
+
+D->>A: Use the returned identifier to query for additional data
+A-->D: Return the requested data
+
+@enduml
+```"
+llama3.1:8b,1,44,"As an admin, I want to handle all users' activities, so that I can manage more efficiently.","```plantuml
+@startuml
+participant Admin as A
+participant ActivityManager as AM
+participant User as U
+
+A->AM: Get user activity
+activate AM
+AM->>U: Get user ID
+deactivate AM
+
+U-->AM: Send activity details
+activate AM
+AM->>A: Update user activity list
+deactivate AM
+
+note right of A: Admin handles all users' activities
+@enduml
+```"
+llama3.1:8b,1,45,"As an admin, I want to handle all users' activities, so that I can manage more efficiently.","```plantuml
+@startuml
+participant Admin as ""Admin""
+participant User as ""User""
+
+Admin->>User: Create User
+alt Success
+  User->>Admin: Login
+  Admin->>User: Assign Role
+  alt Moderator
+    User->>Admin: Post Content
+    Admin->>User: Review Post
+  end
+  alt Moderator or Admin
+    User->>Admin: Request Change
+    Admin->>User: Approve Change
+  end
+else Failure
+  User->>Admin: Error Handling
+end
+
+@enduml
+```
+
+This PlantUML code represents a sequence diagram based on the given user story. It includes the roles and interactions between the admin and users, including creation of users, assignment of roles, posting content, requesting changes, and error handling."
+llama3.1:8b,1,46,"As a developer, I want to upgrade to Fedora 4 and migrate our applications and data.","```plantuml
+@startuml
+participant ""Developer"" as d
+participant ""Fedora 3"" as f3
+participant ""Application"" as a
+participant ""Data"" as da
+participant ""Fedora 4"" as f4
+
+d->>f3: Backup Fedora 3 data
+activate f3
+d->>a: Update Application to work with Fedora 4
+activate a
+d->>da: Migrate Data to Fedora 4 format
+activate da
+d->>f4: Restore Fedora 3 data into Fedora 4
+activate f4
+deactivate a
+deactivate da
+deactivate f3
+
+d->>f4: Configure Fedora 4 settings
+activate f4
+d->>a: Test Application with Fedora 4
+activate a
+d->>da: Verify Data integrity in Fedora 4
+activate da
+
+note right of d
+Upgrade to Fedora 4 and migrate data
+@enduml
+```"
+llama3.1:8b,1,47,"As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood.","```plantuml
+@startuml
+participant Employee as ""You""
+participant RoutePlanningSystem as ""RPS""
+
+Employee->>RoutePlanningSystem: Access route planning system
+Note right of RPS: Guiding you through the neighbourhood is our top priority!
+RoutePlanningSystem-->Employee: Displayed the most efficient route to your destination
+
+@enduml
+```"
+llama3.1:8b,1,48,"As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood.","```plantuml
+@startuml
+participant Employee as ""You""
+participant RoutePlanningSystem
+
+Employee->RoutePlanningSystem: Access the route planning system
+Note right of RoutePlanningSystem: You are now navigating your neighbourhood
+@enduml
+```
+
+This will produce a simple sequence diagram where an employee (labeled as ""You"") interacts with the Route Planning System."
+llama3.1:8b,1,49,"As a Zooniverse admin, I want to detect important features such as areas of flooding, damage, temporary shelters, blocked roads etc in the satellite images.","```plantuml
+@startuml
+participant Admin as ""Zooniverse Admin""
+participant API as ""Image Processing API""
+
+Admin->>API: Send image for processing
+API->>API: Run feature detection algorithms (floods, damage, shelters, roadblocks)
+API->>Admin: Return results with detected features
+@enduml
+```"
+llama3.1:8b,1,50,"As a Zooniverse admin, I want to detect important features such as areas of flooding, damage, temporary shelters, blocked roads etc in the satellite images.","```plantuml
+@startuml
+participant Admin as ""Zooniverse admin""
+participant SatelliteImageProcessor as ""Image processing service""
+
+Admin->>SatelliteImageProcessor: Analyze image for important features
+activate SatelliteImageProcessor
+
+SatelliteImageProcessor->>SatelliteImageProcessor: Run object detection algorithm
+activate SatelliteImageProcessor
+
+alt Important feature detected
+  SatelliteImageProcessor->>Admin: Notify admin of flooding, damage, temporary shelters or blocked roads
+else
+  SatelliteImageProcessor->>Admin: No important features detected
+endif
+
+deactivate SatelliteImageProcessor
+
+@enduml
+```
+This sequence diagram shows the interaction between the Zooniverse admin and the image processing service. The admin initiates the analysis of a satellite image for important features, which is then processed by the image processing service. If any important features are detected, the service notifies the admin; otherwise, it informs them that no such features were found."
+llama3.1:8b,1,51,"As a librarian, I want to delete books from the library.","```plantuml
+@startuml
+participant Librarian
+participant LibrarySystem
+
+Librarian->>LibrarySystem: Delete book
+LibrarySystem-->Librarian: Confirm deletion successful
+note right of LibrarySystem
+  Verify book exists and is not borrowed
+end note
+@enduml
+```
+
+This sequence diagram represents the interaction between a librarian and the library system when deleting books. The librarian initiates the deletion, while the library system confirms the success of the operation and verifies that the book exists and is not currently borrowed."
+llama3.1:8b,1,52,"As a librarian, I want to delete books from the library.","```plantuml
+@startuml
+participant Librarian
+participant Database
+
+Librarian ->> Database: Delete book
+Database --> Librarian: Book deleted successfully
+@enduml
+```
+
+This PlantUML code represents a librarian sending a request to delete a book, and the database responding with confirmation of deletion."
+llama3.1:8b,1,53,"As an OlderPerson, I want to be able to see my training Performance.","```
+@startuml
+participant OlderPerson as ""OP""
+participant TrainingDataRepository as ""TDR""
+
+OP->>TDR: Get Training Data
+TDR-->OP: Return Valid Training Performance Data
+
+@enduml
+```"
+llama3.1:8b,1,54,"As an OlderPerson, I want to be able to see my training Performance.","```plantuml
+@startuml
+participant OlderPerson as ""Me""
+participant TrainingSystem as ""Training System""
+
+Me->>TrainingSystem: Request performance
+TrainingSystem->>Me: Show my performance
+@enduml
+```
+
+Note: I assume there is a system that provides the training performance data. The above sequence diagram shows how an `OlderPerson` interacts with this system to view their training performance."
+llama3.1:8b,1,55,"As an Agency user, I want to be able to include a large number of flexfields without performance impact.","```plantuml
+@startuml
+participant ""Database"" as db
+participant ""Agency User""
+participant ""Application""
+
+agencyUser->db: Query with many flexfields
+alt Flexfields are small
+  db->>agencyUser: Return results quickly
+else Flexfields are large
+  db->>application: Optimize query in Application layer
+  application->>db: Execute optimized query
+  note right of application: This prevents performance impact on Database
+endif
+
+@enduml
+```
+
+This PlantUML sequence diagram illustrates the user's scenario, where an Agency User queries a database with many flexfields. If the flexfields are small, the results return quickly. However, if they are large, the Application layer optimizes the query to prevent performance issues in the Database."
+llama3.1:8b,1,56,"As an Agency user, I want to be able to include a large number of flexfields without performance impact.","```plantuml
+@startuml
+participant AgencyUser
+participant FlexfieldProcessor
+
+AgencyUser->>FlexfieldProcessor: Process Flexfields
+activate FlexfieldProcessor
+FlexfieldProcessor->>FlexfieldProcessor: Fetch Flexfields from Database
+note right: Assuming multiple flexfields are fetched without performance impact
+FlexfieldProcessor->>FlexfieldProcessor: Process Each Flexfield
+note right: This is the key operation where each flexfield is processed individually
+FlexfieldProcessor->>AgencyUser: Return Flexfields to Agency User
+deactivate FlexfieldProcessor
+
+@enduml
+```"
+llama3.1:8b,1,57,"As a moderator, I want to enter the agreed-upon estimate, so that we can move on to the next item when we agree.","```plantuml
+@startuml
+participant Moderator as ""Moderator""
+participant Estimator as ""Estimator""
+
+Moderator->>Estimator: Enter agreed-upon estimate
+Estimator->>Moderator: Provide entered estimate
+Moderator->>Moderator: Review provided estimate
+alt Estimate is valid
+    Moderator->>Estimator: Accept estimate
+    alt Next item needs review
+        Moderator->>Estimator: Move to next item for review
+    else 
+        Moderator->>Estimator: Finish review process
+    end
+else Estimate is invalid
+    Moderator->>Estimator: Request new estimate from Estimator
+end
+
+@enduml
+```"
+llama3.1:8b,1,58,"As a moderator, I want to enter the agreed-upon estimate, so that we can move on to the next item when we agree.","```
+@startuml
+participant Moderator as ""You""
+participant TaskList
+
+You->TaskList: Agree on an estimate
+TaskList->>You: Display agreed-upon estimate field
+You->TaskList: Enter estimated time
+TaskList->>You: Validate input (ensure non-negative number)
+alt Not valid input
+  You->TaskList: Display error message for invalid input
+else
+  TaskList->>Moderator: Update task with entered estimate
+  Moderator->TaskList: Confirm update
+  TaskList->>You: Display confirmation of updated estimate
+endif
+
+@enduml
+```"
+llama3.1:8b,1,59,"As a researcher, I want to record research publications in the institutional repository or CRIS with DMP records, so that I can generate reports of research output resulting from a project.","```
+@startuml
+participant Researcher
+participant InstitutionalRepository as IR
+participant CRIS as C
+participant DMP
+
+Researcher->IR: Record publication in IR with DMP record
+alt Publication already exists in CRIS
+    Researcher->C: Check if publication already recorded in CRIS
+    C->IR: If not, transfer record to CRIS
+endif
+Researcher->DMP: Generate report of research output resulting from a project
+@enduml
+```"
+llama3.1:8b,1,60,"As a researcher, I want to record research publications in the institutional repository or CRIS with DMP records, so that I can generate reports of research output resulting from a project.","```plantuml
+@startuml
+participant Researcher as ""You""
+participant InstitutionalRepository
+participant CrisSystem
+participant ProjectManager
+
+Researcher->InstitutionalRepository: Record publication in institutional repository with DMP record
+alt CRIS used instead of Institutional Repository
+  Researcher->CrisSystem: Record publication in CRIS system with DMP record
+else
+  InstitutionalRepository-->ProjectManager: Notify project manager of new publication
+  ProjectManager-->Researcher: Receive notification and update project status
+end
+
+note right of Researcher
+Generate report on research output resulting from the project
+end note
+@enduml
+```"
+llama3.1:8b,1,61,"As a attendee, I want to get detailed directions to the summit venue, so that I can get to the summit easily on the day of the event.","```plantuml
+@startuml
+participant Attendee
+participant SummitOrganizer
+participant NavigationSystem
+
+Attendee->SummitOrganizer: Request directions to summit venue
+activate SummitOrganizer
+SummitOrganizer->NavigationSystem: Get detailed directions
+activate NavigationSystem
+NavigationSystem->>Attendee: Provide directions to attendee via email or app
+deactivate NavigationSystem
+deactivate SummitOrganizer
+Attendee->Attendee: Review and print or save directions for reference
+@enduml
+```"
+llama3.1:8b,1,62,"As a attendee, I want to get detailed directions to the summit venue, so that I can get to the summit easily on the day of the event.","```plantuml
+@startuml
+participant Attendee
+participant MapService
+participant VenueInfo
+
+Attendee->MapService: Get directions to summit venue
+activate MapService
+MapService->VenueInfo: Retrieve venue information
+deactivate MapService
+alt Has address and coordinates for venue
+  VenueInfo->MapService: Return detailed directions
+  deactivate VenueInfo
+else Does not have address and coordinates for venue
+  VenueInfo->MapService: Return error message
+  deactivate VenueInfo
+end
+
+MapService->Attendee: Send directions to attendee
+deactivate MapService
+
+ Attendee-->VenueInfo: Display venue information
+@enduml
+```
+
+This PlantUML code represents the sequence of actions taken by an attendee and the involved systems (Map Service, Venue Info) when requesting detailed directions to the summit venue. The `alt` block is used to model the conditional behavior based on whether the venue has address and coordinates or not."
+llama3.1:8b,1,63,"As a sponsor, I want to post a job, so that I can hire top-tier Drupal talent.","```plantuml
+@startuml
+participant Sponsor as ""You""
+participant System
+
+Sponsor->System: Post Job
+System->>JobDatabase: Save Job in Database
+alt Job not posted before
+    System->>JobDatabase: Create New Job Entry
+else 
+    System->>JobDatabase: Update Existing Job Entry
+end
+System->>Sponsor: Return Job ID and status
+Sponsor->>System: Confirm Job posting was successful
+@enduml
+```"
+llama3.1:8b,1,64,"As a sponsor, I want to post a job, so that I can hire top-tier Drupal talent.","```
+@startuml
+participant Sponsor as ""You""
+participant API as ""Job Posting API""
+
+Sponsor->>API: Post Job
+API-->Sponsor: Job created successfully
+@enduml
+```"
+llama3.1:8b,1,65,"As a moderator, I want to export a transcript of a game as a CSV file, so that I can further process the stories and estimates.","```plantuml
+@startuml
+participant Moderator
+participant GameAPI
+
+Moderator->>GameAPI: Get Transcript
+activate GameAPI
+GameAPI->>Database: Retrieve Game Data
+activate Database
+Database->>GameAPI: Return Game Data
+deactivate Database
+GameAPI->>Moderator: Return Transcript as CSV
+deactivate GameAPI
+@enduml
+```"
+llama3.1:8b,1,66,"As a moderator, I want to export a transcript of a game as a CSV file, so that I can further process the stories and estimates.","```plantuml
+@startsequence
+participant Moderator
+participant GameServer
+
+Moderator->GameServer: Request transcript export
+GameServer->>Moderator: Return CSV data
+@endsequence
+```"
+llama3.1:8b,1,67,"As an archivist, I want to link electronic versions of researchers' publications to citations, so that I can share them with other researchers.","```plantuml
+@startuml
+participant Archivist
+participant System
+
+Archivist->System: Link publication to citation
+System->>Archivist: Verify user credentials
+note right: Ensure access control and authentication
+end note
+System->>Archivist: Confirm link created
+note right: Update database with new link
+end note
+Archivist->>System: Request share with other researchers
+System->>Archivist: Share publication with specified users
+note right: Send notification to shared users
+end note
+@enduml
+```
+
+This sequence diagram represents the steps an archivist takes to link publications to citations and share them with other researchers. The `participant` keywords indicate the entities involved in the interaction, and the arrows show the flow of control between them."
+llama3.1:8b,1,68,"As an archivist, I want to link electronic versions of researchers' publications to citations, so that I can share them with other researchers.","```plantuml
+@startuml
+participant Archivist as ""A""
+participant Database as ""DB""
+
+note right: Electronic version of publication
+A->>DB: Add citation to database
+alt Publication not found in database
+  A->>DB: Create new publication entry
+else
+  DB-->A: Return existing publication ID
+end
+
+note left: Link electronic version to citation
+A->>DB: Update citation with publication link
+DB-->A: Confirmation of successful update
+@enduml
+```"
+llama3.1:8b,1,69,"As a repoadmin, I want to have Symplectic Elements to communicate","```
+@startuml
+participant Repoadmin
+participant SymplecticElements
+
+note over Repoadmin,SymplecticElements: Communication established
+Repoadmin->>SymplecticElements: Request communication
+activate SymplecticElements
+SymplecticElements->>Repoadmin: Confirm communication
+deactivate SymplecticElements
+@enduml
+```"
+llama3.1:8b,1,70,"As a repoadmin, I want to have Symplectic Elements to communicate","```plantuml
+@startuml
+participant Repoadmin
+participant SymplecticElements
+Repoadmin->>SymplecticElements: Communicate
+@enduml
+```
+
+This will generate a simple sequence diagram showing the repoadmin communicating with Symplectic Elements."
+llama3.1:8b,1,71,"As a researcher, I want the DMP to prepopulate information that I have already entered in other institutional systems, so that I do not have to re-enter information ensuring the DMP contains accurate and standardized information.","```plantuml
+@startuml
+participant DMP as ""Data Management Plan""
+participant Researcher as ""Researcher""
+participant InstitutionalSystem as ""Institutional System""
+
+DMP ->> Researcher: Request data prepopulation
+alt Data already exists in institutional system
+    Researcher --> InstitutionalSystem: Send request for existing data
+    InstitutionalSystem --> Researcher: Return data to researcher
+    Researcher --> DMP: Populate DMP with returned data
+else No existing data found
+    end
+DMP --> DMP: Prepopulate data from previous systems
+
+@enduml
+```
+
+This PlantUML code defines a sequence diagram that shows how the Data Management Plan (DMP) can prepopulate information based on data already entered in other institutional systems."
+llama3.1:8b,1,72,"As a researcher, I want the DMP to prepopulate information that I have already entered in other institutional systems, so that I do not have to re-enter information ensuring the DMP contains accurate and standardized information.","```plantuml
+@startuml
+participant ""Researcher"" as R
+participant ""Institutional System"" as IS
+participant ""DMP System"" as DPS
+
+R ->> IS: Login to Institutional System
+IS -->> R: Prompt for information
+R ->> IS: Enter information in Institutional System
+IS --> IS: Store entered information in database
+alt Prepopulate info enabled
+  IS --> DPS: Send prepopulated information
+  note right: Only send if information is up-to-date
+  DPS --> DPS: Populate DMP with sent information
+else Info not available or error
+  R --> R: Display error message
+end
+
+R ->> DPS: Login to DMP System
+DPS --> R: Prompt for DMP creation
+R ->> DPS: Enter additional required information in DMP
+alt Prepopulate info received
+  note right: No extra action needed
+else Info not available or error
+  R --> R: Display error message
+end
+
+R --> IS: Logout from Institutional System
+R --> DPS: Save and finalize DMP in DPS
+@enduml
+```"
+llama3.1:8b,1,73,"As an OlderPerson, I want to have ALFRED to set limits in the games duration as I get bored easily.","```
+@startuml
+participant OlderPerson
+participant ALFRED
+
+OlderPerson->>ALFRED: Set game duration limit
+ALFRED->>OlderPerson: Duration limit set to X minutes
+note right: The value of X is configurable by the user or default to 30 minutes
+@enduml
+```"
+llama3.1:8b,1,74,"As an OlderPerson, I want to have ALFRED to set limits in the games duration as I get bored easily.","```plantuml
+@startuml
+participant OLDERPERSON
+participant ALFRED
+
+OLDERPERSON->ALFRED: I'm feeling tired and want to stop playing.
+note: The OlderPerson gets bored quickly during games.
+ALFRED->>OLDERPERSON: Alright, let's end the game now.
+
+ALT OlderPerson is still interested in continuing the game.
+OLDERPERSON->ALFRED: Actually, can we keep going?
+note: The OlderPerson reconsiders and wants to continue playing.
+ALFRED->>OLDERPERSON: Okay, we'll add some more time. How about 15 minutes?
+
+ALT OLDERPERSON confirms that they still want to stop the game.
+OLDERPERSON->ALFRED: No, I've really had enough now.
+note: The OlderPerson is firm in their decision to quit playing.
+ALFRED->>OLDERPERSON: Alright, we'll end the game.
+
+@enduml
+```
+
+This sequence diagram represents a conversation between an Older Person and ALFRED about ending a game. It shows different scenarios of how the Older Person may react when asked if they want to stop playing."
+llama3.1:8b,1,75,"As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.","```plantuml
+@startuml
+participant DAMS as ""DAMS Manager""
+participant Preservation as ""Preservation Manager""
+
+DAMS ->> Preservation: notify of master file integrity and obsolescence
+note right: indicating file size, creation date, format and version
+@enduml
+```
+
+This sequence diagram shows the interaction between the DAMS manager and the preservation manager. The DAMS manager notifies the preservation manager about the file's integrity and impending obsolescence by sending a message to them."
+llama3.1:8b,1,76,"As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.","```plantuml
+@startuml
+participant DAMS_Manager as ""DAMS Manager""
+participant Preservation_Manager as ""Preservation Manager""
+
+note right of Preservation_Manager
+Indicate aspects useful for monitoring integrity and impending obsolescence
+end note
+
+DAMS_Manager->>Preservation_Manager: Indicate file size
+alt File size is relevant
+    Preservation_Manager->>DAMS_Manager: Acknowledge relevance
+else 
+    Preservation_Manager->>DAMS_Manager: Ignore
+endif
+
+DAMS_Manager->>Preservation_Manager: Indicate creation date
+alt Creation date is relevant
+    Preservation_Manager->>DAMS_Manager: Acknowledge relevance
+else
+    Preservation_Manager->>DAMS_Manager: Ignore
+endif
+
+DAMS_Manager->>Preservation_Manager: Indicate file format and version
+alt Format and version are relevant
+    Preservation_Manager->>DAMS_Manager: Acknowledge relevance
+else 
+    Preservation_Manager->>DAMS_Manager: Ignore
+endif
+@enduml
+```"
+llama3.1:8b,1,77,"As a manager, I want to save the menu each month.","```plantuml
+@startuml
+participant Manager
+participant Database
+
+Manager->Database: Save menu for this month
+note right of Database
+  Validate and store data in database
+end note
+Database-->Manager: Menu saved successfully
+@enduml
+```"
+llama3.1:8b,1,78,"As a manager, I want to save the menu each month.","```plantuml
+@startuml
+participant Manager as ""You""
+participant MenuSystem
+
+Manager->>MenuSystem: Save Menu
+alt Monthly Cycle
+  MenuSystem->>Database: Save Data
+else Invalid Cycle
+  MenuSystem->>ErrorLog: Log Error
+endif
+
+@enduml
+```
+
+Please note that you'll need to have PlantUML installed on your system or a compatible online tool open to view the diagram."
+llama3.1:8b,1,79,"As an Archivist, I want to upload an EAD for import from within the frontend application.","```plantuml
+@startuml
+participant Archivist as ""Frontend Application""
+participant ImportService
+participant Database
+
+note right of ImportService: Validate EAD XML schema compliance
+Frontend Application->>ImportService: Upload EAD file
+importService->>Database: Store EAD data in database
+alt Valid EAD
+    importService->>Database: Update database with parsed EAD data
+else Invalid EAD
+    importService->>Archivist: Raise error - invalid EAD
+end
+    
+@enduml
+```"
+llama3.1:8b,1,80,"As an Archivist, I want to upload an EAD for import from within the frontend application.","```
+@startuml
+participant FrontendApplication
+participant APIGateway
+participant BackendService
+participant EADValidator
+
+FrontendApplication->APIGateway: Upload EAD file
+APIGateway->BackendService: Send EAD data to backend service
+alt EAD is valid
+    BackendService->EADValidator: Validate EAD
+    EADValidator->>BackendService: Return validation result
+    if true then
+      BackendService->>FrontendApplication: Return import success response
+    else
+      BackendService->>FrontendApplication: Return import failure response
+    endif
+else
+  BackendService->>FrontendApplication: Return invalid EAD error response
+endif
+@enduml
+```"
+llama3.1:8b,1,81,"As a PI, I want to plan what kind of data I want to record/store, so that I can ensure it will possible to store it.","```plantuml
+@startuml
+participant PI as ""Principal Investigator""
+participant DBA as ""Database Administrator""
+
+note right: The PI needs to plan data types and storage needs to ensure feasibility.
+PI->>DBA: Discuss potential data storage and record-keeping requirements.
+
+alt Feasibility not assessed
+    note left: No consideration given to potential database limitations or performance issues.
+end
+
+DBA->>PI: Assess data types and storage needs for feasibility.
+
+note right: The PI assesses the feasibility of storing the required data with the DBA's input.
+PI->>DBA: Request additional information or clarification regarding specific data requirements.
+
+alt Feasibility assessment complete
+    note left: All considerations have been taken into account to ensure feasible data recording and storage.
+end
+
+DBA->>PI: Confirm that all necessary steps were considered for feasible data recording and storage.
+
+note right: The PI confirms their understanding of the feasibility with the DBA's confirmation.
+@enduml
+```"
+llama3.1:8b,1,82,"As a PI, I want to plan what kind of data I want to record/store, so that I can ensure it will possible to store it.","```plantuml
+@startuml
+participant ""PI"" as p1
+participant ""System Administrator""
+
+note right of p1
+Plan what kind of data I want to record/store
+end note
+
+p1->>System Administrator: Discuss with System Administrator about data requirements
+
+System Administrator->>p1: Review and confirm data requirements
+
+
+alt Data requirements confirmed
+
+    p1->>System Administrator: Proceed with planning data storage
+else 
+
+    p1->>System Administrator: Revisit data requirements discussion
+    
+end
+
+@enduml
+```
+
+Note: The alt keyword is used to represent alternative scenarios in a PlantUML sequence diagram. If the condition inside the alt block is true, then it will follow that path and if it's false, it'll go to the else path."
+llama3.1:8b,1,83,"As a member, I want to remove reservations so that I can cancel my reservation anytime I want.","```plantuml
+@startuml
+participant Member as ""I""
+participant Database as ""DB""
+
+I->Database: Remove Reservation
+Database-->Member: Reservation Removed successfully
+
+note right of Member
+Remove the current reservation from the database.
+@enduml
+```
+
+This PlantUML code represents a sequence diagram for removing reservations. It shows a member interacting with the system by sending a request to remove their reservation and receiving confirmation that it has been removed."
+llama3.1:8b,1,84,"As a member, I want to remove reservations so that I can cancel my reservation anytime I want.","```plantuml
+@startuml
+participant Member
+participant ReservationService
+
+Member->ReservationService: Remove reservation
+ReservationService->>Database: Delete reservation from database
+Database-->ReservationService: Confirmation of deletion
+ReservationService->>Member: Notification of successful removal
+
+@enduml
+```
+
+This sequence diagram shows the interaction between a Member and the ReservationService. The Member requests to remove a reservation, which is then processed by the ReservationService. The service communicates with the Database to delete the reservation, receives confirmation that it was successfully deleted, and notifies the Member of the outcome."
+llama3.1:8b,1,85,"As a librarian, I want to update pages for book information.","```plantuml
+@startuml
+participant Librarian
+participant Database
+
+Librarian->Database: Get page data for book info
+Database-->Librarian: Return page data
+
+Librarian->Database: Update page data with new information
+Database-->Librarian: Confirm update success
+
+@enduml
+```
+
+This sequence diagram represents the user story where a librarian updates pages for book information. The diagram shows the flow of interactions between the Librarian and Database, illustrating how the librarian retrieves existing page data, updates it, and confirms the successful update."
+llama3.1:8b,1,86,"As a librarian, I want to update pages for book information.","```plantuml
+@startuml
+participant Librarian as ""Librarian""
+participant Database as ""Database""
+
+activate Librarian
+Librarian->>Database: Update Page
+alt Invalid Page Id
+  Database-->Librarian: Return Error Message
+else Valid Page Id
+  Database-->Librarian: Confirm Update Successful
+end
+
+@enduml
+```"
+llama3.1:8b,1,87,"As a user, I want frontend changes for managing enum lists.","```
+@startuml
+participant User
+participant Frontend
+
+Note right of Frontend: Enum List Management
+User ->> Frontend: Request to manage enum list
+Frontend->> User: Display enum list management UI
+User ->> Frontend: Select action (add, edit, delete) on enum item
+Frontend->> User: Validate selected action and enum item data
+User ->> Frontend: Confirm or cancel action
+Frontend->> User: Update enum list based on action and return updated list
+@enduml
+```"
+llama3.1:8b,1,88,"As a user, I want frontend changes for managing enum lists.","```plantuml
+@startuml
+participant Frontend as ""Frontend""
+participant Backend as ""Backend""
+
+note over Frontend
+  User interacts with Frontend to manage enum lists
+end note
+
+Frontend->>Backend: Send request to retrieve enum list
+alt Enum list exists in database
+  Backend-->>Frontend: Return enum list from database
+else
+  Backend-->>Frontend: Create new enum list in database
+  Backend->>Backend: Save changes to database
+endif
+
+note over Frontend
+  User makes changes to enum list on Frontend
+end note
+
+Frontend->>Backend: Send request to update enum list
+alt Changes are valid and saved successfully
+  Backend-->>Frontend: Return success message
+else
+  Backend-->>Frontend: Return error message for invalid changes
+endif
+
+@enduml
+```"
+llama3.1:8b,1,89,"As an admin, I want to automatically validated the ingested contents for copyright infringement.","```plantuml
+@startsequence
+participant Admin as A
+participant CopyrightChecker as CC
+participant Validator as V
+
+A->CC: Validate ingested content for copyright infringement
+CC-->V: Send content to validator
+V->>CC: Return validation result
+CC-->>A: Display result to admin
+
+@endsequence
+```"
+llama3.1:8b,1,90,"As an admin, I want to automatically validated the ingested contents for copyright infringement.","```plantuml
+@startuml
+participant Admin as A
+participant IngestionService as IS
+participant ValidationService as VS
+participant ContentRepository as CR
+
+note right of A: Validate contents on ingestion
+A->IS: Ingest content
+activate IS
+
+IS->VS: Check for copyright infringement
+activate VS
+
+alt Copyright infringement detected
+VS->>IS: Raise alert
+end
+else
+VS->>IS: Content is valid
+end
+
+IS->CR: Store content in repository
+deactivate VS
+deactivate IS
+
+note right of A: Validate contents on ingestion (success)
+@enduml
+```"
+llama3.1:8b,1,91,"As a manager, I want to delete library members.","```plantuml
+@startuml
+participant Manager as ""Manager""
+participant LibrarySystem as ""Library System""
+
+Manager->>LibrarySystem: Delete Member Request
+note right: Validate member existence and access permissions
+LibrarySystem-->>Manager: Confirmation of deletion success or error message
+
+@enduml
+```
+
+This sequence diagram shows the interaction between a manager and a library system when deleting a library member. It highlights the request for deletion, validation checks by the library system, and the subsequent response from the library system to the manager regarding the outcome of the deletion operation."
+llama3.1:8b,1,92,"As a manager, I want to delete library members.","```plantuml
+@startuml
+participant Manager as ""Manager""
+participant LibrarySystem as ""Library System""
+
+Manager->>LibrarySystem: Delete member
+LibrarySystem->>Database: Update database
+Database-->>LibrarySystem: Updated
+LibrarySystem-->>Manager: Member deleted
+@enduml
+```
+
+This PlantUML code defines a sequence diagram for the user story. It shows that when the Manager deletes a library member, it triggers an action in the Library System which updates the database and then notifies the Manager that the deletion was successful."
+llama3.1:8b,1,93,"As a user, I want to link my email account to my profile, so that I can get a temporary password in case I forget my own one.","```plantuml
+@startuml
+participant User as ""You""
+participant EmailService
+participant Profile
+
+User->Profile: login
+activate Profile
+Profile->EmailService: request_email_link
+activate EmailService
+EmailService->>EmailService: generate_temp_password
+alt Email account exists
+EmailService->Profile: send_email_link
+else 
+EmailService->Profile: no email account found
+endif
+deactivate EmailService
+User->Profile: logout
+deactivate Profile
+
+@enduml
+```"
+llama3.1:8b,1,94,"As a user, I want to link my email account to my profile, so that I can get a temporary password in case I forget my own one.","```plantuml
+@startuml
+participant User
+participant EmailService
+participant Profile
+
+User->>EmailService: link email account
+EmailService->>Profile: update profile with email address
+alt email already linked
+  User->>EmailService: update existing link (overwrite old)
+else
+  User->>EmailService: create new link
+endif
+Profile->>User: email verification success (optional)
+
+User->>Profile: request temporary password
+Profile->>EmailService: send temp. password to user's email
+alt email verified
+  EmailService->>Profile: update profile with temporary password
+else
+  EmailService->>Profile: generate new temp. password and send it via email
+endif
+
+@enduml
+```
+
+This sequence diagram shows the interaction between a User, an Email Service, and a Profile when linking an email account to the user's profile and requesting a temporary password if needed."
+llama3.1:8b,1,95,"As a chef, I want to update the ingredients of the menu items.","```plantuml
+@startuml
+participant MenuService as ""Menu Service""
+participant IngredientRepository as ""Ingredient Repository""
+
+activate MenuService
+MenuService ->> IngredientRepository: updateIngredientsOf(menuItems)
+IngredientRepository ->> MenuService: updateIngredients of menuItem (ok)
+alt invalid input
+    IngredientRepository ->> MenuService: throw exception
+end
+
+@enduml
+```"
+llama3.1:8b,1,96,"As a chef, I want to update the ingredients of the menu items.","```plantuml
+@startsequence
+participant Chef as C
+participant MenuSystem as MS
+C->MS: Update ingredient list
+MS->>MS: Validate new ingredient list
+alt New list is valid
+    MS->>MS: Save updated menu items
+else Invalid input
+    MS->>C: Display error message
+end
+@endsequence
+```"
+llama3.1:8b,1,97,"As a user, I want to choose a flexible pick up time, so that I can more conveniently use the website.","```plantuml
+@startuml
+participant User
+participant Website
+
+User->>Website: Choose pickup time
+alt Invalid input
+    Website->>User: Show error message
+else Valid input
+    Website->>Database: Save pickup time
+    Database->>Website: Retrieve order details
+    Website->>User: Display order summary
+endif
+@enduml
+```"
+llama3.1:8b,1,98,"As a user, I want to choose a flexible pick up time, so that I can more conveniently use the website.","@startuml
+participant User as ""You""
+participant OrderSystem
+
+User->OrderSystem: Choose pickup time
+Note right of OrderSystem: Validate pickup time
+OrderSystem->>User: Display available pickup times
+User->OrderSystem: Select pickup time
+OrderSystem->>User: Confirm order with selected pickup time
+@enduml"
+llama3.1:8b,1,99,"As a manager, I want to display orders by date.","```plantuml
+@startuml
+participant ""Manager"" as M
+participant ""Database"" as DB
+
+M->DB: GetOrdersByDate
+
+alt Valid Order Date
+  DB->>M: Orders by date
+else Invalid Order Date
+  DB->>M: Error - invalid order date
+endif
+
+@enduml
+```"
+llama3.1:8b,1,100,"As a manager, I want to display orders by date.","```plantuml
+@startuml
+participant OrderService as OS
+participant Database as DB
+
+OS->>DB: Get Orders By Date
+alt Valid Input
+  DB-->>OS: List of Orders
+else Invalid Input
+  DB-->>OS: Error Message
+end alt
+@enduml
+```
+
+This sequence diagram represents the flow of data between `OrderService` and `Database`. The `Get Orders By Date` message is sent from `OrderService` to `Database`, which then returns a list of orders or an error message based on valid or invalid input."
+llama3.1:8b,1,101,"As an archivist, I want to upload a single file.","```plantuml
+@startuml
+participant Archivist
+participant FileStorage
+
+Archivist->>FileStorage: Upload Single File
+note right of FileStorage
+  Validate file type and size
+end note
+alt Invalid file or size exceeds limit
+    FileStorage-->>Archivist : Return error message
+else
+    FileStorage-->>Archivist : Confirm file uploaded successfully
+endif
+
+@enduml
+```"
+llama3.1:8b,1,102,"As an archivist, I want to upload a single file.","```plantuml
+@startuml
+participant Archivist
+participant StorageService
+
+Archivist->>StorageService: Upload file (single file)
+alt File is valid
+  StorageService-->Archivist: Store file in storage
+else
+  StorageService-->Archivist: Invalid file, please try again
+endif
+
+@enduml
+```"
+llama3.1:8b,1,103,"As a librarian, I want to create information about borrowed books.","```plantuml
+@startuml
+participant Librarian
+participant Database
+
+Librarian->Database: Create borrow record
+Database-->>Librarian: Return success or error message
+
+@enduml
+```
+
+This is a basic example, and you may want to add more details such as error handling, user input validation, etc. depending on the actual requirements of your application."
+llama3.1:8b,1,104,"As a librarian, I want to create information about borrowed books.","```plantuml
+@startsequence
+    participant Librarian as ""Librarian""
+    participant Database as ""Database""
+
+    Librarian->>Database: Create new entry for borrowed book
+    Database-->Librarian: Confirmation that entry was created
+@endsequence
+```
+
+This PlantUML sequence diagram shows a librarian interacting with the database to create an entry for a borrowed book. The `participant` keyword is used to define the roles involved in the interaction, and the arrows indicate the direction of communication between them."
+llama3.1:8b,1,105,"As a Staff, I want to edit book, so that I can correct book records those are faulty.","```plantuml
+@startuml
+participant Staff as S
+participant Database as DB
+
+S->>DB: Get book details
+alt Book is faulty
+    DB-->>S: Return book details with error message
+else
+    DB-->>S: Return book details for editing
+end
+
+S->>DB: Edit book records
+DB-->>S: Update successful
+@enduml
+```"
+llama3.1:8b,1,106,"As a Staff, I want to edit book, so that I can correct book records those are faulty.","```plantuml
+@startuml
+participant User as ""Staff""
+participant Database as ""Database""
+
+User->>Database: Retrieve Book
+Database-->>User: Return Book with faults
+
+User->>Database: Send Edit Request
+Database-->>User: Confirm Edit Request
+
+User->>Database: Send Corrected Data
+Database-->>User: Update Book Records
+@enduml
+```"
+llama3.1:8b,1,107,"As a library staff member, I want to upload large batches of items simultaneously, including descriptive metadata, so that I can offer service to authors efficiently.","```plantuml
+@startuml
+participant Library Staff as L
+participant System as S
+
+note right: Large batch upload
+
+L->>S: Upload items and metadata in batches
+activate S
+S->>Database: Store uploaded data
+S->>Validation Service: Validate uploaded metadata
+alt Valid metadata
+  then S->>Database: Save validated metadata
+else Invalid metadata
+  then S-->^: Reject invalid metadata to library staff
+end
+
+S->>Library Staff: Notify of upload success or failure
+deactivate S
+
+@enduml
+```"
+llama3.1:8b,1,108,"As an archivist, I want to access metadata and visual representations of index cards, so that I can use that information to assist researchers.","```plantuml
+@startuml
+participant Archivist as ""You""
+participant Database
+participant IndexCardRepository
+
+Note right: The archivist wants to access metadata and visual representations of index cards.
+ Archivist->Database: Get Index Card Metadata
+ alt Metadata is available
+ Database-->>Archivist: Return metadata about the index card
+ else No metadata is available
+ endalt
+note right: If no metadata exists, a message can be displayed explaining this
+ 
+ Archivist->IndexCardRepository: Get Visual Representation of Index Card
+ alt Visual representation is available
+ IndexCardRepository-->>Archivist: Return visual representation of index card
+ else No visual representation exists
+ endalt
+
+note right: The archivist now has access to the required information.
+@enduml
+```"
+llama3.1:8b,1,109,"As an archivist, I want to access metadata and visual representations of index cards, so that I can use that information to assist researchers.","```plantuml
+@startsequencediagramevents
+participant Archivist
+participant Database
+participant VisualizationEngine
+participant IndexCard as ""Index Card""
+
+Archivist->Database: Retrieve metadata of Index Card
+Database-->Archivist: Metadata retrieved successfully
+Archivist->Database: Request visual representation of Index Card
+Database-->VisualizationEngine: Visual representation requested
+VisualizationEngine->>Archivist: Visual representation displayed
+
+@endsequencediagramevents
+```"
+llama3.1:8b,1,110,"As a chef, I want to create dishes so that I can follow customer comments.","```plantuml
+@startuml
+participant Chef as ""Chef""
+participant Customer as ""Customer""
+
+note right of Customer
+  ""Provides feedback on existing dish""
+end note
+
+Chef->>Customer: Creates new dish
+Customer->>Chef: Provides feedback on existing dish
+Chef->>Chef: Analyzes customer feedback
+Chef->>Chef: Updates recipe based on feedback
+
+@enduml
+```"
+llama3.1:8b,1,111,"As a user, I want to be able to give my email ID, so that I can receive notifications for new events as they are posted.","```plantuml
+@startsequence
+participant User
+participant Service
+
+User->>Service: Provide Email Id
+activate Service
+
+Service->>Database: Save email id
+alt Email not already registered
+    then Service->>User: Email added successfully
+else Service->>User: Email already exists
+end
+
+User->>Service: Subscribe to notifications
+activate Service
+
+Service->>Database: Save subscription details
+Service->>Notification Service: Send notification on new event
+activate Notification Service
+
+Notification Service->>User: New event notification
+deactivate Notification Service
+
+@endsequence
+```"
+llama3.1:8b,1,112,"As a user, I want to be able to give my email ID, so that I can receive notifications for new events as they are posted.","```plantuml
+@startuml
+participant User
+participant System
+
+User->>System: Provide Email ID
+
+alt Email ID is invalid
+System-->User: Invalid Email ID
+
+else Email ID is valid
+System-->>User: OK
+
+User->>System: Subscribe for new events
+
+alt No new events posted yet
+System-->User: No new events
+
+else New event is available
+System-->>User: Event Notification
+
+@enduml
+```"
+llama3.1:8b,1,113,"As a researcher, I want to link research publications in the institutional repository or CRIS with DMP records, so that I can generate reports of research output resulting from a project.","```plantuml
+@startuml
+participant Researcher as R
+participant Institutional Repository as IR
+participant CERIF Research Information System (CRIS) as CRIS
+participant DMP Management System as DMS
+
+R ->> IR: Search publication in repository
+IR --> R: Publication found in repository
+alt Publication not found
+  R ->> CRIS: Search publication in CRIS
+  CRIS --> R: Publication found in CRIS
+end
+R ->> DMS: Link DMP record to publication
+DMS --> R: Link created successfully
+
+note right of R
+Generate reports of research output resulting from a project
+@endnote
+@enduml
+```"
+llama3.1:8b,1,114,"As a research participant, I want to make sure that the appearance of the prototype does not distract from the workflow, so that I can complete the user interview.","```plantuml
+@startuml
+participant ResearchParticipant as ""You""
+participant Prototype
+
+ResearchParticipant->Prototype: Use the prototype
+note right of Prototype
+Appearance should not distract from workflow
+end note
+ResearchParticipant->>Prototype: Complete user interview
+@enduml
+```
+
+This sequence diagram illustrates a scenario where the research participant is interacting with the prototype, and it highlights the expectation that the appearance of the prototype should not be distracting."
+llama3.1:8b,1,115,"As a research participant, I want to make sure that the appearance of the prototype does not distract from the workflow, so that I can complete the user interview.","```plantuml
+@startuml
+participant Researcher as ""Research Participant""
+participant UI as ""Prototype""
+
+UI->>Researcher: Display appearance of prototype
+Researcher->>UI: Evaluate workflow distraction
+UI->>Researcher: Adjust appearance according to feedback
+@enduml
+```
+
+This PlantUML sequence diagram represents the interaction between the research participant (researcher) and the prototype's user interface (UI). The researcher interacts with the UI, which displays its appearance. The researcher then evaluates whether this appearance distracts from the workflow, providing feedback that is used by the UI to adjust its appearance accordingly."
+llama3.1:8b,1,116,"As a member, I want to calculate the fine for delayed returns by automatically.","```plantuml
+@startuml
+participant Member as ""Member""
+participant System as ""System""
+
+note right of System: Calculate fine for delayed return
+.Member->>System: Send delayed return date and loan period to system
+System->>System: Check if return is valid (not past due)
+alt Yes, return is valid
+    System->>Member: Return loan with no fine
+else No, return is late
+    System->>Member: Calculate fine using fee per day formula
+    System->>System: Update fine in database
+end
+
+note right of Member: Fine calculated and returned to member
+@enduml
+```"
+llama3.1:8b,1,117,"As a member, I want to calculate the fine for delayed returns by automatically.","```plantuml
+@startuml
+participant Member as ""Member""
+participant System
+
+System->>Member: Calculate fine for delayed return?
+
+Member-->>System: Yes
+activate System
+System-->>System: Retrieve due date from database
+System-->>System: Calculate delay in days
+System-->>System: Look up fine rate from database
+System-->>System: Calculate fine amount
+System-->>Member: Fine amount is X dollars
+
+note right of Member
+ Member confirms the fine amount
+end note
+
+@enduml
+```"
+llama3.1:8b,1,118,"As a cook, I want to mark items unavailable, so that Waiter can inform customers.","```plantuml
+@startuml
+participant Cook
+participant Kitchen
+participant Server
+participant Client
+
+Cook->Kitchen: Mark item unavailable
+Kitchen-->Server: Inform server of updated status
+Server->Client: Notify customer of unavailability
+
+@enduml
+```"
+llama3.1:8b,1,119,"As a cook, I want to mark items unavailable, so that Waiter can inform customers.","```plantuml
+@startuml
+participant Cook as ""Cook""
+participant InventoryManager as ""Inventory Manager""
+
+Cook->>InventoryManager: Mark item unavailable
+InventoryManager-->Cook: Updated successfully
+Cook-->>Waiter: Inform customer
+@enduml
+```
+
+This PlantUML code represents a sequence diagram with the participants `Cook` and `InventoryManager`. The interaction between these two is that the Cook marks an item as unavailable in the Inventory Manager, which then responds to say it was updated successfully. Then, the Cook informs the Waiter, who would notify the customer."
+llama3.1:8b,1,120,"As a management user, I want to see the arrival and departure times of the employees.","```plantuml
+@startuml
+participant Management as ""Management User""
+participant Database as DB
+participant System
+
+Management->>DB: View Employee Arrival/Departure Times
+alt DB has data
+  DB-->>Management: Show arrival/departure times
+else 
+  DB-->>Management: Notify to update database
+endif
+System->>Management: Display updated list of employees and their times
+
+@enduml
+```"
+llama3.1:8b,1,121,"As an Archivist, I want to create and edit Agent records.","```plantuml
+@startuml
+participant ""Archivist""
+participant ""Agent Record""
+
+note right of ""Archivist""
+  Create/edit Agent record
+end note
+
+Archivist->>Agent Record: Create record
+alt Existing record
+  Archivist->>Agent Record: Retrieve existing record
+else New record
+  notesize=20;
+  note right of ""Archivist"" : No existing record found
+end alt
+
+note right of ""Archivist""
+  Edit Agent record (if necessary)
+end note
+
+Archivist->>Agent Record: Save changes to record
+@enduml
+```"
+llama3.1:8b,1,122,"As an Archivist, I want to create and edit Agent records.","```plantuml
+@startsequence
+participant Archivist
+participant Database
+note
+  The Archivist is responsible for creating and editing Agent records.
+endnote
+
+Archivist->Database: Create new Agent record
+Database-->Archivist: Record created successfully
+note
+  The Archivist can view the newly created record in the database.
+endnote
+
+Archivist->Database: Edit existing Agent record
+Database-->Archivist: Record updated successfully
+note
+  The Archivist can see their changes reflected in the database.
+endnote
+
+Archivist->Database: Attempt to edit a non-existent record
+Database-->>Archivist: Error - record not found
+note
+  If the Archivist tries to edit a record that doesn't exist, they will receive an error message.
+endnote
+
+@enduml
+```"
+llama3.1:8b,1,123,"As an Archivist, I want to create and edit Event records.","```plantuml
+@startsequence
+participant Archivist as ""Archivist""
+participant EventStore as ""Event Store""
+
+activate Archivist
+
+Archivist->>EventStore: Create Event record
+note right of EventStore
+  Validations and data processing occur here
+end note
+
+alt Event record is invalid
+  EventStore-->Archivist: Return error message
+else
+  EventStore->>Archivist: Record created successfully
+end
+
+activate Archivist
+
+Archivist->>EventStore: Edit Event record
+note right of EventStore
+  Data is updated in the event store, validations occur as well
+end note
+
+alt Event data is invalid
+  EventStore-->Archivist: Return error message
+else
+  EventStore->>Archivist: Record edited successfully
+end
+
+@endsequence
+```
+
+This sequence diagram illustrates how an Archivist can create and edit Event records in the Event Store. The valid cases show the successful creation or editing of a record, while the alternative case shows what happens when there's an invalid event record. 
+
+The `alt` keyword is used to indicate that one of the branches will be taken but not both at the same time. In this scenario, it signifies an 'else' condition and represents any other valid situation other than creating or editing a record with invalid data.
+
+Note: This PlantUML code snippet assumes a basic understanding of PlantUML syntax. If you're new to PlantUML, I recommend checking their official documentation for more details on how to create sequence diagrams."
+llama3.1:8b,1,124,"As an Archivist, I want to create and edit Event records.","```plantuml
+@startuml
+participant Archivist
+participant Database
+
+Archivist->Database: Create Event Record
+alt Valid data
+  Database-->: Save Event Record
+else Invalid data
+  Database-->Archivist: Error message
+endif
+
+Archivist->Database: Edit Event Record
+alt Valid data
+  Database-->: Save Event Record changes
+else Invalid data
+  Database-->Archivist: Error message
+endif
+
+@enduml
+```"
+llama3.1:8b,1,125,"As an app developer, I want to share a dataset type that I had previously deployed as part of an app.","```plantuml
+@startuml
+participant AppDeveloper
+participant DatasetRepository
+participant DeployedApp
+
+AppDeveloper->DatasetRepository: Share dataset type from deployed app
+note right: Check if dataset type is available in repository
+DatasetRepository-->DeployedApp: Retrieve deployed app with shared dataset type
+AppDeveloper->DeployedApp: Get shared dataset type from retrieved app
+@enduml
+```"
+llama3.1:8b,1,126,"As an app developer, I want to share a dataset type that I had previously deployed as part of an app.","```plantuml
+@startuml
+participant Developer
+participant AppRegistry
+
+Developer->>AppRegistry: Request share dataset
+AppRegistry-->Developer: Return dataset details
+Developer-->AppRegistry: Confirm dataset shared
+AppRegistry->>Developer: Acknowledge dataset shared
+@enduml
+```
+
+This sequence diagram describes the interaction between the app developer and the app registry when sharing a previously deployed dataset. The developer requests to share the dataset, the app registry returns the dataset details, the developer confirms that the dataset is shared, and the app registry acknowledges that the dataset has been shared."
+llama3.1:8b,1,127,"As a manager, I want to keep track of resources available so that I can manage inventory.","```plantuml
+@startuml
+participant ""Inventory Management System"" as IMS
+participant ""Resource Manager"" as RM
+participant ""Database"" as DB
+
+IMSMO->RM: Get Resource List
+RM->DB: Retrieve Resources from Database
+alt (Resources found)
+    DB-->IMS: Return list of resources
+else (No resources found)
+    DB-->IMS: Display message to create new resource
+end
+note right of IMS
+  Update inventory with new resource information.
+end note
+
+@enduml
+```"
+llama3.1:8b,1,128,"As a manager, I want to keep track of resources available so that I can manage inventory.","```plantuml
+@startuml
+participant Manager as ""Manager""
+participant Warehouse as ""Warehouse""
+
+Manager->Warehouse: Get Resource Status
+alt Resources Available
+  Warehouse->>Manager: Send resource status report
+else 
+  Warehouse->>Manager: Alert manager of stock levels
+endif
+@enduml
+```
+
+This will generate a sequence diagram that shows the interaction between the Manager and the Warehouse, with an alternate condition to display different outcomes based on whether resources are available or not."
+llama3.1:8b,1,129,"As an Owner, I want to design a schedule from the UI SME, so that I know the potential timeline of the UI improvements wanted.","```plantuml
+@startuml
+participant Owner
+participant DesignTool
+participant Schedule
+
+Owner->DesignTool: Design schedule
+DesignTool->Schedule: Generate schedule
+Schedule->Owner: Show scheduled timeline
+
+@enduml
+```
+
+This is a basic sequence diagram that describes how an owner interacts with a design tool to generate a schedule, which is then displayed to the owner."
+llama3.1:8b,1,130,"As a depositor, I want to specify a disposal policy for my data, so that I do not accidentally breach laws or collaboration agreements.","```plantuml
+@startuml
+participant Depositor as ""You""
+participant DisposalPolicy
+
+Depositor->DisposalPolicy: Specify disposal policy
+DisposalPolicy-->Depositor: Confirm disposal policy
+Depositor->DisposalPolicy: Review disposal policy for compliance with laws and agreements
+DisposalPolicy-->Depositor: Indicate if disposal policy compliant
+
+@enduml
+```"
+llama3.1:8b,1,131,"As a depositor, I want to specify a disposal policy for my data, so that I do not accidentally breach laws or collaboration agreements.","```plantuml
+@startuml
+participant Depositor as ""You""
+participant BankSystem
+
+note right of Depositor
+Specify disposal policy
+end note
+
+Depositor ->> BankSystem: Specify disposal policy (e.g., delete after 1 year)
+alt Disposal policy invalid
+BankSystem --> Depositor: Error message (disposal policy invalid)
+
+else
+BankSystem --> Depositor: Confirmation message (disposal policy accepted)
+end
+@enduml
+```"
