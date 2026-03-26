@@ -176,6 +176,8 @@ def evaluate_story(idx, row):
 
 
 if __name__ == "__main__":
+    print(len(MODELS))
+    quit()
     df = pd.read_csv(r"data-folder\Evaluation\Final CSV_gpt.csv")
 
     for idx, row in df.iterrows():
