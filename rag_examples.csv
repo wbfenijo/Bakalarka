@@ -1,0 +1,246 @@
+story_num,user_story,plantuml
+1,"As a researcher, I want to link research publications in the institutional repository or CRIS with DMP records, so that I can generate reports of research output resulting from a project.","@startuml
+actor Researcher
+database InstitutionalRepository
+database CRIS 
+participant DMP System
+participant ReportGenerator
+
+Researcher -> DMPSystem: Link DMP record with research project
+DMPSystem --> Researcher: Confirmation of link
+
+Researcher -> InstitutionalRepository: Link publication with DMP record
+InstitutionalRepository --> Researcher: Confirmation of link
+
+Researcher -> CRIS: Link publication with DMP record
+CRIS --> Researcher: Confirmation of link
+
+Researcher -> ReportGenerator: Generate research output report for a project
+ReportGenerator --> DMPSystem: Retrieve linked DMP records
+DMPSystem --> ReportGenerator: Provide linked DMP records
+ReportGenerator --> InstitutionalRepository: Retrieve linked publications
+InstitutionalRepository --> ReportGenerator: Provide linked publications
+ReportGenerator --> CRIS: Retrieve linked publications
+CRIS --> ReportGenerator: Provide linked publications
+ReportGenerator --> Researcher: Generate and present research output report
+
+@enduml
+"
+2,"As a developer, I want to have the ALFRED API to reduce the work to achieve my goals.","@startuml
+actor Developer
+actor ALFRED
+database DataStorage
+
+Developer -> ALFRED: API Request
+ALFRED -> ALFRED: Process API Request
+ALFRED -> DataStorage: Retrieve Data
+DataStorage --> ALFRED: Return Data
+ALFRED --> Developer: Provide API Response
+
+@enduml
+"
+3,"As an Owner, I want to design a schedule from the UI SME, so that I know the potential timeline of the UI improvements wanted.","@startuml
+actor Owner
+database ScheduleDatabase
+participant UISME 
+participant ScheduleDesigner
+
+Owner -> UISME: Collaborate to gather UI improvement requirements
+UISME --> Owner: Provide UI improvement details
+
+activate Owner
+
+Owner -> ScheduleDesigner: Design a schedule based on UI improvement requirements
+ScheduleDesigner --> ScheduleDatabase: Store designed schedule
+ScheduleDatabase --> ScheduleDesigner: Confirmation of storage
+ScheduleDesigner --> Owner: Present the designed schedule
+
+deactivate Owner
+@enduml
+"
+4,"As a chef, I want to create dishes so that I can follow customer comments.","@startuml
+actor Chef
+database DishDatabase
+participant CustomerComments
+
+Chef -> DishDatabase: Create a new dish
+DishDatabase --> Chef: Confirm creation of the new dish
+
+Chef -> CustomerComments: Monitor customer comments for feedback
+CustomerComments --> Chef: Receive comments and feedback on dishes
+Chef -> DishDatabase: Update dishes based on feedback
+DishDatabase --> Chef: Confirm update of dishes
+
+@enduml"
+5,"As a repoadmin, I want to have users to be presented with a license or a selection of licenses, specific to the collection, and deposit to be denied if the submitter does not accept the license.","@startuml
+actor RepoAdmin
+participant LicenseManager
+participant User
+participant DepositHandler
+
+RepoAdmin -> LicenseManager: Configure licenses for the collection
+LicenseManager --> RepoAdmin: Licenses configured successfully
+
+activate RepoAdmin
+
+RepoAdmin -> User: Request deposit for a collection
+User --> DepositHandler: Initiate deposit process
+
+activate User
+activate DepositHandler
+
+DepositHandler -> LicenseManager: Retrieve collection-specific license(s)
+LicenseManager --> DepositHandler: Provide license options
+
+DepositHandler -> User: Present license options for acceptance
+User --> DepositHandler: Select a license
+
+alt User accepts the license
+    DepositHandler -> DepositHandler: Proceed with deposit
+    DepositHandler --> User: Deposit accepted
+else User does not accept the license
+    DepositHandler --> User: Deposit denied due to license non-acceptance
+end
+
+deactivate User
+deactivate DepositHandler
+
+deactivate RepoAdmin
+@enduml"
+6,"As a Zoning Staff member, I want to Process the Requests for Zoning Information, so that I can capture my response to the request in the system and also send a communication from the system to the Applicant.","@startuml
+actor ZoningStaff
+actor System
+actor Applicant
+
+ZoningStaff -> System: Submit Zoning Request
+System -> System: Capture Request Details
+System -> ZoningStaff: Acknowledge Receipt
+
+activate ZoningStaff
+
+loop until request processed
+    ZoningStaff -> System: Process Request
+    System -> System: Update Zoning Information
+    System -> Applicant: Send Communication
+    Applicant -> System: Receive Communication
+    System -> ZoningStaff: Notify Completion
+end
+
+deactivate ZoningStaff
+
+@enduml
+"
+7,"As an asset manager, I want to know what the intellectual value of the asset is to the institution at the time of deposit, so that I obtain guidance in the evaluation of it for current value for the institution.","@startuml
+actor AssetManager
+actor System
+database InstitutionalKnowledgeBase
+
+AssetManager -> System: Log In
+System -> System: Authenticate AssetManager
+System -> AssetManager: Provide Access
+
+activate AssetManager
+
+AssetManager -> System: Deposit Asset
+System -> AssetManager: Provide Metadata Entry
+AssetManager -> System: Evaluate Intellectual Value
+System -> InstitutionalKnowledgeBase: Store Intellectual Value
+InstitutionalKnowledgeBase --> System: Confirmation
+System -> AssetManager: Display Intellectual Value Confirmation
+
+deactivate AssetManager
+
+@enduml
+"
+8,"As a developer, I want to upgrade to Fedora 4 and migrate our applications and data.","@startuml
+actor Developer
+actor System
+database LegacyData
+database NewDatastore
+
+Developer -> System: Plan Upgrade
+System -> Developer: Provide Upgrade Plan
+Developer -> System: Begin Upgrade Process
+
+activate Developer
+
+Developer -> System: Update Applications
+System -> System: Stop Legacy Services
+System -> System: Install Fedora 4
+System -> System: Configure Fedora 4
+System -> System: Start Fedora 4 Services
+System -> System: Update Applications for Fedora 4
+
+Developer -> LegacyData: Migrate Data
+LegacyData --> NewDatastore: Export Data
+NewDatastore --> Developer: Data Export Complete
+Developer -> NewDatastore: Import Data
+NewDatastore --> Developer: Data Import Complete
+
+deactivate Developer
+
+@enduml
+"
+9,"As a management user, I want to see the arrival and departure times of the employees.","@startuml
+actor ManagementUser
+database AttendanceDatabase
+participant AttendanceTracker
+
+ManagementUser -> AttendanceTracker: Request employee arrival and departure times
+AttendanceTracker --> AttendanceDatabase: Retrieve attendance data
+AttendanceDatabase --> AttendanceTracker: Provide attendance details
+AttendanceTracker --> ManagementUser: Display arrival and departure times
+
+activate ManagementUser
+deactivate ManagementUser
+
+@enduml"
+10,"As a library staff member, I want to upload large batches of items simultaneously, including descriptive metadata, so that I can offer service to authors efficiently.","@startuml
+actor LibraryStaff
+database LibraryDatabase
+participant BatchUploader
+participant MetadataProcessor
+
+LibraryStaff -> BatchUploader: Upload batch of items with metadata
+BatchUploader --> LibraryDatabase: Store items and metadata
+LibraryDatabase --> BatchUploader: Confirmation of upload
+
+BatchUploader -> MetadataProcessor: Process descriptive metadata
+MetadataProcessor --> LibraryDatabase: Retrieve descriptive metadata
+LibraryDatabase --> MetadataProcessor: Provide items with descriptive metadata
+MetadataProcessor --> BatchUploader: Confirm metadata processing
+
+@enduml"
+11,"As a DigitalRecords Archivist, I want to expose the descriptive record for each ETD item for re-use external to Fedora.","@startuml 
+digitalrecord_archivist->etd_item:expose descriptive_record use fedora 
+@enduml"
+12,"As an archivist, I want to link electronic versions of researchers' publications to citations, so that I can share them with other researchers.","@startuml 
+archivist->researcher_publication:link electronic_version citations 
+archivist->System:share them other_researcher 
+@enduml"
+13,"As a DAMS manager, I want to know when permitted and restricted acts and/or their active dates are modified.","@startuml 
+dam_manager->System:know 
+@enduml"
+14,"As a manager, I want to display orders by date.","@startuml 
+manager->System:display orders date 
+@enduml"
+15,"As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.","@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml"
+16,"As a Zooniverse admin, I want to detect important features such as areas of flooding, damage, temporary shelters, blocked roads etc in the satellite images.","@startuml 
+zooniverse_admin->area:detect important_feature 
+@enduml"
+17,"As a Consumer, I want to load a Data Package from R, so that that I can immediately start playing with it.","@startuml 
+consumer->System:load datum_package r 
+consumer->System:start it 
+@enduml"
+18,"As a patron, I want to email system provider to report issues and ask questions.","@startuml 
+patron->System:system_provider issues questions 
+@enduml"
+19,"As an ethics manager, I want to be informed about the data, so that I can check for sensitivity of data.","@startuml 
+ethics_manager->System:informed data 
+ethics_manager->datum:check sensitivity 
+@enduml"
+20,"As a repository manager, I want to indicate names related to the collection either as creator, source, or subject.","@startuml 
+repository_manager->System:indicate names collection creator_source 
+@enduml"
