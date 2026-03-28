@@ -12,7 +12,7 @@ PROMPTS = [PROMPT_ZS1,
 
 MODELS = MODELS[:4]
 
-INPUT_FILE = "evaluation_data.csv"
+INPUT_FILE = "evaluation_unique.csv"
 OUTPUT_FILE = "generated_results.csv"
 MEMO_FILE = "memo.txt"
 
