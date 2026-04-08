@@ -5,7 +5,8 @@ from router import query_model
 EVAL_FILE = "generated_results_clean.csv"
 
 MODEL = "azure/gpt-4.1"
-COUNT = 100 * 6  * 21
+TOTAL = 100 * 6  * 21
+count = 0
 #MODEL = "gpt-4o-mini"
 
 
@@ -21,8 +22,9 @@ df_clean.to_csv("generated_results_clean.csv", index=False)
 
 
 def evaluate_model(model, user_story, generated_plantuml, writer, prompt_id):
-
-    print(f"Model: {model}:  {user_story} generated with prompt {prompt_id}")
+    global count
+    count += 1
+    print(f"Model: {model}:  {user_story} generated with prompt {prompt_id} - {count} / {TOTAL}")
     prompt = make_prompt(user_story, generated_plantuml)
     response = query_model(MODEL, prompt)
     qe = parse_response(response)

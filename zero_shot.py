@@ -48,10 +48,11 @@ def main():
             print(f"\n=== MODEL: {model} ===")
 
             for p_id, prompt_template in enumerate(PROMPTS, start=1):
-                count += 1
+                
                 print(f"  Prompt {p_id}")
 
                 for _, row in df.iterrows():
+                    count += 1
                     story_id = row["story_num"]
                     user_story = row["user_story"]
 
@@ -80,7 +81,7 @@ def main():
                     save_to_memo(key)
                     memo.add(key)
 
-                    print(f"    Saved story {story_id} - {count}/ {len(MODELS) * len(PROMPTS) * 100}")
+                    print(f"    Saved story {story_id} - {count} / {len(MODELS) * len(PROMPTS) * 100}")
 
     print("\nDONE")
 
