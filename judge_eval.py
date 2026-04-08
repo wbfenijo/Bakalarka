@@ -5,13 +5,13 @@ from router import query_model
 EVAL_FILE = "generated_results_clean.csv"
 
 MODEL = "azure/gpt-4.1"
-
+COUNT = 100 * 6  * 21
 #MODEL = "gpt-4o-mini"
 
 
 df = pd.read_csv("generated_results.csv")
 
-df_clean = df.drop_duplicates(
+df_clean = df.drop_duplicates(  
     subset=["model", "user_story", "prompt_id"],
     keep="first"
 )
@@ -58,7 +58,6 @@ def evaluate_story(idx, row):
         file.flush()
         os.fsync(file.fileno())
 
-    print(f"Finished")
 
 
 
@@ -67,5 +66,4 @@ if __name__ == "__main__":
     df = pd.read_csv(EVAL_FILE)
 
     for idx, row in df.iterrows():
-        print(f"\n=== Evaluating ===")
         evaluate_story(idx, row)

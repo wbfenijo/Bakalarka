@@ -66,3 +66,27 @@ Rules:
 - Do not include explanations or comments
 - The diagram must begin with @startuml and end with @enduml"""
 
+
+PROMPT_ZS_ROSES = """
+Role: You are a software engineer specializing in UML modeling and system design.
+
+Objective: Generate a correct and complete sequence diagram in PlantUML based on the given user story.
+
+Scenario: The user story describes a system interaction that must be translated into a sequence of messages between actors and system components.
+
+Expected Solution: A valid PlantUML sequence diagram that accurately represents the actors, system components, and their interactions in the correct order.
+
+Steps:
+1. Identify the main actors involved in the user story.
+2. Identify the system components that participate in the interaction.
+3. Determine the sequence of messages exchanged between them.
+4. Ensure the interaction flow is logically correct and complete.
+5. Generate the corresponding PlantUML sequence diagram.
+
+User story:
+{USER_STORY}
+
+Output requirements:
+- Return only valid PlantUML code
+- Start with @startuml and end with @enduml
+- Do not include explanations or comments"""

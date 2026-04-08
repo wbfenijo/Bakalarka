@@ -8,7 +8,8 @@ PROMPTS = [PROMPT_ZS1,
            PROMPT_ZS2,
            PROMPT_ZS3,
            PROMPT_ZS4,
-           PROMPT_ZS5]
+           PROMPT_ZS5,
+           PROMPT_ZS_ROSES]
 
 MODELS = MODELS[:4]
 
@@ -39,7 +40,7 @@ def main():
 
     with open(OUTPUT_FILE, "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-
+        count = 0
         if f.tell() == 0:
             writer.writerow(["model", "prompt_id", "story_id", "user_story", "plantuml"])
 
@@ -47,6 +48,7 @@ def main():
             print(f"\n=== MODEL: {model} ===")
 
             for p_id, prompt_template in enumerate(PROMPTS, start=1):
+                count += 1
                 print(f"  Prompt {p_id}")
 
                 for _, row in df.iterrows():
@@ -78,7 +80,7 @@ def main():
                     save_to_memo(key)
                     memo.add(key)
 
-                    print(f"    Saved story {story_id}")
+                    print(f"    Saved story {story_id} - {count}/ {len(MODELS) * len(PROMPTS) * 100}")
 
     print("\nDONE")
 
