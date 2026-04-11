@@ -6,8 +6,9 @@ EVAL_FILE = "generated_results_clean.csv"
 
 MODEL = "azure/gpt-4.1"
 TOTAL = 100 * 6  * 21
+MEMO_FILE = "memo_judge_ZS.txt"
 count = 0
-#MODEL = "gpt-4o-mini"
+MODEL = "gpt-4o-mini"
 
 
 df = pd.read_csv("generated_results.csv")
@@ -18,6 +19,19 @@ df_clean = df.drop_duplicates(
 )
 
 df_clean.to_csv("generated_results_clean.csv", index=False)
+
+
+
+def load_memo():
+    try:
+        with open(MEMO_FILE, "r", encoding="utf-8") as f:
+            return set(line.strip() for line in f)
+    except FileNotFoundError:
+        return set()
+    
+def save_to_memo(entry):
+    with open(MEMO_FILE, "a", encoding="utf-8") as f:
+        f.write(entry + "\n")
 
 
 
@@ -44,18 +58,28 @@ def evaluate_model(model, user_story, generated_plantuml, writer, prompt_id):
 
 
 def evaluate_story(idx, row):
+    global count
+    memo = load_memo()
     user_story = row["user_story"]
     model = row["model"]
     generated_plantuml = row["plantuml"]
     promt_id = row["prompt_id"]
+    key = f"{model},{user_story},{promt_id}"
 
     os.makedirs("generated_outputs_eval", exist_ok=True)
-    csv_path = os.path.join("generated_outputs_eval", f"prompt_{promt_id}.csv")
+    csv_path = os.path.join("generated_outputs_eval", f"prompt_{promt_id}_clean.csv")
+    if key in memo:
+        print(f"Skipping {key} - already done ")
+        count += 1
+        return
+    
+    save_to_memo(key)
 
     with open(csv_path, "a", encoding="utf-8", newline="") as file:
         writer = csv.writer(file)
         if file.tell() == 0:
             writer.writerow(["model", "user_story", "QE1", "QE2", "QE3", "QE4", "QE5", "PromptID"])
+
         evaluate_model(model, user_story, generated_plantuml, writer, promt_id)
         file.flush()
         os.fsync(file.fileno())

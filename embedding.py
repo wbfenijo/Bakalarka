@@ -17,4 +17,4 @@ for story in df["user_story"]:
 
 df["embedding"] = embeddings
 
-df.to_pickle("rag_with_embeddings.pkl")  
+df.to_csv("rag_with_embeddings.csv")  
