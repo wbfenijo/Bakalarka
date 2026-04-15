@@ -3,8 +3,7 @@ postup.txt
 __pycache__/
 results.py
 plantuml_outputs/
-all_combined.csv
-RAG.py
+
 
 
 
