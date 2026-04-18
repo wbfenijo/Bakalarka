@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import os, csv, ast
-from embedding import client
 from router import query_model
 from evaluator import MODELS
 
@@ -42,16 +41,11 @@ def cosine_similarity(a, b):
     b = np.array(b, dtype=float)
     return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
 
-def get_top_k_examples(query, k=3):
+def get_top_k_examples(query, embedding, k=3):
     global rag_df
     df = rag_df
-    response = client.client.embeddings.create(
-        model="text-embedding-3-large",
-        input=query
-    )
-    query_emb = response.data[0].embedding
     df["similarity"] = df["embedding"].apply(
-    lambda x: cosine_similarity(np.array(ast.literal_eval(x), dtype=float), query_emb)
+    lambda x: cosine_similarity(np.array(ast.literal_eval(x), dtype=float), np.array(ast.literal_eval(embedding), dtype=float))
     )
 
     top_k = df.sort_values("similarity", ascending=False).head(k)
@@ -98,12 +92,11 @@ def generate_with_rag(user_story, model):
     return query_model(model, prompt)
 
 def main():
-    INPUT_FILE = "evaluation_unique.csv"
+    INPUT_FILE = "rag_input_embeddings.csv"
     OUTPUT_FILE = "rag_generated_results.csv"
 
     global count
     load_examples()
-    print(EXAMPLES)
     df = pd.read_csv(INPUT_FILE)
     memo = load_memo()
 
@@ -123,6 +116,7 @@ def main():
             for idx, row in df.iterrows():
                 story_id = row["story_num"]
                 user_story = row["user_story"]
+                embeddings = row["embedding"]
                 key = f"{model},{user_story}"
                 if user_story in EXAMPLES:
                     count += 1
@@ -135,7 +129,7 @@ def main():
                 print(f"  Story {story_id}")
 
                 try:
-                    examples = get_top_k_examples(user_story)
+                    examples = get_top_k_examples(user_story, embeddings)
                     prompt = build_rag_prompt(user_story, examples)
                     result = query_model(model, prompt)
 

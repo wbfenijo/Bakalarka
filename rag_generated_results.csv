@@ -1,1170 +1,128 @@
 model,story_id,user_story,plantuml
 llama3.1:8b,2,"As a cook, I want to keep track of store orders so that I can schedule orders.","Here is the sequence diagram for the given user story:
 
-```plantuml
+
 @startuml
 actor Cook
-participant OrderTracker
-database StoreOrdersDatabase
+participant StoreOrders
+database OrderDatabase
 
-Cook -> OrderTracker: Receive new order from store
-OrderTracker -> StoreOrdersDatabase: Log new order in database
-StoreOrdersDatabase --> OrderTracker: Confirm logging of new order
+Cook -> OrderDatabase: Retrieve store orders
+OrderDatabase --> Cook: Confirm retrieval of store orders
 
-Cook -> OrderTracker: Monitor and track status of orders
-OrderTracker -> StoreOrdersDatabase: Retrieve current status of orders
-StoreOrdersDatabase --> OrderTracker: Provide updated status information
+Cook -> StoreOrders: Monitor store order status
+StoreOrders --> Cook: Receive updates on store order status
 
-Cook -> OrderTracker: Schedule orders for production
-OrderTracker -> StoreOrdersDatabase: Update schedule in database
-StoreOrdersDatabase --> Cook: Confirm scheduling of orders
+Cook -> OrderDatabase: Update order status in database
+OrderDatabase --> Cook: Confirm update of order status
 
-@enduml
-```
-
-This sequence diagram represents the steps involved in tracking and scheduling store orders, as described by the user story. The cook actor initiates the process by receiving a new order from the store, which is then logged into the Store Orders Database through the OrderTracker participant. The Cook can monitor and track the status of orders, schedule them for production, and confirm that they have been scheduled successfully."
+@enduml"
 llama3.1:8b,4,"As an OlderPerson, I want to use ALFRED to control the heating.","Here is the sequence diagram for the given user story:
 
 
+```
 @startuml
 actor OlderPerson
 actor ALFRED
 device HeatingSystem
-database DataStorage
 
-OlderPerson -> ALFRED: Control Heating Request
-ALFRED -> ALFRED: Process Control Request
-ALFRED -> DataStorage: Retrieve Temperature Setting
-DataStorage --> ALFRED: Return Temperature Setting
-ALFRED -> HeatingSystem: Send Temperature Command
-HeatingSystem --> ALFRED: Confirm Receipt of Command
-ALFRED --> OlderPerson: Provide Confirmation
-
-@enduml"
+OlderPerson -> ALFRED: Command to Control Heating
+ALFRED -> HeatingSystem: Send Control Signal
+HeatingSystem --> ALFRED: Confirm Receipt of Signal
+ALFRED --> OlderPerson: Provide Confirmation of Action
+@enduml
+```"
 llama3.1:8b,6,"As an employee, I want to see all store orders.","Here is the sequence diagram for the given user story:
 
-```plantuml
-@startuml
-employee->System: view all store orders
-@enduml
-```
-
-This sequence diagram shows a message from an `employee` to a `System`, where the employee wants to view all store orders."
-llama3.1:8b,8,"As a Data Consuming User, I want to be able to search any dataset published and publicly accessible by their title and metadata, So that I can find the datasets I'm interested in.","Here is the sequence diagram for the user story:
 
 ```plantuml
 @startuml
-data_consuming_user->Search System:search_by_title title 
-data_consuming_user->Search System:search_by_metadata metadata 
-Search System->System:return search results 
+employee->System:display store orders
 @enduml
 ```
 
-This sequence diagram represents a Data Consuming User interacting with a Search System, which queries the System for datasets by their title and metadata. The result of the search is then returned to the user.
+This sequence diagram captures the interaction between an employee and the system, where the employee requests to display all store orders."
+llama3.1:8b,8,"As a Data Consuming User, I want to be able to search any dataset published and publicly accessible by their title and metadata, So that I can find the datasets I'm interested in.","Here is a sequence diagram for the given user story:
 
-Note that I used `return` as an operation to represent the action of returning search results from the System to the Search System. This is valid PlantUML syntax."
-llama3.1:8b,10,"As a library member, I want to locate related books and see the shelf number in the library by using unique information to speed up the searching process.","Here is the sequence diagram for the user story:
+```plantuml
+@startuml
+data consuming user->dataset repository:search by title 
+dataset repository->dataset repository:return search results 
+data consuming user->system:select dataset from results 
+@enduml
+```
+
+In this sequence diagram, the `data consuming user` initiates a search for datasets in the `dataset repository` using their title. The `dataset repository` then returns a list of search results to the `data consuming user`, who can select a desired dataset from the results."
+llama3.1:8b,10,"As a library member, I want to locate related books and see the shelf number in the library by using unique information to speed up the searching process.","Here is the sequence diagram for the given user story:
 
 ```plantuml
 @startuml
 actor LibraryMember
-database LibraryDatabase
 participant SearchEngine
+participant CatalogSystem
 participant ShelfLocator
-participant BookRepository
 
-LibraryMember -> SearchEngine: Provide unique information (e.g. ISBN, title)
-SearchEngine --> LibraryDatabase: Retrieve book records with related books
-LibraryDatabase --> SearchEngine: Return list of book records with related books
-SearchEngine -> ShelfLocator: Get shelf number for each book record
-ShelfLocator --> LibraryDatabase: Update shelf numbers in database
+LibraryMember ->> SearchEngine: Input unique book information to search
+SearchEngine --> CatalogSystem: Query catalog system for related books and shelf number
+CatalogSystem --> SearchEngine: Retrieve list of related books with shelf numbers
+SearchEngine --> LibraryMember: Display results to library member
 
-SearchEngine --> BookRepository: Retrieve physical location of books (shelf)
-BookRepository --> SearchEngine: Provide library's physical layout
-SearchEngine --> LibraryMember: Display related books with shelf numbers
+SearchEngine -> ShelfLocator: Get shelf information from shelf locator module
+ShelfLocator --> SearchEngine: Return shelf number for selected book
 
 @enduml
 ```
 
-This sequence diagram represents the steps involved in locating related books and their corresponding shelf numbers. The `LibraryMember` actor initiates the search by providing unique information about a book. The `SearchEngine` then interacts with the `LibraryDatabase` to retrieve relevant records, which are then processed by the `ShelfLocator` to determine shelf numbers. Finally, the results are displayed to the library member through the `BookRepository`, which provides information on the physical location of books within the library."
-llama3.1:8b,12,"As an API User, I want to be able to use data to get results from multiple datasets, So that I can build user experiences based on more than one dataset more easily.","Here is the sequence diagram for the given user story:
+This sequence diagram represents the interactions between a library member, search engine, catalog system, and shelf locator to facilitate efficient searching of related books in the library."
+llama3.1:8b,12,"As an API User, I want to be able to use data to get results from multiple datasets, So that I can build user experiences based on more than one dataset more easily.","Here is a sequence diagram for the given user story:
 
-```
-@startuml 
-api_user->System:get results from multiple datasets 
+```plantuml
+@startuml
+api_user->System:use data 
+System-->data_service1: get data from dataset1
+System-->data_service2: get data from dataset2
+data_service1-->System:return valid_data1
+data_service2-->System:return valid_data2
+System-->api_user:return results
 @enduml
-```"
-llama3.1:8b,14,"As a customer, I want to be able to pay the bill partially","Here is the sequence diagram for the given user story:
-
 ```
+
+This sequence diagram shows the interaction between the API User and the System, where the System uses data services to retrieve data from multiple datasets (dataset1 and dataset2) and returns the results to the API User."
+llama3.1:8b,14,"As a customer, I want to be able to pay the bill partially","Here is a sequence diagram for the given user story:
+
+
 @startuml
 actor Customer
-participant POSSystem
 participant PaymentGateway
-participant Database
+participant OrderService
 
-Customer ->>.POSSystem: Select items to pay
-POSSystem ->>.Customer: Confirm selection of items
-Customer ->>.POSSystem: Choose payment method
-POSSystem ->>.PaymentGateway: Initiate payment transaction
-PaymentGateway ->>.POSSystem: Request partial payment authorization
-POSSystem ->>.Database: Update order status and amount paid
-Database --> POSSystem: Confirm update of order status
+Customer -> OrderService: Request partial payment of bill
+OrderService --> Customer: Confirm request for partial payment
 
-Customer ->>.POSSystem: Review updated bill
-POSSystem ->>.Customer: Display updated bill with remaining balance
-@enduml
-```
+OrderService -> PaymentGateway: Process partial payment
+PaymentGateway --> OrderService: Confirm successful payment
 
-This sequence diagram illustrates the steps involved in a customer paying their bill partially, including selecting items to pay, choosing payment method, and updating the order status and amount paid."
-llama3.1:8b,16,"As a cook, I want to have employee data on the system including clock in and out information.","Here is the sequence diagram for the given user story:
+OrderService -> OrderService: Update order with partial payment
+OrderService --> Customer: Notify customer of partial payment update
 
+@enduml"
+llama3.1:8b,16,"As a cook, I want to have employee data on the system including clock in and out information.","Here is the sequence diagram based on the given user story:
 
+```plantuml
 @startuml
 actor Cook
 database EmployeeDatabase
-participant TimeTrackingSystem
+participant TimeTracker
 
-Cook -> TimeTrackingSystem: Request employee data and clock in/out information
-TimeTrackingSystem --> EmployeeDatabase: Retrieve employee data
-EmployeeDatabase --> TimeTrackingSystem: Provide employee details
-TimeTrackingSystem --> EmployeeDatabase: Update clock in/out information
-EmployeeDatabase --> TimeTrackingSystem: Confirm update successful
+Cook -> TimeTracker: Request employee data including clock in/out info
+TimeTracker --> EmployeeDatabase: Retrieve employee details and time records
+EmployeeDatabase --> TimeTracker: Provide valid employee data
+TimeTracker --> Cook: Display employee information, clock in/out times
 
 activate Cook
 deactivate Cook
 
-@enduml"
-llama3.1:8b,18,"As a Plan Review Staff member, I want to Review Plans, so that I can review them for compliance and either approve, or fail or deny the plans and record any conditions, clearances, or corrections needed from the Applicant.","Here is a sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor PlanReviewStaff
-actor System
-actor Applicant
-
-PlanReviewStaff -> System: Submit Plans for Review
-System -> System: Retrieve Plans Details
-System -> PlanReviewStaff: Acknowledge Receipt
-
-activate PlanReviewStaff
-
-loop until plans approved or rejected
-    PlanReviewStaff -> System: Review Plans
-    System -> System: Evaluate Compliance
-    if (compliance OK) then
-        System -> Applicant: Send Approval Notification
-    else 
-        System -> Applicant: Send Failure/Denial Notification
-    end
-    System -> System: Record Conditions/Clearances/Corrections
-    System -> PlanReviewStaff: Notify Completion
-end
-
-deactivate PlanReviewStaff
-
-@enduml
-```"
-llama3.1:8b,20,"As a patron, I want to know previous name(s) and publication date range (first version-last version) of reports/datasets, so that I can know what historical versions are available and how current more recent version is.","Here is the sequence diagram for the given user story:
-
-```
-@startuml
-patron->System:know_previous_versions 
-@enduml
-```"
-llama3.1:8b,22,"As a user, I want to scope my searches for collections, objects, or object components to a specific language.","Here is the sequence diagram for the given user story:
-
-```plantuml
-@startuml
-user->System:scope search collection_object_component by language 
 @enduml
 ```
 
-This sequence diagram represents a user sending a request to scope their searches for collections, objects, or object components to a specific language."
-llama3.1:8b,24,"As a MedicalCaregiver, I want to locate the ALFRED user.","Here is the sequence diagram for the given user story:
-
-```
-@startuml
-actor MedicalCaregiver
-actor ALFRED
-database DataStorage
-
-MedicalCaregiver -> ALFRED: Locate User Request
-ALFRED -> ALFRED: Process Location Request
-ALFRED -> DataStorage: Retrieve User Information
-DataStorage --> ALFRED: Return User Information
-ALFRED --> MedicalCaregiver: Provide Location Response
-
-@enduml
-```
-
-This sequence diagram illustrates the interaction between the MedicalCaregiver, ALFRED, and DataStorage. The MedicalCaregiver sends a request to locate the ALFRED user, which is processed by ALFRED. ALFRED then retrieves the necessary information from DataStorage and returns it to the MedicalCaregiver as a response."
-llama3.1:8b,26,"As a library staff member, I want to be able to assign an item to more than one collection.","Here is the sequence diagram for the given user story:
-
-```
-@startuml
-actor LibraryStaff
-participant CollectionManager
-participant ItemDatabase
-
-LibraryStaff -> CollectionManager: Request to assign item to collections
-CollectionManager --> ItemDatabase: Retrieve item details
-ItemDatabase --> CollectionManager: Validate item availability
-CollectionManager --> ItemDatabase: Assign item to multiple collections
-ItemDatabase --> CollectionManager: Confirmation of assignment
-CollectionManager -> LibraryStaff: Notify staff of successful assignment
-
-@enduml
-```
-
-This sequence diagram captures the interactions between the library staff, collection manager, and item database in assigning an item to more than one collection."
-llama3.1:8b,28,"As a repository manager, I want to indicate any name that is pertinent to the component.","Here's a sequence diagram based on your requirements:
-
-
-@startuml
-repository_manager->System:indicate names component 
-@enduml"
-llama3.1:8b,30,"As a library member, I want to keep track of books from an app so that I can know if it is taken or in the library before I go.","Here's a sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor LibraryMember
-participant BookSearchService
-database LibraryDatabase
-
-LibraryMember -> BookSearchService: Search book availability
-BookSearchService --> LibraryDatabase: Retrieve book status
-LibraryDatabase --> BookSearchService: Book status response (e.g. available, taken, in-library)
-
-BookSearchService -> LibraryMember: Inform of book availability
-@enduml
-```
-
-This sequence diagram models the interaction between a library member and the book search service, with the service communicating with the library database to retrieve the book's status."
-llama3.1:8b,32,"As a restaurant employee, I want to receive a notification message when the customer places an order.","Here is the sequence diagram based on the provided user story:
-
-
-    @startuml
-actor RestaurantEmployee
-participant OrderSystem
-participant NotificationService
-
-RestaurantEmployee -> OrderSystem: Place an order
-OrderSystem --> RestaurantEmployee: Confirm receipt of order
-
-OrderSystem ->> NotificationService : Send notification for new order
-NotificationService -->> RestaurantEmployee : Receive and display notification
-
-
-@enduml"
-llama3.1:8b,34,"As a student, I want to see the books that are currently unavailable so that I can arrange my reading plan.","Here is a sequence diagram for the user story:
-
-```
-@startuml
-actor Student
-participant LibraryDatabase
-participant BookSearcher
-
-Student -> LibraryDatabase: Request list of unavailable books
-LibraryDatabase --> BookSearcher: Provide list of unavailable book IDs
-
-BookSearcher -> LibraryDatabase: Retrieve detailed information about each book
-LibraryDatabase --> BookSearcher: Return book details with availability status
-
-BookSearcher --> Student: Display list of currently unavailable books to the student
-
-@enduml
-```"
-llama3.1:8b,37,"As a DAMS manager, I want to know the agent(s) responsible for carrying out an event.","Here is a sequence diagram based on the user story:
-
-```plantuml
-@startuml
-dams_manager->System: know_agent_for_event
-@enduml
-```
-
-Let me know if you need further assistance!"
-llama3.1:8b,39,"As a Developer I want to quickly access Broker application data, so that I can investigate issues.","Here is the sequence diagram for the given user story:
-
-
-@startuml
-actor Developer
-actor Broker
-database DataStorage
-
-Developer -> Broker: API Request
-Broker -> Broker: Process API Request
-Broker -> DataStorage: Retrieve Data
-DataStorage --> Broker: Return Data
-Broker --> Developer: Provide API Response
-
-@enduml"
-llama3.1:8b,41,"As an agency user, I want to submit my data elements surrounded by quotation marks, so that Excel won't strip off leading and trailing zeroes.","Here is the sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor AgencyUser
-actor System
-
-AgencyUser -> System: Submit Data Elements
-System -> System: Validate Data Elements
-System -> AgencyUser: Display Validation Result
-
-activate AgencyUser
-
-loop until data elements validated
-    AgencyUser -> System: Review Validation Result
-    if (validation successful) then 
-        System -> System: Store Validated Data
-        AgencyUser -> System: Confirm Submission
-    else 
-        AgencyUser -> System: Revise Data Elements
-    end
-    
-end
-
-deactivate AgencyUser
-@enduml
-```
-
-In this sequence diagram, we have an Agency User who submits their data elements to the system. The system validates these data elements and displays the validation result to the user. If the validation is successful, the system stores the validated data and confirms the submission with the user. If not, the user revises the data elements until they are valid. This loop continues until all data elements have been successfully validated and stored."
-llama3.1:8b,44,"As an admin, I want to handle all users' activities, so that I can manage more efficiently.","Here is a sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor AdminUser
-database ActivityDatabase
-participant UserActivityTracker
-
-AdminUser -> UserActivityTracker: Request all users' activities
-UserActivityTracker --> ActivityDatabase: Retrieve activity data
-ActivityDatabase --> UserActivityTracker: Provide activity details
-UserActivityTracker --> AdminUser: Display and manage users' activities
-
-activate AdminUser
-deactivate AdminUser
-
-@enduml
-```"
-llama3.1:8b,47,"As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood.","Here is a sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor Employee
-participant RoutePlannerSystem
-database NeighbourhoodDatabase
-
-Employee -> RoutePlannerSystem: Request route planning assistance
-RoutePlannerSystem --> NeighbourhoodDatabase: Retrieve neighbourhood map data
-NeighbourhoodDatabase --> RoutePlannerSystem: Provide location and routing information
-RoutePlannerSystem --> Employee: Display guided route through the neighbourhood
-
-activate Employee
-deactivate Employee
-@enduml
-```
-
-This sequence diagram illustrates the interaction between an employee and the route planning system, including the necessary database access to retrieve the relevant neighborhood map data."
-llama3.1:8b,51,"As a librarian, I want to delete books from the library.","Here is the sequence diagram for the given user story:
-
-
-@startuml
-actor Librarian
-participant LibrarySystem
-participant Database
-participant BookManager
-
-Librarian -> LibrarySystem: Request to delete book
-LibrarySystem --> Database: Validate deletion request
-Database --> LibrarySystem: Confirmation of valid request
-
-LibrarySystem -> BookManager: Delete book from database and library catalog
-BookManager --> Database: Update database with deleted book information
-Database --> BookManager: Confirmation of deletion
-
-@enduml"
-llama3.1:8b,53,"As an OlderPerson, I want to be able to see my training Performance.","Here is a sequence diagram based on the given user story:
-
-
-```plantuml
-@startuml
-actor OlderPerson
-participant PersonalTrainer
-participant TrainingDatabase
-
-OlderPerson ->> PersonalTrainer: Request training performance review
-activate OlderPerson
-
-PersonalTrainer --> TrainingDatabase: Retrieve training data
-activate TrainingDatabase
-
-TrainingDatabase --> PersonalTrainer: Provide training details
-deactivate TrainingDatabase
-
-PersonalTrainer --> OlderPerson: Display training performance report
-deactivate OlderPerson
-
-@enduml
-```
-
-This sequence diagram represents the interaction between an `OlderPerson` (the user), a `PersonalTrainer`, and a `TrainingDatabase`. The sequence of events is as follows:
-
-- An `OlderPerson` requests a training performance review from a `PersonalTrainer`.
-- The `PersonalTrainer` retrieves the training data from the `TrainingDatabase`.
-- The `TrainingDatabase` provides the training details to the `PersonalTrainer`.
-- Finally, the `PersonalTrainer` displays the training performance report to the `OlderPerson`."
-llama3.1:8b,55,"As an Agency user, I want to be able to include a large number of flexfields without performance impact.","Here is the sequence diagram for the given user story:
-
-```
-@startuml
-actor AgencyUser
-database DatabaseSchema
-participant FlexfieldManager
-participant SQLExecutor
-
-AgencyUser -> FlexfieldManager: Request to include multiple flexfields
-FlexfieldManager --> SQLExecutor: Optimize query to handle large number of flexfields
-
-SQLExecutor --> DatabaseSchema: Execute optimized query with flexfields
-DatabaseSchema --> SQLExecutor: Confirmation of query execution
-
-SQLExecutor --> FlexfieldManager: Notify completion of flexfield inclusion
-FlexfieldManager --> AgencyUser: Confirm successful inclusion of multiple flexfields
-@enduml
-```
-
-This sequence diagram depicts the interaction between an Agency user, a Flexfield manager, and a database schema to efficiently include large numbers of flexfields."
-llama3.1:8b,57,"As a moderator, I want to enter the agreed-upon estimate, so that we can move on to the next item when we agree.","Here is the sequence diagram for the user story:
-
-```
-@startuml
-actor Moderator
-participant Estimator
-participant TaskDatabase
-participant WorkflowManager
-
-Moderator -> Estimator: Enter agreed-upon estimate
-Estimator --> Moderator: Confirm validity of estimate
-
-activate Moderator
-
-Estimator -> TaskDatabase: Update task with new estimate
-TaskDatabase --> Estimator: Confirmation of update
-
-deactivate Moderator
-
-WorkflowManager -> TaskDatabase: Check for completion status
-TaskDatabase --> WorkflowManager: Status update
-
-WorkflowManager -> Moderator: Notify of next item in workflow
-
-@enduml
-```
-
-This sequence diagram represents the flow of events from the moderator entering the agreed-upon estimate to updating the task with the new estimate and finally notifying the moderator of the next item in the workflow."
-llama3.1:8b,59,"As a researcher, I want to record research publications in the institutional repository or CRIS with DMP records, so that I can generate reports of research output resulting from a project.","Here is a sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor Researcher
-database InstitutionalRepository
-database CRIS 
-participant DMP System
-participant ReportGenerator
-
-Researcher -> DMPSystem: Create new DMP record
-DMPSystem --> Researcher: Confirmation of creation
-
-Researcher -> InstitutionalRepository: Link publication with DMP record
-InstitutionalRepository --> Researcher: Confirmation of link
-
-Researcher -> CRIS: Link publication with DMP record
-CRIS --> Researcher: Confirmation of link
-
-Researcher -> ReportGenerator: Generate research output report for a project
-ReportGenerator --> DMPSystem: Retrieve linked DMP records
-DMPSystem --> ReportGenerator: Provide linked DMP records
-ReportGenerator --> InstitutionalRepository: Retrieve linked publications
-InstitutionalRepository --> ReportGenerator: Provide linked publications
-ReportGenerator --> CRIS: Retrieve linked publications
-CRIS --> ReportGenerator: Provide linked publications
-ReportGenerator --> Researcher: Generate and present research output report
-
-@enduml
-```
-
-This sequence diagram illustrates the flow of interactions between the researcher, DMP system, institutional repository, CRIS, and report generator for recording research publications with DMP records and generating reports."
-llama3.1:8b,61,"As a attendee, I want to get detailed directions to the summit venue, so that I can get to the summit easily on the day of the event.","Here is the sequence diagram for the user story:
-
-```
-@startuml
-actor Attendee
-participant VenueFinder
-participant MapService
-database VenueDatabase
-
-Attendee -> VenueFinder: Request directions to summit venue
-VenueFinder --> MapService: Get venue coordinates
-MapService --> VenueDatabase: Retrieve map data
-VenueDatabase --> VenueFinder: Provide route information
-VenueFinder --> Attendee: Display detailed directions
-
-activate Attendee
-deactivate Attendee
-
-@enduml
-```
-
-This sequence diagram models the interaction between the attendee, the venue finder, the map service, and the venue database to retrieve and display detailed directions to the summit venue."
-llama3.1:8b,63,"As a sponsor, I want to post a job, so that I can hire top-tier Drupal talent.","Here is the sequence diagram for the given user story:
-
-```plantuml
-@startuml 
-sponsor->System:post_job 
-@enduml
-```
-
-In this sequence diagram, a sponsor initiates a request to the system by posting a job. The `sponsor` actor sends a request to the `System`, which then processes the post-job action. This is a simple and straightforward model of the user story in terms of interaction with the system. 
-
-Please let me know if you need any further assistance or details!"
-llama3.1:8b,65,"As a moderator, I want to export a transcript of a game as a CSV file, so that I can further process the stories and estimates.","Here is the sequence diagram for the user story:
-
-```
-@startuml 
-moderator->Transcript:export as csv file 
-moderator->System:process stories estimates 
-@enduml
-```"
-llama3.1:8b,69,"As a repoadmin, I want to have Symplectic Elements to communicate","Here is a sequence diagram that illustrates the interaction between Symplectic Elements and other components based on the given user story:
-
-```plantuml
-@startuml
-actor RepoAdmin
-participant SymplecticElements
-participant CommunicationManager
-participant NotificationSystem
-
-RepoAdmin -> SymplecticElements: Request to communicate
-activate SymplecticElements
-
-SymplecticElements -> CommunicationManager: Configure communication settings
-activate CommunicationManager
-
-CommunicationManager --> SymplecticElements: Communication settings configured successfully
-
-activate SymplecticElements
-
-SymplecticElements -> NotificationSystem: Send notification for successful configuration
-activate NotificationSystem
-
-NotificationSystem --> SymplecticElements: Notification sent successfully
-
-deactivate SymplecticElements
-deactivate CommunicationManager
-deactivate NotificationSystem
-
-RepoAdmin -> SymplecticElements: Request to initiate communication
-activate SymplecticElements
-
-SymplecticElements -> CommunicationManager: Initiate communication process
-activate CommunicationManager
-
-CommunicationManager --> SymplecticElements: Communication initiated successfully
-
-activate SymplecticElements
-
-SymplecticElements -> User: Send notification for successful initiation of communication
-User --> NotificationSystem: Acknowledge notification
-
-NotificationSystem --> SymplecticElements: Notification acknowledged
-
-deactivate SymplecticElements
-deactivate CommunicationManager
-deactivate NotificationSystem
-
-@enduml
-```
-
-This sequence diagram shows the interactions between the RepoAdmin, Symplectic Elements, Communication Manager, and Notification System. It illustrates how Symplectic Elements communicates with other components to initiate communication."
-llama3.1:8b,71,"As a researcher, I want the DMP to prepopulate information that I have already entered in other institutional systems, so that I do not have to re-enter information ensuring the DMP contains accurate and standardized information.","Here is a sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor Researcher
-participant InstitutionalSystem
-participant DMP System
-participant IntegrationService
-
-Researcher -> InstitutionalSystem: Enter research project information
-InstitutionalSystem --> IntegrationService: Forward entered information to Integration Service
-
-IntegrationService -> DMP System: Prepopulate DMP record with retrieved information
-DMP System --> Researcher: Confirmation of prepopulated DMP record
-
-Researcher -> DMP System: Review and edit prepopulated information (if necessary)
-
-@enduml
-```
-
-However, the user story implies that there should be integration between multiple systems, not just one. So, here is an updated version:
-
-```plantuml
-@startuml
-actor Researcher
-participant InstitutionalSystem
-participant CRIS
-participant DMP System
-participant IntegrationService
-
-Researcher -> InstitutionalSystem: Enter research project information
-InstitutionalSystem --> IntegrationService: Forward entered information to Integration Service
-
-IntegrationService -> CRIS: Prepopulate CRIS record with retrieved information
-CRIS --> IntegrationService: Return prepopulated CRIS record
-
-IntegrationService -> DMP System: Prepopulate DMP record with retrieved information from Institutional and CRIS systems
-DMP System --> Researcher: Confirmation of prepopulated DMP record
-
-Researcher -> DMP System: Review and edit prepopulated information (if necessary)
-
-@enduml
-```
-
-This updated sequence diagram reflects the integration between multiple systems, ensuring that accurate and standardized information is available in the DMP without requiring manual re-entry by the researcher."
-llama3.1:8b,73,"As an OlderPerson, I want to have ALFRED to set limits in the games duration as I get bored easily.","Here is the sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor OlderPerson
-actor ALFRED
-database DataStorage
-
-OlderPerson -> ALFRED: Request Game Configuration
-ALFRED -> ALFRED: Process Game Configuration Request
-ALFRED -> DataStorage: Retrieve Game Limits
-DataStorage --> ALFRED: Return Valid Game Limits
-ALFRED -> DataStorage: Update Game Limits (if necessary)
-DataStorage --> ALFRED: Confirm Updated Game Limits
-ALFRED --> OlderPerson: Provide Game Configuration Response
-
-@enduml
-```
-
-This sequence diagram shows the interactions between an `OlderPerson`, the `ALFRED` system, and a `DataStorage` database. The `ALFRED` system processes requests from the `OlderPerson`, retrieves game limits from the database, updates them if necessary, and provides a response back to the user."
-llama3.1:8b,77,"As a manager, I want to save the menu each month.","Here is the sequence diagram for the given user story:
-
-```plantuml
-@startuml
-manager->System:save menu 
-@enduml
-```
-
-This sequence diagram represents the interaction between the manager and the System, where the manager sends a request to save the menu."
-llama3.1:8b,79,"As an Archivist, I want to upload an EAD for import from within the frontend application.","Here is the sequence diagram for the given user story:
-
-
-@startuml 
-archivist->frontend_application:upload_ead 
-frontend_application->import_processor:import_ead 
-@enduml
-
-
-This sequence diagram captures the interaction between an Archivist, the Frontend Application, and the Import Processor. The Archivist uploads an EAD to the frontend application, which then sends it to the import processor for processing."
-llama3.1:8b,81,"As a PI, I want to plan what kind of data I want to record/store, so that I can ensure it will possible to store it.","Based on the user story:
-
-As a PI (Principal Investigator), I want to plan what kind of data I want to record/store, so that I can ensure it will possible to store it.
-
-Here is the sequence diagram:
-```
-@startuml
-pi->storage_planner: plan storage requirements 
-@enduml
-```"
-llama3.1:8b,83,"As a member, I want to remove reservations so that I can cancel my reservation anytime I want.","Here is the sequence diagram based on the provided user story:
-
-```plantuml
-@startuml
-actor Member
-participant ReservationSystem
-database ReservationDatabase
-
-Member -> ReservationSystem: Request to cancel reservation
-ReservationSystem --> ReservationDatabase: Validate member's reservation status
-ReservationDatabase --> ReservationSystem: Confirm reservation exists and is active
-ReservationSystem --> Member: Prompt for confirmation to cancel reservation
-activate Member
-Member -> ReservationSystem: Confirm cancellation request
-deactivate Member
-
-ReservationSystem --> ReservationDatabase: Update reservation status to cancelled
-ReservationDatabase --> ReservationSystem: Verify update successful
-ReservationSystem --> Member: Display confirmation of cancelled reservation
-
-@enduml
-```
-
-This sequence diagram captures the interaction between the member, Reservation System, and Reservation Database. It shows how a member can initiate a request to cancel their reservation, which is then validated by the system and database before being updated as cancelled. The member's confirmation is also captured in the sequence."
-llama3.1:8b,85,"As a librarian, I want to update pages for book information.","Here is the sequence diagram for the given user story:
-
-
-@startuml
-actor Librarian
-database LibraryDatabase
-participant PageUpdater
-participant BookInformationRetriever
-
-Librarian -> PageUpdater: Update page information for book
-PageUpdater --> LibraryDatabase: Store updated page information
-LibraryDatabase --> PageUpdater: Confirmation of update
-
-PageUpdater -> BookInformationRetriever: Retrieve current book information
-BookInformationRetriever --> LibraryDatabase: Retrieve book data
-LibraryDatabase --> BookInformationRetriever: Provide current book data
-BookInformationRetriever --> PageUpdater: Confirm retrieval
-
-@enduml"
-llama3.1:8b,87,"As a user, I want frontend changes for managing enum lists.","Here is a sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor User 
-database EnumDatabase
-participant FrontendDeveloper 
-
-User -> FrontendDeveloper: Request frontend changes for managing enum lists
-FrontendDeveloper --> User: Confirm understanding of requirements
-
-activate FrontendDeveloper
-
-FrontendDeveloper -> EnumDatabase: Retrieve list of valid enums
-EnumDatabase --> FrontendDeveloper: Return list of valid enums
-
-FrontendDeveloper -> User: Implement and present updated UI component for managing enums
-
-deactivate FrontendDeveloper
-@enduml
-```
-
-This sequence diagram represents the interaction between a `User`, a `FrontendDeveloper`, and an `EnumDatabase`. The user requests frontend changes, which are implemented by the frontend developer after retrieving valid enum data from the database."
-llama3.1:8b,89,"As an admin, I want to automatically validated the ingested contents for copyright infringement.","Here is the sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor Admin
-participant IngestionService
-participant Validator
-
-Admin -> IngestionService: Initiate ingestion process
-IngestionService --> Admin: Ingestion initiated successfully
-
-activate Admin
-
-IngestionService -> Validator: Validate ingested contents for copyright infringement
-Validator --> IngestionService: Validation result (valid/invalid)
-
-alt Contents are valid
-    IngestionService -> Admin: Ingested contents are valid
-else Contents are invalid
-    IngestionService -> Admin: Ingested contents have copyright infringement issues
-end
-
-deactivate IngestionService
-deactivate Validator
-
-deactivate Admin
-@enduml
-```
-
-This sequence diagram represents the interaction between an `Admin` who initiates the ingestion process, the `IngestionService` that performs the actual ingestion and provides a validation result to the `Validator`, and the `Validator` that checks for copyright infringement issues."
-llama3.1:8b,91,"As a manager, I want to delete library members.","Here is the sequence diagram for the given user story:
-
-
-@startuml
-actor Manager
-participant LibraryDatabase
-participant MemberDeleter
-participant ValidationService
-
-Manager -> MemberDeleter: Delete library member request
-MemberDeleter --> ValidationService: Validate delete request
-ValidationService --> MemberDeleter: Validate result
-
-MemberDeleter -> LibraryDatabase: Remove deleted user from database
-LibraryDatabase --> MemberDeleter: Confirmation of deletion
-
-@enduml"
-llama3.1:8b,93,"As a user, I want to link my email account to my profile, so that I can get a temporary password in case I forget my own one.","Here is the sequence diagram for the given user story:
-
-```plantuml
-@startuml
-user->System:link_email_account
-System->>Database:store_link_info
-Database-->System:link_info_validated
-System->>user:temporary_password_sent
-@enduml
-```
-
-This sequence diagram represents the interaction between the user, system, and database to link an email account with a profile and send a temporary password in case of forgotten login credentials."
-llama3.1:8b,95,"As a chef, I want to update the ingredients of the menu items.","Here is the sequence diagram based on the given user story:
-
-```plantuml
-@startuml
-actor Chef
-database IngredientDatabase
-participant MenuManager
-
-Chef -> IngredientDatabase: Update ingredients of menu items
-IngredientDatabase --> MenuManager: Notify of ingredient updates
-
-MenuManager -> Chef: Confirm update of menu items
-Chef -> MenuManager: Review and validate updated menu items
-MenuManager -> IngredientDatabase: Save updated menu item information
-IngredientDatabase --> MenuManager: Confirm save operation
-
-@enduml
-```
-
-This sequence diagram represents the interaction between the chef, ingredient database, and menu manager to update the ingredients of menu items."
-llama3.1:8b,97,"As a user, I want to choose a flexible pick up time, so that I can more conveniently use the website.","Here is the sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor User
-participant BookingService
-database Database
-
-User ->+ BookingService: Request flexible pick up time
-activate User
-
-BookingService ->> Database: Validate availability and time slots
-Database --> BookingService: Provide available time slots
-BookingService --> User: Display available pick up times
-
-deactivate User
-
-@enduml
-```
-
-This sequence diagram illustrates the interactions between the user, booking service, and database to allow the user to choose a flexible pick up time."
-llama3.1:8b,101,"As an archivist, I want to upload a single file.","Here is a sequence diagram that illustrates the user story:
-
-```
-@startuml
-actor Archivist
-participant StorageSystem
-participant Validator
-
-Archivist -> StorageSystem: Upload single file
-StorageSystem --> Validator: Validate file type and size
-Validator --> StorageSystem: File validation result
-
-StorageSystem -> StorageSystem: Store uploaded file
-StorageSystem --> Archivist: Confirmation of upload
-
-@enduml
-```
-
-This sequence diagram shows the interaction between the Archivist, Storage System, and Validator. The Archivist uploads a single file to the Storage System, which then validates the file type and size with the help of the Validator. Once the file is validated, it is stored in the Storage System, and confirmation of upload is sent back to the Archivist."
-llama3.1:8b,103,"As a librarian, I want to create information about borrowed books.","Here is a sequence diagram for the given user story:
-
-```
-@startuml
-librarian->System:create_borrowed_book_info 
-@enduml
-```
-
-This simple sequence diagram represents the interaction between the librarian and the system, where the librarian initiates the creation of information about borrowed books. 
-
-However, to make it more detailed, we could add some additional steps:
-
-```
-@startuml
-librarian->System:login 
-System->librarian:validate_credentials 
-librarian->System:create_borrowed_book_info 
-@enduml
-```"
-llama3.1:8b,105,"As a Staff, I want to edit book, so that I can correct book records those are faulty.","Here is the sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor Staff
-participant BookEditor
-participant Database
-
-Staff -> BookEditor: Select book to edit
-BookEditor -> Database: Retrieve book details
-Database --> BookEditor: Return book details (if found)
-
-BookEditor -> User: Display current and corrected values for editing
-User -> BookEditor: Send edited book details
-BookEditor -> Database: Update book records with new information
-Database --> BookEditor: Confirmation of update
-
-@enduml
-```"
-llama3.1:8b,108,"As an archivist, I want to access metadata and visual representations of index cards, so that I can use that information to assist researchers.","Here is the sequence diagram for the user story:
-
-```plantuml
-@startuml 
-archivist->System:access metadata index_cards 
-archivist->System:request visual_representations index_cards 
-archivist->System:return information assist_researchers 
-@enduml
-```
-
-This sequence diagram shows that the archivist requests access to metadata and visual representations of index cards, and then receives that information from the system which they can use to help researchers."
-llama3.1:8b,111,"As a user, I want to be able to give my email ID, so that I can receive notifications for new events as they are posted.","Here is the sequence diagram based on the given user story:
-
-```plantuml
-@startuml
-user->System:provide_email_id 
-System-->user:notifications_for_new_events
-@enduml
-```
-
-In this sequence diagram, ""user"" initiates the interaction with ""system"" by providing their email ID. Then, the system sends notifications for new events to the user's email ID."
-llama3.1:8b,114,"As a research participant, I want to make sure that the appearance of the prototype does not distract from the workflow, so that I can complete the user interview.","Here is a sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor ResearchParticipant
-participant PrototypeDesigner
-participant UsabilityEvaluator
-participant WorkflowAnalyzer
-
-ResearchParticipant -> PrototypeDesigner: Review prototype design for appearance
-activate PrototypeDesigner
-
-PrototypeDesigner -> UsabilityEvaluator: Get feedback on prototype's visual appeal
-UsabilityEvaluator --> PrototypeDesigner: Provide feedback on aesthetics
-
-deactivate PrototypeDesigner
-
-PrototypeDesigner -> WorkflowAnalyzer: Assess if appearance affects workflow
-WorkflowAnalyzer --> PrototypeDesigner: Indicate impact on usability
-
-prototype Designer --> ResearchParticipant: Make design adjustments to ensure workflow is not distracted
-
-@enduml
-```
-
-Please let me know if you need any modifications."
-llama3.1:8b,116,"As a member, I want to calculate the fine for delayed returns by automatically.","Here is the sequence diagram for the given user story:
-
-```
-@startuml
-actor Member
-participant LibrarySystem
-database FineCalculatorDatabase
-participant FineCalculator
-
-Member -> FineCalculator: Request fine calculation for delayed return
-FineCalculator --> FineCalculatorDatabase: Retrieve book details and delay duration
-FineCalculatorDatabase --> FineCalculator: Provide relevant data
-FineCalculator --> LibrarySystem: Calculate fine amount using rules
-LibrarySystem --> Member: Display calculated fine
-
-activate Member
-deactivate Member
-
-@enduml
-```
-
-This sequence diagram describes the interaction between a member, the library system, the fine calculator database, and the fine calculator. The member requests a fine calculation for a delayed return, which triggers the fine calculator to retrieve necessary data from the database and calculate the fine amount based on predefined rules. Finally, the calculated fine is displayed back to the member through the library system."
-llama3.1:8b,118,"As a cook, I want to mark items unavailable, so that Waiter can inform customers.","Here is the sequence diagram based on the given user story:
-
-
-    @startuml
-actor Cook
-participant MenuSystem
-participant Waiter
-
-Cook ->> MenuSystem : Mark item as unavailable
-MenuSystem --> Cook : Confirm unavailability of item
-Waiter ->> MenuSystem : Inform customers about unavailable items
-MenuSystem --> Waiter : Provide list of unavailable items for customer notification
-@enduml"
-llama3.1:8b,121,"As an Archivist, I want to create and edit Agent records.","Here is the sequence diagram for the given user story:
-
-```
-@startuml
-Archivist->Agent: create_record
-Archivist->Agent: edit_record
-@enduml
-```
-
-However, this simple diagram does not convey any information about validation or error handling. To make it more comprehensive, let's add a few more steps to handle invalid inputs and errors.
-
-```plantuml
-@startuml
-Archivist->Agent: create_record
-Agent->>Database: validate_input
-Database->Agent: return_validation_result
-if (validation_result == valid) then 
-  Archivist->Agent: save_record
-else 
-  Archivist->System: display_error_message
-endif
-
-Archivist->Agent: edit_record
-Agent->>Database: validate_input
-Database->Agent: return_validation_result
-if (validation_result == valid) then 
-  Archivist->Agent: save_changes
-else 
-  Archivist->System: display_error_message
-endif
-@enduml
-```
-
-This revised sequence diagram includes the following:
-
-*   The `create_record` and `edit_record` operations are initiated by the Archivist.
-*   When creating or editing a record, the Agent first validates the input using the Database.
-*   If the validation is successful (i.e., `validation_result == valid`), the record is saved. Otherwise, an error message is displayed to the user.
-
-This sequence diagram provides a more detailed representation of the interactions between the Archivist, Agent, and Database in the context of creating and editing Agent records."
-llama3.1:8b,123,"As an Archivist, I want to create and edit Event records.","Here is the sequence diagram for the given user story:
-
-
-@startuml 
-Archivist->System:Create Event record 
-archivist->System:edit Event record 
-@enduml"
-llama3.1:8b,125,"As an app developer, I want to share a dataset type that I had previously deployed as part of an app.","Here is a sequence diagram for the given user story:
-
-```
-@startuml
-app_developer->System:share dataset_type 
-System-->Database: retrieve shared_dataset_type
-@enduml
-```"
-llama3.1:8b,127,"As a manager, I want to keep track of resources available so that I can manage inventory.","Here is the sequence diagram for the given user story:
-
-```
-@startuml
-manager->System: get resource availability
-@enduml
-```
-
-This sequence diagram captures the interaction between the manager and the system, where the manager requests to retrieve the current resource availability from the system. The `get resource availability` message indicates that the system should return the current state of resources available for management."
-llama3.1:8b,130,"As a depositor, I want to specify a disposal policy for my data, so that I do not accidentally breach laws or collaboration agreements.","Here is the sequence diagram for the user story:
-
-```
-@startuml
-actor Depositor
-participant DataManager
-participant PolicyHandler
-participant DisposalService
-
-Depositor -> DataManager: Specify data disposal policy for collection
-DataManager --> Depositor: Policy specified successfully
-
-activate Depositor
-
-Depositor -> DataProcessor: Process data for collection
-DataProcessor --> PolicyHandler: Raise event to validate data against policy
-
-activate DataProcessor
-activate PolicyHandler
-
-PolicyHandler -> DisposalService: Validate data against policy
-DisposalService --> PolicyHandler: Policy validation result (e.g. valid or invalid)
-
-alt Policy is valid
-    DataProcessor --> Depositor: Data processed successfully with approved policy
-else Policy is invalid
-    DataProcessor --> Depositor: Data processing halted due to policy non-compliance
-end
-
-deactivate DataProcessor
-deactivate PolicyHandler
-
-Depositor -> DataProcessor: Correct and resubmit data
-DataProcessor --> PolicyHandler: Re-process data for validation
-
-alt Corrected data meets policy
-    DataProcessor --> Depositor: Data processed successfully with approved policy
-else Corrected data still non-compliant
-    DataProcessor --> Depositor: Data processing halted due to continued policy non-compliance
-end
-
-deactivate Depositor
-@enduml
-```
-
-Note that I have followed the rules you specified, starting and ending with `@startuml` and `@enduml`, respectively. The sequence diagram describes the flow of interactions between the DepoSitoR actor, DataManager, PolicyHandler, and DisposalService participants as the depositor specifies a disposal policy for their data, processes the data, and handles validation against that policy."
-llama3.1:8b,132,"As a Zooniverse admin, I want to know when I should educate a volunteer.","Here is the sequence diagram for the given user story:
-
-
-@startuml
-zooniverse_admin->educate_v2:check_volunteer_level 
-if volunteer_level < threshold then 
-zooniverse_admin->educate_v2:send_education_request  
-else 
-endif
-@enduml"
-llama3.1:8b,134,"As a repository manager, I want to see a display of recent errors deduplicated for easy comprehension like Symplectic Elements provides.","Here is the sequence diagram for the user story:
-
-```plantuml
-@startuml
-repository_manager->System:display recent errors
-System-->repository_manager:return deduplicated error list
-@enduml
-```
-
-In this sequence diagram, the repository manager requests the system to display recent errors. The system then returns a list of deduplicated errors to the repository manager for easy comprehension."
-llama3.1:8b,142,"As a researcher I want clear citation information on each document, so that I can cite accurately in a publication.","Here is the sequence diagram for the user story:
-
-```plantuml
-@startuml 
-researcher->System: request citation information
-System->researcher: provide clear citation information on each document
-@enduml
-```
-
-This sequence diagram captures the interaction between the researcher and the system, where the researcher requests citation information from the system, which then provides it to the researcher. This way, the researcher can accurately cite documents in their publication."
-llama3.1:8b,144,"As a manager, I want to track which employees sell the most number of products so that I can increase their salary.","Here is the sequence diagram for the given user story:
-
-```plantuml
-@startuml
-manager->System:track top selling employees 
-@enduml
-```
-
-However, this simple example does not provide a clear representation of the interaction. Let's add more details to make it more informative.
-
-```plantuml
-@startuml
-manager->System:request top selling employees data 
-System->>Database:query employee sales data 
-Database->>System:return top selling employees data 
-System->>manager:return top selling employees list 
-@enduml
-```
-
-In this updated sequence diagram, we have added more steps to the interaction:
-
-- The manager requests the top selling employees data from the system.
-- The system queries the database for the employee sales data.
-- The database returns the top selling employees data to the system.
-- Finally, the system returns the list of top selling employees to the manager."
-llama3.1:8b,148,"As a librarian, I want to add new books to book list.","Here is the sequence diagram for the given user story:
-
-```plantuml
-@startuml
-actor Librarian
-participant BookListManager
-participant Database
-
-Librarian -> BookListManager: Add new book to book list
-BookListManager --> Database: Validate and store book information
-Database --> BookListManager: Confirmation of storage
-
-BookListManager -> Librarian: Notify librarian of successful addition
-
-@enduml
-```
-
-This sequence diagram represents the steps involved in adding a new book to a book list, including validation and storage. The `Librarian` actor initiates the process by asking the `BookListManager` participant to add a new book. The `BookListManager` then validates and stores the book information in the `Database`. Once stored, the `BookListManager` notifies the `Librarian` of the successful addition."
+This sequence diagram illustrates the interaction between a `Cook` actor requesting employee data and time records, and the system's components (`TimeTracker` participant) retrieving this data from the `EmployeeDatabase`."
