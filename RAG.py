@@ -134,7 +134,7 @@ def main():
                     result = query_model(model, prompt)
 
                 except Exception as e:
-                    result = f"ERROR: {e}"
+                    quit()
 
                 writer.writerow([
                     model,
