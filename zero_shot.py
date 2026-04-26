@@ -3,6 +3,7 @@ import csv
 from router import query_model
 from prompts import *
 from evaluator import MODELS
+import os
 
 PROMPTS = [PROMPT_ZS1,
            PROMPT_ZS2,
@@ -77,7 +78,7 @@ def main():
                     ])
 
                     f.flush()
-
+                    os.fsync(f.fileno())
                     save_to_memo(key)
                     memo.add(key)
 

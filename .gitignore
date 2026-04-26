@@ -3,6 +3,7 @@ postup.txt
 __pycache__/
 results.py
 plantuml_outputs/
+tables.py
 
 
 
