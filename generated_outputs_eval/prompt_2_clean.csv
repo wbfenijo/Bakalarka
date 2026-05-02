@@ -2498,3 +2498,203 @@ gpt-5,"As a staff, I want to add books with unique id.",0,1,1,1,0,2
 gpt-5,"As a DigitalRecords Archivist, I want to expose the descriptive record for each ETD item for re-use external to Fedora.",0,1,1,1,0,2
 gpt-5,"As an archivist, I want to see what a particular user has downloaded, so that I can track use of assets.",1,9,9,9,1,2
 gpt-5,"As a user, I want to take a picture or upload an image, so that I am recommended with videos related to that picture or image.",1,9,9,9,1,2
+Llama-3.1-70b,"As a Zoning Staff member, I want to Process the Requests for Zoning Information, so that I can capture my response to the request in the system and also send a communication from the system to the Applicant.",0,1,1,1,0,2
+Llama-3.1-70b,"As a cook, I want to keep track of store orders so that I can schedule orders.",0,1,1,1,0,2
+Llama-3.1-70b,"As an OlderPerson, I want to use ALFRED to control the heating.",0,1,1,1,0,2
+Llama-3.1-70b,"As an employee, I want to see all store orders.",0,1,1,1,0,2
+Llama-3.1-70b,"As a Data Consuming User, I want to be able to search any dataset published and publicly accessible by their title and metadata, So that I can find the datasets I'm interested in.",0,1,1,1,0,2
+Llama-3.1-70b,"As a library member, I want to locate related books and see the shelf number in the library by using unique information to speed up the searching process.",0,1,1,1,0,2
+Llama-3.1-70b,"As an API User, I want to be able to use data to get results from multiple datasets, So that I can build user experiences based on more than one dataset more easily.",0,1,1,1,0,2
+Llama-3.1-70b,"As a customer, I want to be able to pay the bill partially",0,1,1,1,0,2
+Llama-3.1-70b,"As a cook, I want to have employee data on the system including clock in and out information.",0,1,1,1,0,2
+Llama-3.1-70b,"As a Plan Review Staff member, I want to Review Plans, so that I can review them for compliance and either approve, or fail or deny the plans and record any conditions, clearances, or corrections needed from the Applicant.",0,1,1,1,0,2
+Llama-3.1-70b,"As a patron, I want to know previous name(s) and publication date range (first version-last version) of reports/datasets, so that I can know what historical versions are available and how current more recent version is.",0,1,1,1,0,2
+Llama-3.1-70b,"As a user, I want to scope my searches for collections, objects, or object components to a specific language.",0,1,1,1,0,2
+Llama-3.1-70b,"As a MedicalCaregiver, I want to locate the ALFRED user.",0,1,1,1,0,2
+Llama-3.1-70b,"As a library staff member, I want to be able to assign an item to more than one collection.",0,1,1,1,0,2
+Llama-3.1-70b,"As a repository manager, I want to indicate any name that is pertinent to the component.",0,1,1,1,0,2
+Llama-3.1-70b,"As a library member, I want to keep track of books from an app so that I can know if it is taken or in the library before I go.",0,1,1,1,0,2
+Llama-3.1-70b,"As a restaurant employee, I want to receive a notification message when the customer places an order.",0,1,1,1,0,2
+Llama-3.1-70b,"As a student, I want to see the books that are currently unavailable so that I can arrange my reading plan.",0,1,1,1,0,2
+Llama-3.1-70b,"As an asset manager, I want to know what the intellectual value of the asset is to the institution at the time of deposit, so that I obtain guidance in the evaluation of it for current value for the institution.",0,1,1,1,0,2
+Llama-3.1-70b,"As a DAMS manager, I want to know the agent(s) responsible for carrying out an event.",0,1,1,1,0,2
+Llama-3.1-70b,"As a Developer I want to quickly access Broker application data, so that I can investigate issues.",0,1,1,1,0,2
+Llama-3.1-70b,"As an agency user, I want to submit my data elements surrounded by quotation marks, so that Excel won't strip off leading and trailing zeroes.",0,1,1,1,0,2
+Llama-3.1-70b,"As a developer, I want to have the ALFRED API to reduce the work to achieve my goals.",0,1,1,1,0,2
+Llama-3.1-70b,"As an admin, I want to handle all users' activities, so that I can manage more efficiently.",0,1,1,1,0,2
+Llama-3.1-70b,"As a developer, I want to upgrade to Fedora 4 and migrate our applications and data.",0,1,1,1,0,2
+Llama-3.1-70b,"As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood.",0,1,1,1,0,2
+Llama-3.1-70b,"As a Zooniverse admin, I want to detect important features such as areas of flooding, damage, temporary shelters, blocked roads etc in the satellite images.",0,1,1,1,0,2
+Llama-3.1-70b,"As a librarian, I want to delete books from the library.",0,1,1,1,0,2
+Llama-3.1-70b,"As an OlderPerson, I want to be able to see my training Performance.",0,1,1,1,0,2
+Llama-3.1-70b,"As an Agency user, I want to be able to include a large number of flexfields without performance impact.",0,1,1,1,0,2
+Llama-3.1-70b,"As a moderator, I want to enter the agreed-upon estimate, so that we can move on to the next item when we agree.",0,1,1,1,0,2
+Llama-3.1-70b,"As a researcher, I want to record research publications in the institutional repository or CRIS with DMP records, so that I can generate reports of research output resulting from a project.",0,1,1,1,0,2
+Llama-3.1-70b,"As a attendee, I want to get detailed directions to the summit venue, so that I can get to the summit easily on the day of the event.",0,1,1,1,0,2
+Llama-3.1-70b,"As a sponsor, I want to post a job, so that I can hire top-tier Drupal talent.",0,1,1,1,0,2
+Llama-3.1-70b,"As a moderator, I want to export a transcript of a game as a CSV file, so that I can further process the stories and estimates.",0,1,1,1,0,2
+Llama-3.1-70b,"As an archivist, I want to link electronic versions of researchers' publications to citations, so that I can share them with other researchers.",0,1,1,1,0,2
+Llama-3.1-70b,"As a repoadmin, I want to have Symplectic Elements to communicate",0,1,1,1,0,2
+Llama-3.1-70b,"As a researcher, I want the DMP to prepopulate information that I have already entered in other institutional systems, so that I do not have to re-enter information ensuring the DMP contains accurate and standardized information.",0,1,1,1,0,2
+Llama-3.1-70b,"As an OlderPerson, I want to have ALFRED to set limits in the games duration as I get bored easily.",0,1,1,1,0,2
+Llama-3.1-70b,"As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.",0,1,1,1,0,2
+Llama-3.1-70b,"As a manager, I want to save the menu each month.",0,1,1,1,0,2
+Llama-3.1-70b,"As an Archivist, I want to upload an EAD for import from within the frontend application.",0,1,1,1,0,2
+Llama-3.1-70b,"As a PI, I want to plan what kind of data I want to record/store, so that I can ensure it will possible to store it.",0,1,1,1,0,2
+Llama-3.1-70b,"As a member, I want to remove reservations so that I can cancel my reservation anytime I want.",0,1,1,1,0,2
+Llama-3.1-70b,"As a librarian, I want to update pages for book information.",0,1,1,1,0,2
+Llama-3.1-70b,"As a user, I want frontend changes for managing enum lists.",0,1,1,1,0,2
+Llama-3.1-70b,"As an admin, I want to automatically validated the ingested contents for copyright infringement.",0,1,1,1,0,2
+Llama-3.1-70b,"As a manager, I want to delete library members.",0,1,1,1,0,2
+Llama-3.1-70b,"As a user, I want to link my email account to my profile, so that I can get a temporary password in case I forget my own one.",0,1,1,1,0,2
+Llama-3.1-70b,"As a chef, I want to update the ingredients of the menu items.",0,1,1,1,0,2
+Llama-3.1-70b,"As a user, I want to choose a flexible pick up time, so that I can more conveniently use the website.",0,1,1,1,0,2
+Llama-3.1-70b,"As a manager, I want to display orders by date.",0,1,1,1,0,2
+Llama-3.1-70b,"As an archivist, I want to upload a single file.",0,1,1,1,0,2
+Llama-3.1-70b,"As a librarian, I want to create information about borrowed books.",0,1,1,1,0,2
+Llama-3.1-70b,"As a Staff, I want to edit book, so that I can correct book records those are faulty.",0,1,1,1,0,2
+Llama-3.1-70b,"As a library staff member, I want to upload large batches of items simultaneously, including descriptive metadata, so that I can offer service to authors efficiently.",0,1,1,1,0,2
+Llama-3.1-70b,"As an archivist, I want to access metadata and visual representations of index cards, so that I can use that information to assist researchers.",0,1,1,1,0,2
+Llama-3.1-70b,"As a chef, I want to create dishes so that I can follow customer comments.",0,1,1,1,0,2
+Llama-3.1-70b,"As a user, I want to be able to give my email ID, so that I can receive notifications for new events as they are posted.",0,1,1,1,0,2
+Llama-3.1-70b,"As a researcher, I want to link research publications in the institutional repository or CRIS with DMP records, so that I can generate reports of research output resulting from a project.",0,1,1,1,0,2
+Llama-3.1-70b,"As a research participant, I want to make sure that the appearance of the prototype does not distract from the workflow, so that I can complete the user interview.",0,1,1,1,0,2
+Llama-3.1-70b,"As a member, I want to calculate the fine for delayed returns by automatically.",0,1,1,1,0,2
+Llama-3.1-70b,"As a cook, I want to mark items unavailable, so that Waiter can inform customers.",0,1,1,1,0,2
+Llama-3.1-70b,"As a management user, I want to see the arrival and departure times of the employees.",0,1,1,1,0,2
+Llama-3.1-70b,"As an Archivist, I want to create and edit Agent records.",0,1,1,1,0,2
+Llama-3.1-70b,"As an Archivist, I want to create and edit Event records.",0,1,1,1,0,2
+Llama-3.1-70b,"As an app developer, I want to share a dataset type that I had previously deployed as part of an app.",0,1,1,1,0,2
+Llama-3.1-70b,"As a manager, I want to keep track of resources available so that I can manage inventory.",0,1,1,1,0,2
+Llama-3.1-70b,"As an Owner, I want to design a schedule from the UI SME, so that I know the potential timeline of the UI improvements wanted.",0,1,1,1,0,2
+Llama-3.1-70b,"As a depositor, I want to specify a disposal policy for my data, so that I do not accidentally breach laws or collaboration agreements.",0,1,1,1,0,2
+Llama-3.1-70b,"As a Zooniverse admin, I want to know when I should educate a volunteer.",0,1,1,1,0,2
+Llama-3.1-70b,"As a repository manager, I want to see a display of recent errors deduplicated for easy comprehension like Symplectic Elements provides.",0,1,1,1,0,2
+Llama-3.1-70b,"As an ethics manager, I want to be informed about the data, so that I can check for sensitivity of data.",0,1,1,1,0,2
+Llama-3.1-70b,"As a repository manager, I want to indicate names related to the collection either as creator, source, or subject.",0,1,1,1,0,2
+Llama-3.1-70b,"As a patron, I want to email system provider to report issues and ask questions.",0,1,1,1,0,2
+Llama-3.1-70b,"As a researcher I want clear citation information on each document, so that I can cite accurately in a publication.",0,1,1,1,0,2
+Llama-3.1-70b,"As a manager, I want to track which employees sell the most number of products so that I can increase their salary.",0,1,1,1,0,2
+Llama-3.1-70b,"As a Consumer, I want to load a Data Package from R, so that that I can immediately start playing with it.",0,1,1,1,0,2
+Llama-3.1-70b,"As a librarian, I want to add new books to book list.",0,1,1,1,0,2
+Llama-3.1-70b,"As an OlderPerson, I want to use ALFRED to control the TV and radio.",0,1,1,1,0,2
+Llama-3.1-70b,"As a Staff member, I want to Manage Bonds, so that I can track and manage bonds throughout the lifecycle of the project until release.",0,1,1,1,0,2
+Llama-3.1-70b,"As a chef, I want to update the allergy warnings of menu items.",0,1,1,1,0,2
+Llama-3.1-70b,"As an employee, I want to change orders of a table.",0,1,1,1,0,2
+Llama-3.1-70b,"As a library manager, I want to know which books are borrowed most so that I can bring the further copies of the books.",0,1,1,1,0,2
+Llama-3.1-70b,"As a librarian, I want to edit suggestion list.",0,1,1,1,0,2
+Llama-3.1-70b,"As a Cornell faculty member, I want to have some control over how items within my collection sort in collection contents lists, so that I can control how my work is presented.",0,1,1,1,0,2
+Llama-3.1-70b,"As a DAMS manager, I want to know when permitted and restricted acts and/or their active dates are modified.",0,1,1,1,0,2
+Llama-3.1-70b,"As a restaurant manager, I want to see weekly reports.",0,1,1,1,0,2
+Llama-3.1-70b,"As a user, I want to sync events created in NeuroHub with a web-based Calendar such as Google Calendar.",0,1,1,1,0,2
+Llama-3.1-70b,"As a team member, I want to know what visual design related tasks we might need to plan for this sprint, so that I can assign tasks as necessary.",0,1,1,1,0,2
+Llama-3.1-70b,"As a repoadmin, I want to have users to be presented with a license or a selection of licenses, specific to the collection, and deposit to be denied if the submitter does not accept the license.",0,1,1,1,0,2
+Llama-3.1-70b,"As an employee, I want to add a new information about myself to the my employee data",0,1,1,1,0,2
+Llama-3.1-70b,"As a customer, I want to see the availability of books.",0,1,1,1,0,2
+Llama-3.1-70b,"As a user, I want to have nice error pages when something goes wrong, so that I can trust the system and its developers.",0,1,1,1,0,2
+Llama-3.1-70b,"As a restaurant manager, I want to create, monitor and delegate tasks to workers to increase labor management efficiency.",0,1,1,1,0,2
+Llama-3.1-70b,"As a DB/IR administrator, I want to see list of subscribers for specified report in order research missing report complaints.",0,1,1,1,0,2
+Llama-3.1-70b,"As a staff, I want to add books with unique id.",0,1,1,1,0,2
+Llama-3.1-70b,"As a DigitalRecords Archivist, I want to expose the descriptive record for each ETD item for re-use external to Fedora.",0,1,1,1,0,2
+Llama-3.1-70b,"As an archivist, I want to see what a particular user has downloaded, so that I can track use of assets.",0,1,1,1,0,2
+Llama-3.1-70b,"As a user, I want to take a picture or upload an image, so that I am recommended with videos related to that picture or image.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a Zoning Staff member, I want to Process the Requests for Zoning Information, so that I can capture my response to the request in the system and also send a communication from the system to the Applicant.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a cook, I want to keep track of store orders so that I can schedule orders.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an OlderPerson, I want to use ALFRED to control the heating.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an employee, I want to see all store orders.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a Data Consuming User, I want to be able to search any dataset published and publicly accessible by their title and metadata, So that I can find the datasets I'm interested in.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a library member, I want to locate related books and see the shelf number in the library by using unique information to speed up the searching process.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an API User, I want to be able to use data to get results from multiple datasets, So that I can build user experiences based on more than one dataset more easily.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a customer, I want to be able to pay the bill partially",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a cook, I want to have employee data on the system including clock in and out information.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a Plan Review Staff member, I want to Review Plans, so that I can review them for compliance and either approve, or fail or deny the plans and record any conditions, clearances, or corrections needed from the Applicant.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a patron, I want to know previous name(s) and publication date range (first version-last version) of reports/datasets, so that I can know what historical versions are available and how current more recent version is.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a user, I want to scope my searches for collections, objects, or object components to a specific language.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a MedicalCaregiver, I want to locate the ALFRED user.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a library staff member, I want to be able to assign an item to more than one collection.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a repository manager, I want to indicate any name that is pertinent to the component.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a library member, I want to keep track of books from an app so that I can know if it is taken or in the library before I go.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a restaurant employee, I want to receive a notification message when the customer places an order.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a student, I want to see the books that are currently unavailable so that I can arrange my reading plan.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an asset manager, I want to know what the intellectual value of the asset is to the institution at the time of deposit, so that I obtain guidance in the evaluation of it for current value for the institution.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a DAMS manager, I want to know the agent(s) responsible for carrying out an event.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a Developer I want to quickly access Broker application data, so that I can investigate issues.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an agency user, I want to submit my data elements surrounded by quotation marks, so that Excel won't strip off leading and trailing zeroes.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a developer, I want to have the ALFRED API to reduce the work to achieve my goals.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an admin, I want to handle all users' activities, so that I can manage more efficiently.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a developer, I want to upgrade to Fedora 4 and migrate our applications and data.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a Zooniverse admin, I want to detect important features such as areas of flooding, damage, temporary shelters, blocked roads etc in the satellite images.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a librarian, I want to delete books from the library.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an OlderPerson, I want to be able to see my training Performance.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an Agency user, I want to be able to include a large number of flexfields without performance impact.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a moderator, I want to enter the agreed-upon estimate, so that we can move on to the next item when we agree.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a researcher, I want to record research publications in the institutional repository or CRIS with DMP records, so that I can generate reports of research output resulting from a project.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a attendee, I want to get detailed directions to the summit venue, so that I can get to the summit easily on the day of the event.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a sponsor, I want to post a job, so that I can hire top-tier Drupal talent.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a moderator, I want to export a transcript of a game as a CSV file, so that I can further process the stories and estimates.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an archivist, I want to link electronic versions of researchers' publications to citations, so that I can share them with other researchers.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a repoadmin, I want to have Symplectic Elements to communicate",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a researcher, I want the DMP to prepopulate information that I have already entered in other institutional systems, so that I do not have to re-enter information ensuring the DMP contains accurate and standardized information.",0,3,2,2,0,2
+ollama-embedding-qwen3-06,"As an OlderPerson, I want to have ALFRED to set limits in the games duration as I get bored easily.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.",1,1,1,1,1,2
+ollama-embedding-qwen3-06,"As a manager, I want to save the menu each month.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an Archivist, I want to upload an EAD for import from within the frontend application.",1,1,1,1,1,2
+ollama-embedding-qwen3-06,"As a PI, I want to plan what kind of data I want to record/store, so that I can ensure it will possible to store it.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a member, I want to remove reservations so that I can cancel my reservation anytime I want.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a librarian, I want to update pages for book information.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a user, I want frontend changes for managing enum lists.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an admin, I want to automatically validated the ingested contents for copyright infringement.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a manager, I want to delete library members.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a user, I want to link my email account to my profile, so that I can get a temporary password in case I forget my own one.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a chef, I want to update the ingredients of the menu items.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a user, I want to choose a flexible pick up time, so that I can more conveniently use the website.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a manager, I want to display orders by date.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an archivist, I want to upload a single file.",1,1,1,1,1,2
+ollama-embedding-qwen3-06,"As a librarian, I want to create information about borrowed books.",1,1,1,1,1,2
+ollama-embedding-qwen3-06,"As a Staff, I want to edit book, so that I can correct book records those are faulty.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a library staff member, I want to upload large batches of items simultaneously, including descriptive metadata, so that I can offer service to authors efficiently.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an archivist, I want to access metadata and visual representations of index cards, so that I can use that information to assist researchers.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a chef, I want to create dishes so that I can follow customer comments.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a user, I want to be able to give my email ID, so that I can receive notifications for new events as they are posted.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a researcher, I want to link research publications in the institutional repository or CRIS with DMP records, so that I can generate reports of research output resulting from a project.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a research participant, I want to make sure that the appearance of the prototype does not distract from the workflow, so that I can complete the user interview.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a member, I want to calculate the fine for delayed returns by automatically.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a cook, I want to mark items unavailable, so that Waiter can inform customers.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a management user, I want to see the arrival and departure times of the employees.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an Archivist, I want to create and edit Agent records.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an Archivist, I want to create and edit Event records.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an app developer, I want to share a dataset type that I had previously deployed as part of an app.",1,1,1,1,1,2
+ollama-embedding-qwen3-06,"As a manager, I want to keep track of resources available so that I can manage inventory.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an Owner, I want to design a schedule from the UI SME, so that I know the potential timeline of the UI improvements wanted.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a depositor, I want to specify a disposal policy for my data, so that I do not accidentally breach laws or collaboration agreements.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a Zooniverse admin, I want to know when I should educate a volunteer.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a repository manager, I want to see a display of recent errors deduplicated for easy comprehension like Symplectic Elements provides.",0,2,2,1,0,2
+ollama-embedding-qwen3-06,"As an ethics manager, I want to be informed about the data, so that I can check for sensitivity of data.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a repository manager, I want to indicate names related to the collection either as creator, source, or subject.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a patron, I want to email system provider to report issues and ask questions.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a researcher I want clear citation information on each document, so that I can cite accurately in a publication.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a manager, I want to track which employees sell the most number of products so that I can increase their salary.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a Consumer, I want to load a Data Package from R, so that that I can immediately start playing with it.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a librarian, I want to add new books to book list.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an OlderPerson, I want to use ALFRED to control the TV and radio.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a Staff member, I want to Manage Bonds, so that I can track and manage bonds throughout the lifecycle of the project until release.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a chef, I want to update the allergy warnings of menu items.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an employee, I want to change orders of a table.",1,1,1,1,1,2
+ollama-embedding-qwen3-06,"As a library manager, I want to know which books are borrowed most so that I can bring the further copies of the books.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a librarian, I want to edit suggestion list.",1,1,1,1,1,2
+ollama-embedding-qwen3-06,"As a Cornell faculty member, I want to have some control over how items within my collection sort in collection contents lists, so that I can control how my work is presented.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a DAMS manager, I want to know when permitted and restricted acts and/or their active dates are modified.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a restaurant manager, I want to see weekly reports.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a user, I want to sync events created in NeuroHub with a web-based Calendar such as Google Calendar.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a team member, I want to know what visual design related tasks we might need to plan for this sprint, so that I can assign tasks as necessary.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a repoadmin, I want to have users to be presented with a license or a selection of licenses, specific to the collection, and deposit to be denied if the submitter does not accept the license.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an employee, I want to add a new information about myself to the my employee data",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a customer, I want to see the availability of books.",1,1,1,1,1,2
+ollama-embedding-qwen3-06,"As a user, I want to have nice error pages when something goes wrong, so that I can trust the system and its developers.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a restaurant manager, I want to create, monitor and delegate tasks to workers to increase labor management efficiency.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a DB/IR administrator, I want to see list of subscribers for specified report in order research missing report complaints.",1,1,1,1,1,2
+ollama-embedding-qwen3-06,"As a staff, I want to add books with unique id.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a DigitalRecords Archivist, I want to expose the descriptive record for each ETD item for re-use external to Fedora.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As an archivist, I want to see what a particular user has downloaded, so that I can track use of assets.",0,1,1,1,0,2
+ollama-embedding-qwen3-06,"As a user, I want to take a picture or upload an image, so that I am recommended with videos related to that picture or image.",0,1,1,1,0,2
