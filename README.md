@@ -49,6 +49,14 @@ implementácia prístupu pre transformáciu artefaktov vývoja softvéru
 | 01.12.-07.12. | Pokračovanie v skripte pre judge-a, prvé výsledky, spracovanie do .csv súborov | 
 | 08.12.-14.12. | Návrh skriptu pre koreláciu v dátach, zlyhanie pre chybné dáta | 
 | 16.02.-22.02. | Skript pre opravu dát, pridané nové modely, veľká refaktorizácia, stratified split datasetu pre trénovanie LLM| 
+| 23.02.-01.03. | Skripty pre promptovanie modelov pre zero-shot| 
+| 08.03.-14.03. | Skripty pre promptovanie modelov RAG a zároveň hodnotenie výsledkov pre ZS| 
+| 16.03.-22.03. | Hodnotenie výsledkov pre RAG| 
+| 06.04.-12.04. | Regenerovanie chybných výsledkov| 
+| 16.03.-22.03. | Hodnotenie výsledkov pre RAG| 
+| 06.04.-12.04. | Regenerovanie chybných výsledkov| 
+| 13.04.-30.04. | Písanie textu bakalárskej práce| 
+| 01.05.-10.05. | Štatistické závery generovania| 
 
 
 
