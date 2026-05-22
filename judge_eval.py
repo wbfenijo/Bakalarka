@@ -8,7 +8,7 @@ MODEL = "azure/gpt-4.1"
 TOTAL = 100 * 6  * 21
 MEMO_FILE = "memo_judge_ZS.txt"
 count = 0
-MODEL = "gpt-4o-mini"
+
 
 
 df = pd.read_csv("generated_results.csv")

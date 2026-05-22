@@ -37,7 +37,16 @@ MODELS = [
 
 def make_prompt(user_story: str, generated_code: str) -> str:
     return f"""
-You are an assistant that evaluates a PlantUML sequence diagram based on a given user story.
+You are an expert evaluator of UML sequence diagrams.
+
+Your task is to carefully compare a User Story with a generated PlantUML Sequence Diagram and evaluate how accurately the diagram represents the intended system behavior.
+
+You should evaluate:
+- whether the diagram captures the main functionality described in the user story,
+- whether the correct actors, objects, and system components are included,
+- whether the exchanged messages are meaningful and logically correct,
+- whether the interaction order follows a realistic execution flow,
+- and whether the generated diagram would be practically useful during software design.
 
 USER STORY:
 {user_story}
@@ -45,15 +54,55 @@ USER STORY:
 SEQUENCE DIAGRAM (PlantUML):
 {generated_code}
 
-Evaluate using:
+Evaluation principles:
 
-QE1: 0/1 (Yes/No)
-QE2: 1-10
-QE3: 1-10
-QE4: 1-10
-QE5: 0/1 (Yes/No)
+- Evaluate the diagram as if you were reviewing documentation created by a junior software engineer.
+- Reward diagrams that are complete, logically consistent, and aligned with the user story.
+- Penalize missing participants, incorrect interactions, unrealistic message flow, fabricated functionality, or syntax that suggests misunderstanding of the scenario.
+- Use the full scoring range when appropriate.
 
-Return exactly:
+Detailed guidance:
+
+QE1:
+- Return 1 only if the generated diagram is clearly relevant to the described user story.
+- Return 0 if the diagram is unrelated, incomplete to the point of being unusable, or models a different scenario.
+
+QE2:
+- Evaluate the correctness and completeness of the participants represented in the sequence diagram.
+- Focus on whether the diagram contains the appropriate actors, objects, services, system components, or external systems required by the user story.
+- Verify that interactions occur between logically correct participants.
+- Minor naming differences should not significantly reduce the score if the intended participant roles are clear.
+- Penalize missing essential participants, incorrect system entities, redundant objects, or unrealistic communication relationships.
+- High scores should correspond to diagrams where the represented objects and their interactions closely match the intended system structure described in the user story.
+
+QE3:
+- Focus on the semantic correctness of messages and interactions.
+- Determine whether the exchanged messages correctly model the intended behavior and communication.
+- Higher scores indicate realistic and meaningful interaction logic.
+
+QE4:
+- Focus on temporal and logical ordering of interactions.
+- Verify whether the sequence of messages follows the expected workflow from the user story.
+- Penalize misplaced, reversed, or inconsistent interaction order.
+
+QE5:
+- Evaluate practical usefulness from the perspective of a software engineer creating sequence diagrams during analysis or design.
+- Return 1 if the generated diagram already provides a mostly correct and reusable interaction structure, even if small corrections would still be necessary.
+- Return 1 when the diagram captures the main workflow, important participants, and meaningful interactions well enough to reduce manual modeling effort.
+- Return 0 only if the diagram is largely incorrect, misleading, missing critical interactions, or would require substantial rework before it could be used.
+- Focus on whether the diagram accelerates the modeling process, not whether it is perfect.
+
+QE1: Is the generated Sequence Diagram (SD) relevant to the given User Story (US)? 0/1 (Yes/No)
+
+QE2: Rate the accuracy of object representation and interactions between them on a scale of 1 to 10.
+
+QE3: Rate the accuracy of message and interaction representation on a scale of 1 to 10.
+
+QE4: Rate the accuracy of the message sequence order on a scale of 1 to 10.
+
+QE5: Do you think this tool will save time for the Software Engineers to model SD for this particular user story? 0/1 (Yes/No)
+
+Return ONLY the following format exactly:
 
 QE1: ...
 QE2: ...
@@ -182,5 +231,6 @@ if __name__ == "__main__":
     print(len(MODELS))
     df = pd.read_csv(r"data-folder\Evaluation\Final CSV_gpt.csv")
     for idx, row in df.iterrows():
+
         print(f"\n=== Evaluating Story {idx} ===")
         evaluate_story(idx, row)

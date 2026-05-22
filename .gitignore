@@ -5,7 +5,7 @@ results.py
 plantuml_outputs/
 tables.py
 statistics.py
-
-
-
-
+correlation_train.py
+evaluation_outputs_train
+violin_best_model.png
+violin_best_model_qe.png

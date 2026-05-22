@@ -3,7 +3,8 @@ from openai_client import OpenAIClient
 
 OPENAI_MODELS = {
     "gpt-5",
-    "gpt-4o-mini"
+    "gpt-4o-mini",
+    "gpt-4.1"
     
 }
 
