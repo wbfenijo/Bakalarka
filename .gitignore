@@ -9,3 +9,4 @@ correlation_train.py
 evaluation_outputs_train
 violin_best_model.png
 violin_best_model_qe.png
+violin_best_pair.png
